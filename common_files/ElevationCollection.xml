@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<caaml:ElevationCollection xmlns:caaml="http://caaml.org/Schemas/V5.0/Profiles/BulletinEAWS" xmlns:gml="http://www.opengis.net/gml" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://caaml.org/Schemas/V5.0/Profiles/BulletinEAWS
+http://caaml.org/Schemas/V5.0/Profiles/BulletinEAWS/CAAMLv5_BulletinEAWS.xsd" gml:id="ElevationCatalogLwdTirol">
+	<caaml:metaDataProperty>
+		<caaml:MetaData>
+			<caaml:srcRef xlink:href="LwdTirol"/>
+			<caaml:comment>Elevation Catalogue of the Tyrolean Avalanche Warning Service</caaml:comment>
+		</caaml:MetaData>
+	</caaml:metaDataProperty>
+	<caaml:elevations>
+		<!--
+					Elevation ranges greater than a lower bound
+					
+					Implemented interval (in 100-steps):	[0,3900]
+					Naming-conventions when referring to:	ElevationRange_lb+
+						where lb stands for the desired lower bound
+				-->
+		<caaml:ElevationRange gml:id="ElevationRange_0Hi" uom="m">
+			<caaml:beginPosition>0</caaml:beginPosition>
+		</caaml:ElevationRange>
+		<caaml:ElevationRange gml:id="ElevationRange_100Hi" uom="m">
+			<caaml:beginPosition>100</caaml:beginPosition>
+		</caaml:ElevationRange>
+		<caaml:ElevationRange gml:id="ElevationRange_200Hi" uom="m">
+			<caaml:beginPosition>200</caaml:beginPosition>
+		</caaml:ElevationRange>
+		<caaml:ElevationRange gml:id="ElevationRange_300Hi" uom="m">
+			<caaml:beginPosition>300</caaml:beginPosition>
+		</caaml:ElevationRange>
+		<caaml:ElevationRange gml:id="ElevationRange_400Hi" uom="m">
+			<caaml:beginPosition>400</caaml:beginPosition>
+		</caaml:ElevationRange>
+		<caaml:ElevationRange gml:id="ElevationRange_500Hi" uom="m">
+			<caaml:beginPosition>500</caaml:beginPosition>
+		</caaml:ElevationRange>
+		<caaml:ElevationRange gml:id="ElevationRange_600Hi" uom="m">
+			<caaml:beginPosition>600</caaml:beginPosition>
+		</caaml:ElevationRange>
+		<caaml:ElevationRange gml:id="ElevationRange_700Hi" uom="m">
+			<caaml:beginPosition>700</caaml:beginPosition>
+		</caaml:ElevationRange>
+		<caaml:ElevationRange gml:id="ElevationRange_800Hi" uom="m">
+			<caaml:beginPosition>800</caaml:beginPosition>
+		</caaml:ElevationRange>
+		<caaml:ElevationRange gml:id="ElevationRange_900Hi" uom="m">
+			<caaml:beginPosition>900</caaml:beginPosition>
+		</caaml:ElevationRange>
+		<caaml:ElevationRange gml:id="ElevationRange_1000Hi" uom="m">
+			<caaml:beginPosition>1000</caaml:beginPosition>
+		</caaml:ElevationRange>
+		<caaml:ElevationRange gml:id="ElevationRange_1100Hi" uom="m">
+			<caaml:beginPosition>1100</caaml:beginPosition>
+		</caaml:ElevationRange>
+		<caaml:ElevationRange gml:id="ElevationRange_1200Hi" uom="m">
+			<caaml:beginPosition>1200</caaml:beginPosition>
+		</caaml:ElevationRange>
+		<caaml:ElevationRange gml:id="ElevationRange_1300Hi" uom="m">
+			<caaml:beginPosition>1300</caaml:beginPosition>
+		</caaml:ElevationRange>
+		<caaml:ElevationRange gml:id="ElevationRange_1400Hi" uom="m">
+			<caaml:beginPosition>1400</caaml:beginPosition>
+		</caaml:ElevationRange>
+		<caaml:ElevationRange gml:id="ElevationRange_1500Hi" uom="m">
+			<caaml:beginPosition>1500</caaml:beginPosition>
+		</caaml:ElevationRange>
+		<caaml:ElevationRange gml:id="ElevationRange_1600Hi" uom="m">
+			<caaml:beginPosition>1600</caaml:beginPosition>
+		</caaml:ElevationRange>
+		<caaml:ElevationRange gml:id="ElevationRange_1700Hi" uom="m">
+			<caaml:beginPosition>1700</caaml:beginPosition>
+		</caaml:ElevationRange>
+		<caaml:ElevationRange gml:id="ElevationRange_1800Hi" uom="m">
+			<caaml:beginPosition>1800</caaml:beginPosition>
+		</caaml:ElevationRange>
+		<caaml:ElevationRange gml:id="ElevationRange_1900Hi" uom="m">
+			<caaml:beginPosition>1900</caaml:beginPosition>
+		</caaml:ElevationRange>
+		<caaml:ElevationRange gml:id="ElevationRange_2000Hi" uom="m">
+			<caaml:beginPosition>2000</caaml:beginPosition>
+		</caaml:ElevationRange>
+		<caaml:ElevationRange gml:id="ElevationRange_2100Hi" uom="m">
+			<caaml:beginPosition>2100</caaml:beginPosition>
+		</caaml:ElevationRange>
+		<caaml:ElevationRange gml:id="ElevationRange_2200Hi" uom="m">
+			<caaml:beginPosition>2200</caaml:beginPosition>
+		</caaml:ElevationRange>
+		<caaml:ElevationRange gml:id="ElevationRange_2300Hi" uom="m">
+			<caaml:beginPosition>2300</caaml:beginPosition>
+		</caaml:ElevationRange>
+		<caaml:ElevationRange gml:id="ElevationRange_2400Hi" uom="m">
+			<caaml:beginPosition>2400</caaml:beginPosition>
+		</caaml:ElevationRange>
+		<caaml:ElevationRange gml:id="ElevationRange_2500Hi" uom="m">
+			<caaml:beginPosition>2500</caaml:beginPosition>
+		</caaml:ElevationRange>
+		<caaml:ElevationRange gml:id="ElevationRange_2600Hi" uom="m">
+			<caaml:beginPosition>2600</caaml:beginPosition>
+		</caaml:ElevationRange>
+		<caaml:ElevationRange gml:id="ElevationRange_2700Hi" uom="m">
+			<caaml:beginPosition>2700</caaml:beginPosition>
+		</caaml:ElevationRange>
+		<caaml:ElevationRange gml:id="ElevationRange_2800Hi" uom="m">
+			<caaml:beginPosition>2800</caaml:beginPosition>
+		</caaml:ElevationRange>
+		<caaml:ElevationRange gml:id="ElevationRange_2900Hi" uom="m">
+			<caaml:beginPosition>2900</caaml:beginPosition>
+		</caaml:ElevationRange>
+		<caaml:ElevationRange gml:id="ElevationRange_3000Hi" uom="m">
+			<caaml:beginPosition>3000</caaml:beginPosition>
+		</caaml:ElevationRange>
+		<caaml:ElevationRange gml:id="ElevationRange_3100Hi" uom="m">
+			<caaml:beginPosition>3100</caaml:beginPosition>
+		</caaml:ElevationRange>
+		<caaml:ElevationRange gml:id="ElevationRange_3200Hi" uom="m">
+			<caaml:beginPosition>3200</caaml:beginPosition>
+		</caaml:ElevationRange>
+		<caaml:ElevationRange gml:id="ElevationRange_3300Hi" uom="m">
+			<caaml:beginPosition>3300</caaml:beginPosition>
+		</caaml:ElevationRange>
+		<caaml:ElevationRange gml:id="ElevationRange_3400Hi" uom="m">
+			<caaml:beginPosition>3400</caaml:beginPosition>
+		</caaml:ElevationRange>
+		<caaml:ElevationRange gml:id="ElevationRange_3500Hi" uom="m">
+			<caaml:beginPosition>3500</caaml:beginPosition>
+		</caaml:ElevationRange>
+		<caaml:ElevationRange gml:id="ElevationRange_3600Hi" uom="m">
+			<caaml:beginPosition>3600</caaml:beginPosition>
+		</caaml:ElevationRange>
+		<caaml:ElevationRange gml:id="ElevationRange_3700Hi" uom="m">
+			<caaml:beginPosition>3700</caaml:beginPosition>
+		</caaml:ElevationRange>
+		<caaml:ElevationRange gml:id="ElevationRange_3800Hi" uom="m">
+			<caaml:beginPosition>3800</caaml:beginPosition>
+		</caaml:ElevationRange>
+		<caaml:ElevationRange gml:id="ElevationRange_3900Hi" uom="m">
+			<caaml:beginPosition>3900</caaml:beginPosition>
+		</caaml:ElevationRange>
+		<!--
+					Elevation ranges less than an Hiper bound
+					
+					Implemented interval (in 100-steps):	[100,4000]
+					Naming-conventions when referring to:	ElevationRange_ub-
+						where ub stands for the desired Hiper bound
+				-->
+		<caaml:ElevationRange gml:id="ElevationRange_100Lw" uom="m">
+			<caaml:endPosition>100</caaml:endPosition>
+		</caaml:ElevationRange>
+		<caaml:ElevationRange gml:id="ElevationRange_200Lw" uom="m">
+			<caaml:endPosition>200</caaml:endPosition>
+		</caaml:ElevationRange>
+		<caaml:ElevationRange gml:id="ElevationRange_300Lw" uom="m">
+			<caaml:endPosition>300</caaml:endPosition>
+		</caaml:ElevationRange>
+		<caaml:ElevationRange gml:id="ElevationRange_400Lw" uom="m">
+			<caaml:endPosition>400</caaml:endPosition>
+		</caaml:ElevationRange>
+		<caaml:ElevationRange gml:id="ElevationRange_500Lw" uom="m">
+			<caaml:endPosition>500</caaml:endPosition>
+		</caaml:ElevationRange>
+		<caaml:ElevationRange gml:id="ElevationRange_600Lw" uom="m">
+			<caaml:endPosition>600</caaml:endPosition>
+		</caaml:ElevationRange>
+		<caaml:ElevationRange gml:id="ElevationRange_700Lw" uom="m">
+			<caaml:endPosition>700</caaml:endPosition>
+		</caaml:ElevationRange>
+		<caaml:ElevationRange gml:id="ElevationRange_800Lw" uom="m">
+			<caaml:endPosition>800</caaml:endPosition>
+		</caaml:ElevationRange>
+		<caaml:ElevationRange gml:id="ElevationRange_900Lw" uom="m">
+			<caaml:endPosition>900</caaml:endPosition>
+		</caaml:ElevationRange>
+		<caaml:ElevationRange gml:id="ElevationRange_1000Lw" uom="m">
+			<caaml:endPosition>1000</caaml:endPosition>
+		</caaml:ElevationRange>
+		<caaml:ElevationRange gml:id="ElevationRange_1100Lw" uom="m">
+			<caaml:endPosition>1100</caaml:endPosition>
+		</caaml:ElevationRange>
+		<caaml:ElevationRange gml:id="ElevationRange_1200Lw" uom="m">
+			<caaml:endPosition>1200</caaml:endPosition>
+		</caaml:ElevationRange>
+		<caaml:ElevationRange gml:id="ElevationRange_1300Lw" uom="m">
+			<caaml:endPosition>1300</caaml:endPosition>
+		</caaml:ElevationRange>
+		<caaml:ElevationRange gml:id="ElevationRange_1400Lw" uom="m">
+			<caaml:endPosition>1400</caaml:endPosition>
+		</caaml:ElevationRange>
+		<caaml:ElevationRange gml:id="ElevationRange_1500Lw" uom="m">
+			<caaml:endPosition>1500</caaml:endPosition>
+		</caaml:ElevationRange>
+		<caaml:ElevationRange gml:id="ElevationRange_1600Lw" uom="m">
+			<caaml:endPosition>1600</caaml:endPosition>
+		</caaml:ElevationRange>
+		<caaml:ElevationRange gml:id="ElevationRange_1700Lw" uom="m">
+			<caaml:endPosition>1700</caaml:endPosition>
+		</caaml:ElevationRange>
+		<caaml:ElevationRange gml:id="ElevationRange_1800Lw" uom="m">
+			<caaml:endPosition>1800</caaml:endPosition>
+		</caaml:ElevationRange>
+		<caaml:ElevationRange gml:id="ElevationRange_1900Lw" uom="m">
+			<caaml:endPosition>1900</caaml:endPosition>
+		</caaml:ElevationRange>
+		<caaml:ElevationRange gml:id="ElevationRange_2000Lw" uom="m">
+			<caaml:endPosition>2000</caaml:endPosition>
+		</caaml:ElevationRange>
+		<caaml:ElevationRange gml:id="ElevationRange_2100Lw" uom="m">
+			<caaml:endPosition>2100</caaml:endPosition>
+		</caaml:ElevationRange>
+		<caaml:ElevationRange gml:id="ElevationRange_2200Lw" uom="m">
+			<caaml:endPosition>2200</caaml:endPosition>
+		</caaml:ElevationRange>
+		<caaml:ElevationRange gml:id="ElevationRange_2300Lw" uom="m">
+			<caaml:endPosition>2300</caaml:endPosition>
+		</caaml:ElevationRange>
+		<caaml:ElevationRange gml:id="ElevationRange_2400Lw" uom="m">
+			<caaml:endPosition>2400</caaml:endPosition>
+		</caaml:ElevationRange>
+		<caaml:ElevationRange gml:id="ElevationRange_2500Lw" uom="m">
+			<caaml:endPosition>2500</caaml:endPosition>
+		</caaml:ElevationRange>
+		<caaml:ElevationRange gml:id="ElevationRange_2600Lw" uom="m">
+			<caaml:endPosition>2600</caaml:endPosition>
+		</caaml:ElevationRange>
+		<caaml:ElevationRange gml:id="ElevationRange_2700Lw" uom="m">
+			<caaml:endPosition>2700</caaml:endPosition>
+		</caaml:ElevationRange>
+		<caaml:ElevationRange gml:id="ElevationRange_2800Lw" uom="m">
+			<caaml:endPosition>2800</caaml:endPosition>
+		</caaml:ElevationRange>
+		<caaml:ElevationRange gml:id="ElevationRange_2900Lw" uom="m">
+			<caaml:endPosition>2900</caaml:endPosition>
+		</caaml:ElevationRange>
+		<caaml:ElevationRange gml:id="ElevationRange_3000Lw" uom="m">
+			<caaml:endPosition>3000</caaml:endPosition>
+		</caaml:ElevationRange>
+		<caaml:ElevationRange gml:id="ElevationRange_3100Lw" uom="m">
+			<caaml:endPosition>3100</caaml:endPosition>
+		</caaml:ElevationRange>
+		<caaml:ElevationRange gml:id="ElevationRange_3200Lw" uom="m">
+			<caaml:endPosition>3200</caaml:endPosition>
+		</caaml:ElevationRange>
+		<caaml:ElevationRange gml:id="ElevationRange_3300Lw" uom="m">
+			<caaml:endPosition>3300</caaml:endPosition>
+		</caaml:ElevationRange>
+		<caaml:ElevationRange gml:id="ElevationRange_3400Lw" uom="m">
+			<caaml:endPosition>3400</caaml:endPosition>
+		</caaml:ElevationRange>
+		<caaml:ElevationRange gml:id="ElevationRange_3500Lw" uom="m">
+			<caaml:endPosition>3500</caaml:endPosition>
+		</caaml:ElevationRange>
+		<caaml:ElevationRange gml:id="ElevationRange_3600Lw" uom="m">
+			<caaml:endPosition>3600</caaml:endPosition>
+		</caaml:ElevationRange>
+		<caaml:ElevationRange gml:id="ElevationRange_3700Lw" uom="m">
+			<caaml:endPosition>3700</caaml:endPosition>
+		</caaml:ElevationRange>
+		<caaml:ElevationRange gml:id="ElevationRange_3800Lw" uom="m">
+			<caaml:endPosition>3800</caaml:endPosition>
+		</caaml:ElevationRange>
+		<caaml:ElevationRange gml:id="ElevationRange_3900Lw" uom="m">
+			<caaml:endPosition>3900</caaml:endPosition>
+		</caaml:ElevationRange>
+		<caaml:ElevationRange gml:id="ElevationRange_4000Lw" uom="m">
+			<caaml:endPosition>4000</caaml:endPosition>
+		</caaml:ElevationRange>
+	</caaml:elevations>
+</caaml:ElevationCollection>
