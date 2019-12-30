@@ -634,14 +634,14 @@
 	</element>
 	<complexType name="ValidElevationType" final="#all">
 		<choice minOccurs="0">
-			<element name="ElevationPosition">
+			<element name="elevationPosition">
 				<complexType>
 					<complexContent>
 						<extension base="caaml:ElevationPositionType"/>
 					</complexContent>
 				</complexType>
 			</element>
-			<element name="ElevationRange">
+			<element name="elevationRange">
 				<complexType>
 					<complexContent>
 						<extension base="caaml:ElevationRangeType"/>
