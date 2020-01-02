@@ -208,6 +208,11 @@
 							<documentation>Property element for travel advisory</documentation>
 						</annotation>
 					</element>
+					<element name="tendencyComment" type="string" minOccurs="0">
+						<annotation>
+							<documentation>Property element for tendency</documentation>
+						</annotation>
+					</element>
 				</sequence>
 			</extension>
 		</complexContent>
