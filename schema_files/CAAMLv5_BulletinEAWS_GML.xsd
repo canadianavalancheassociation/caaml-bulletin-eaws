@@ -48,7 +48,7 @@ Since it is based on the XML Schema string type, CoordinatesType may be used in 
 	</simpleType>
 	<simpleType name="UomIdentifier">
 		<annotation>
-			<documentation>The simple type gml:UomIdentifer defines the syntax and value space of the unit of measure identifier.</documentation>
+			<documentation>The simple type gml:UomIdentifier defines the syntax and value space of the unit of measure identifier.</documentation>
 		</annotation>
 		<union memberTypes="gml:UomSymbol gml:UomURI"/>
 	</simpleType>
