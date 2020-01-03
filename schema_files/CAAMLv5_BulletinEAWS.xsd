@@ -127,7 +127,7 @@
 					</sequence>
 				</complexType>
 			</element>
-			<element ref="caaml:locRef"/>
+			<element ref="caaml:locRef" minOccurs="0" maxOccurs="unbounded"/>
 		</sequence>
 		<attribute ref="gml:id" use="required"/>
 		<attribute ref="xml:lang" use="optional"/>
