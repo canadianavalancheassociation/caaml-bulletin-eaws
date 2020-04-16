@@ -3,8 +3,8 @@
 http://caaml.org/Schemas/V5.0/Profiles/BulletinEAWS/CAAMLv5_BulletinEAWS.xsd" gml:id="ElevationCatalogLwdTirol">
 	<caaml:metaDataProperty>
 		<caaml:MetaData>
-			<caaml:srcRef xlink:href="LwdTirol"/>
-			<caaml:comment>Elevation Catalogue of the Tyrolean Avalanche Warning Service</caaml:comment>
+			<caaml:srcRef xlink:href="EAWS"/>
+			<caaml:comment>Elevation Catalogue of the Eureopean Avalanche Warning Service (EAWS)</caaml:comment>
 		</caaml:MetaData>
 	</caaml:metaDataProperty>
 	<caaml:elevations>
@@ -135,6 +135,8 @@ http://caaml.org/Schemas/V5.0/Profiles/BulletinEAWS/CAAMLv5_BulletinEAWS.xsd" gm
 		<caaml:ElevationRange gml:id="ElevationRange_3900Hi" uom="m">
 			<caaml:beginPosition>3900</caaml:beginPosition>
 		</caaml:ElevationRange>
+		<caaml:ElevationRange gml:id="ElevationRange_TreelineHi">
+		</caaml:ElevationRange>
 		<!--
 					Elevation ranges less than an Hiper bound
 					
@@ -261,6 +263,8 @@ http://caaml.org/Schemas/V5.0/Profiles/BulletinEAWS/CAAMLv5_BulletinEAWS.xsd" gm
 		</caaml:ElevationRange>
 		<caaml:ElevationRange gml:id="ElevationRange_4000Lw" uom="m">
 			<caaml:endPosition>4000</caaml:endPosition>
+		</caaml:ElevationRange>
+		<caaml:ElevationRange gml:id="ElevationRange_TreelineLw">
 		</caaml:ElevationRange>
 	</caaml:elevations>
 </caaml:ElevationCollection>
