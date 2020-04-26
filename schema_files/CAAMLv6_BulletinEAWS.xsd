@@ -45,11 +45,6 @@
 	<complexType name="BulletinMeasurementsType" final="#all">
 		<sequence>
 			<element name="metaData" type="caaml:MetaDataBaseType" minOccurs="0"/>
-			<element name="highlights" type="string" minOccurs="0">
-				<annotation>
-					<documentation>Property element for general highlight</documentation>
-				</annotation>
-			</element>
 			<element name="dangerRatings" minOccurs="0">
 				<annotation>
 					<documentation>Complex property element type of list of danger ratings</documentation>
@@ -83,6 +78,11 @@
 			<element name="tendency" type="caaml:TendencyType" minOccurs="0">
 				<annotation>
 					<documentation>Complex property element type of tendency</documentation>
+				</annotation>
+			</element>
+			<element name="highlights" type="string" minOccurs="0">
+				<annotation>
+					<documentation>Property element for general highlight</documentation>
 				</annotation>
 			</element>
 			<element name="wxSynopsisHighlights" type="string" minOccurs="0">
@@ -133,16 +133,15 @@
 		</sequence>
 	</complexType>
 
-	<!--************************************************************************************-->
-	<!--***   DANGER RATING,  DANGER PATTERN, AVALANCHE PROBLEM ELEMENTS AND TENDENCY    ***-->
-	<!--************************************************************************************-->
+	<!--********************************************************************************************************-->
+	<!--***   DANGER RATING,  DANGER PATTERN, AVALANCHE PROBLEM ELEMENTS, TENDENCY AND MATRIX INFORMATION    ***-->
+	<!--********************************************************************************************************-->
 	<!-- DANGER RATING -->
 	<complexType name="DangerRatingType">
 		<sequence>
-			<element name="locRef" type="caaml:LocRefType" minOccurs="0" maxOccurs="unbounded"/>
-			<element name="validTime" type="caaml:ValidTimeType" minOccurs="0"/>
 			<element name="validAspect" type="caaml:ValidAspectType" minOccurs="0" maxOccurs="unbounded"/>
 			<element name="validElevation" type="caaml:ValidElevationType" minOccurs="0"/>
+			<element name="matrixInformation" type="caaml:MatrixInformationType" minOccurs="0"/>
 			<element name="terrainFeature" type="string" minOccurs="0">
 				<annotation>
 					<documentation>property element for the description of relevant terrain features</documentation>
@@ -209,9 +208,10 @@
 			<element name="validTime" type="caaml:ValidTimeType" minOccurs="0"/>
 			<element name="validAspect" type="caaml:ValidAspectType" minOccurs="0" maxOccurs="unbounded"/>
 			<element name="validElevation" type="caaml:ValidElevationType" minOccurs="0"/>
-			<element name="expectedAvSize" type="string" minOccurs="0">
+			<element name="matrixInformation" type="caaml:MatrixInformationType" minOccurs="0"/>
+			<element name="terrainFeature" type="string" minOccurs="0">
 				<annotation>
-					<documentation>Property element for expected avalanche sizes</documentation>
+					<documentation>property element for the description of relevant terrain features</documentation>
 				</annotation>
 			</element>
 			<element name="comment" type="string" minOccurs="0"/>
@@ -248,6 +248,53 @@
 			<enumeration value="increasing"/>
 		</restriction>
 	</simpleType>
+	<!-- MATRIX INFORMATION -->
+	<complexType name="MatrixInformationType">
+		<sequence>
+			<element name="artificialDangerRating" type="caaml:DangerRatingValueBaseType" minOccurs="0"/>
+			<element name="artificialAvSize" type="caaml:AvSizeValueBaseType" minOccurs="0"/>
+			<element name="artificialAvReleaseProbability" type="caaml:ArtificialAvReleaseProbabilityType" minOccurs="0"/>
+			<element name="artificialHazardSiteDistribution" type="caaml:HazardSiteDistributionType" minOccurs="0"/>
+			<element name="naturalDangerRating" type="caaml:DangerRatingValueBaseType" minOccurs="0"/>
+			<element name="naturalAvReleaseProbability" type="caaml:NaturalAvReleaseProbabilityType" minOccurs="0"/>
+			<element name="naturalHazardSiteDistribution" type="caaml:HazardSiteDistributionType" minOccurs="0"/>
+		</sequence>
+	</complexType>
+	<simpleType name="AvSizeValueBaseType">
+		<restriction base="string">
+			<enumeration value="1"/>
+			<enumeration value="2"/>
+			<enumeration value="3"/>
+			<enumeration value="4"/>
+			<enumeration value="5"/>
+		</restriction>
+	</simpleType>
+	<simpleType name="ArtificialAvReleaseProbabilityType">
+		<restriction base="string">
+			<enumeration value="one"/>
+			<enumeration value="two"/>
+			<enumeration value="three"/>
+			<enumeration value="four"/>
+		</restriction>
+	</simpleType>
+	<simpleType name="NaturalAvReleaseProbabilityType">
+		<restriction base="string">
+			<enumeration value="one"/>
+			<enumeration value="two"/>
+			<enumeration value="three"/>
+			<enumeration value="four"/>
+		</restriction>
+	</simpleType>
+	<simpleType name="HazardSiteDistributionType">
+		<restriction base="string">
+			<enumeration value="single"/>
+			<enumeration value="some"/>
+			<enumeration value="many"/>
+			<enumeration value="many_most"/>
+			<enumeration value="moderately_steep"/>
+		</restriction>
+	</simpleType>
+
 
 	<!--*****************************************-->
 	<!--***        META DATA ELEMENTS         ***-->
