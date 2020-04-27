@@ -97,7 +97,7 @@
 			</element>
 			<element name="avActivityHighlights" type="string" minOccurs="0">
 				<annotation>
-					<documentation>Property element for highlights of avalache activity</documentation>
+					<documentation>Property element for highlights of avalanche activity</documentation>
 				</annotation>
 			</element>
 			<element name="avActivityComment" type="string" minOccurs="0">
