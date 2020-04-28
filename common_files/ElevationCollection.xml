@@ -4,7 +4,7 @@ http://caaml.org/Schemas/V5.0/Profiles/BulletinEAWS/CAAMLv5_BulletinEAWS.xsd" gm
 	<caaml:metaDataProperty>
 		<caaml:MetaData>
 			<caaml:srcRef xlink:href="EAWS"/>
-			<caaml:comment>Elevation Catalogue of the Eureopean Avalanche Warning Service (EAWS)</caaml:comment>
+			<caaml:comment>Elevation Catalogue of the European Avalanche Warning Service (EAWS)</caaml:comment>
 		</caaml:MetaData>
 	</caaml:metaDataProperty>
 	<caaml:elevations>
