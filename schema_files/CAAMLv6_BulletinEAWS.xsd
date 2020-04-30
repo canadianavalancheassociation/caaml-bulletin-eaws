@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<schema xmlns:caaml="http://caaml.org/Schemas/V6.0/Profiles/BulletinEAWS" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:gml="http://www.opengis.net/gml" xmlns:xlink="http://www.w3.org/1999/xlink" targetNamespace="http://caaml.org/Schemas/V6.0/Profiles/BulletinEAWS" elementFormDefault="qualified" attributeFormDefault="unqualified" version="6.0.0">
+<schema xmlns:caaml="http://caaml.org/Schemas/V6.0/Profiles/BulletinEAWS" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:gml="http://www.opengis.net/gml" targetNamespace="http://caaml.org/Schemas/V6.0/Profiles/BulletinEAWS" version="6.0.0">
 	<import namespace="http://www.opengis.net/gml" schemaLocation="CAAMLv5_BulletinEAWS_GML.xsd"/>
-	<import namespace="http://www.w3.org/1999/xlink" schemaLocation="xlinks.xsd"/>
 	<import namespace="http://www.w3.org/XML/1998/namespace" schemaLocation="xml.xsd"/>
 
-	<!--*********************************************-->
-	<!--***        MAIN BULLETIN ELEMENTS         ***-->
-	<!--*********************************************-->
+	<!--**********************************************************-->
+	<!--***         OBSERVATION COLLECTION ELEMENTS            ***-->
+	<!--**********************************************************-->
 	<element name="ObsCollection" type="caaml:ObsCollectionType"/>
 	<complexType name="ObsCollectionType">
 		<sequence>
@@ -21,14 +20,17 @@
 		</sequence>
 		<attribute ref="xml:lang" use="required"/>
 	</complexType>
-	<!-- BULLETIN-->
+
+	<!--**********************************************************-->
+	<!--***                 BULLETIN ELEMENTS                  ***-->
+	<!--**********************************************************-->
 	<element name="Bulletin" type="caaml:BulletinType"/>
 	<complexType name="BulletinType" final="#all">
 		<sequence>
 			<element name="metaData" type="caaml:MetaDataBaseType" minOccurs="0"/>
 			<element name="validTime" type="caaml:ValidTimeType"/>
-			<element name="srcRef" type="caaml:SourceRefType"/>
-			<element name="locRef" type="caaml:LocRefType" minOccurs="0" maxOccurs="unbounded"/>
+			<element name="source" type="caaml:SourceType"/>
+			<element name="locations" type="caaml:LocationsType"/>			
 			<element name="complexity" type="caaml:ComplexityType" minOccurs="0"/>
 			<element name="dangerRatings" minOccurs="0">
 				<annotation>
@@ -120,10 +122,9 @@
 		<attribute ref="xml:lang" use="required"/>
 	</complexType>
 
-	<!--********************************************************************************************************-->
-	<!--***   DANGER RATING,  DANGER PATTERN, AVALANCHE PROBLEM ELEMENTS, TENDENCY AND MATRIX INFORMATION    ***-->
-	<!--********************************************************************************************************-->
-	<!-- DANGER RATING -->
+	<!--**********************************************************-->
+	<!--***              DANGER RATING ELEMENTS                ***-->
+	<!--**********************************************************-->
 	<complexType name="DangerRatingType">
 		<sequence>
 			<sequence>
@@ -195,7 +196,10 @@
 			<enumeration value="moderately_steep"/>
 		</restriction>
 	</simpleType>
-	<!-- DANGER PATTERN -->
+
+	<!--**********************************************************-->
+	<!--***              DANGER PATTERN ELEMENTS               ***-->
+	<!--**********************************************************-->
 	<complexType name="DangerPatternType">
 		<sequence>
 			<element name="type" type="caaml:DangerPatternTypeType">
@@ -223,7 +227,10 @@
 			<enumeration value="DP10"/>
 		</restriction>
 	</simpleType>
-	<!-- AVALANCHE PROBLEM -->
+
+	<!--**********************************************************-->
+	<!--***           AVALANCHE PROBLEM ELEMENTS               ***-->
+	<!--**********************************************************-->
 	<complexType name="AvProblemType">
 		<sequence>
 			<element name="type" type="caaml:AvProblemTypeType">
@@ -255,7 +262,10 @@
 			<enumeration value="favourable situation"/>
 		</restriction>
 	</simpleType>
-	<!-- TENDENCY -->
+
+	<!--**********************************************************-->
+	<!--***                 TENDENCY ELEMENTS                  ***-->
+	<!--**********************************************************-->
 	<complexType name="TendencyType">
 		<sequence>
 			<element name="type" type="caaml:TendencyTypeType">
@@ -276,9 +286,9 @@
 		</restriction>
 	</simpleType>
 
-	<!--*****************************************-->
-	<!--***        META DATA ELEMENTS         ***-->
-	<!--*****************************************-->
+	<!--**********************************************************-->
+	<!--***                 META DATA ELEMENTS                 ***-->
+	<!--**********************************************************-->
 	<complexType name="MetaDataBaseType">
 		<sequence>
 			<element name="dateTimeReport" type="gml:TimePositionType" minOccurs="0"/>
@@ -311,10 +321,10 @@
 		</sequence>
 	</complexType>
 
-	<!--************************************************-->
-	<!--***        SOURCE REFERENCE ELEMENTS         ***-->
-	<!--************************************************-->
-	<complexType name="SourceRefType">
+	<!--**********************************************************-->
+	<!--***                  SOURCE ELEMENTS                   ***-->
+	<!--**********************************************************-->
+	<complexType name="SourceType">
 		<choice>
 			<element name="Operation" type="caaml:OperationType"/>
 			<element name="Person" type="caaml:PersonType"/>
@@ -323,7 +333,7 @@
 	<!--  OPERATION  -->
 	<complexType name="OperationType" final="#all">
 		<complexContent>
-			<extension base="caaml:SourceType">
+			<extension base="caaml:SourceBaseType">
 				<sequence>
 					<element name="contactPerson" type="caaml:PersonType" minOccurs="0" maxOccurs="unbounded"/>
 				</sequence>
@@ -333,10 +343,10 @@
 	<!--  PERSON  -->
 	<complexType name="PersonType" final="#all">
 		<complexContent>
-			<extension base="caaml:SourceType"/>
+			<extension base="caaml:SourceBaseType"/>
 		</complexContent>
 	</complexType>
-	<complexType name="SourceType">
+	<complexType name="SourceBaseType">
 		<sequence>
 			<element name="metaData" type="caaml:MetaDataBaseType" minOccurs="0">
 				<annotation>
@@ -348,12 +358,55 @@
 		<attribute ref="gml:id" use="optional"/>
 	</complexType>
 
-	<!--******************************************************-->
-	<!--***           LOCATION INFORMATION                 ***-->
-	<!--******************************************************-->
+	<!--**********************************************************-->
+	<!--***                 LOCATION ELEMENTS                  ***-->
+	<!--**********************************************************-->
 	<!-- LOCATION -->
-	<complexType name="LocRefType">
-		<attribute ref="xlink:href" use="required"/>
+	<complexType name="LocationsType">
+		<sequence maxOccurs="unbounded">
+			<element name="Region" type="caaml:RegionType"/>
+		</sequence>
+	</complexType>
+	<complexType name="RegionType" final="#all">
+		<sequence>
+			<element name="metaData" type="caaml:MetaDataBaseType"/>
+			<element name="description" type="string" minOccurs="0">
+				<annotation>
+					<documentation>Property element for description of location</documentation>
+				</annotation>
+			</element>
+			<element name="name" type="string">
+				<annotation>
+					<documentation>Property element for name of location</documentation>
+				</annotation>
+			</element>
+			<element name="regionSubType" type="string">
+				<annotation>
+					<documentation>Required property element for specifying sub type of region (forecast area, drainage,..)</documentation>
+				</annotation>
+			</element>
+			<element name="centerPoint" minOccurs="0">
+				<annotation>
+					<documentation>Property element for coordinates of center point</documentation>
+				</annotation>
+				<complexType>
+					<sequence>
+						<element ref="gml:Point"/>
+					</sequence>
+				</complexType>
+			</element>
+			<element name="outline" minOccurs="0">
+				<annotation>
+					<documentation>Property element for coordinates of region outline</documentation>
+				</annotation>
+				<complexType>
+					<sequence>
+						<element ref="gml:Polygon"/>
+					</sequence>
+				</complexType>
+			</element>
+		</sequence>
+		<attribute ref="gml:id" use="required"/>
 	</complexType>
 	<!-- ASPECT -->
 	<simpleType name="ValidAspectType">
@@ -434,9 +487,9 @@
 		</restriction>
 	</simpleType>
 
-	<!--***********************************************-->
-	<!--***     MEASUREMENT TYPE DEFINITIONS        ***-->
-	<!--***********************************************-->
+	<!--**********************************************************-->
+	<!--***            MEASUREMENT TYPE DEFINITIONS            ***-->
+	<!--**********************************************************-->
 	<simpleType name="UomLengthType" final="#all">
 		<restriction base="string">
 			<enumeration value="cm"/>
@@ -446,66 +499,5 @@
 			<enumeration value="ft"/>
 		</restriction>
 	</simpleType>
-
-	<!--************************************-->
-	<!--***           COLLECTIONS        ***-->
-	<!--************************************-->
-	<!-- LOCATION COLLECTION -->
-	<element name="LocationCollection" type="caaml:LocationCollectionType"/>
-	<complexType name="LocationCollectionType">
-		<sequence>
-			<element name="metaData" type="caaml:MetaDataBaseType"/>
-			<element name="locations" type="caaml:LocationsType"/>
-		</sequence>
-		<attribute ref="gml:id" use="optional"/>
-		<attribute ref="xml:lang" use="required"/>
-	</complexType>
-	<complexType name="LocationsType">
-		<sequence maxOccurs="unbounded">
-			<element name="Region" type="caaml:RegionType"/>
-		</sequence>
-	</complexType>
-	<complexType name="RegionType" final="#all">
-		<sequence>
-			<element name="metaData" type="caaml:MetaDataBaseType"/>
-			<element name="description" type="string" minOccurs="0">
-				<annotation>
-					<documentation>Property element for description of location</documentation>
-				</annotation>
-			</element>
-			<element name="name" type="string">
-				<annotation>
-					<documentation>Property element for name of location</documentation>
-				</annotation>
-			</element>
-			<element name="regionSubType" type="string">
-				<annotation>
-					<documentation>Required property element for specifying sub type of region (forecast area, drainage,..)</documentation>
-				</annotation>
-			</element>
-			<element name="centerPoint" minOccurs="0">
-				<annotation>
-					<documentation>Property element for coordinates of center point</documentation>
-				</annotation>
-				<complexType>
-					<sequence>
-						<element ref="gml:Point"/>
-					</sequence>
-				</complexType>
-			</element>
-			<element name="outline" minOccurs="0">
-				<annotation>
-					<documentation>Property element for coordinates of region outline</documentation>
-				</annotation>
-				<complexType>
-					<sequence>
-						<element ref="gml:Polygon"/>
-					</sequence>
-				</complexType>
-			</element>
-		</sequence>
-		<attribute ref="gml:id" use="required"/>
-		<attribute ref="xml:lang" use="required"/>
-	</complexType>
 
 </schema>
