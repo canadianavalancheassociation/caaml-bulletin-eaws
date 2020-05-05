@@ -438,8 +438,8 @@
 	</complexType>
 	<complexType name="ElevationRangeType">
 		<sequence>
-			<element name="beginPosition" type="caaml:ElevationBaseType" minOccurs="0"/>
-			<element name="endPosition" type="caaml:ElevationBaseType" minOccurs="0"/>
+			<element name="lowerBound" type="caaml:ElevationBaseType" minOccurs="0"/>
+			<element name="upperBound" type="caaml:ElevationBaseType" minOccurs="0"/>
 		</sequence>
 		<attribute name="uom" type="caaml:UomLengthType" use="required" fixed="m"/>
 	</complexType>
