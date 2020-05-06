@@ -21,7 +21,7 @@
 	<complexType name="BulletinType" final="#all">
 		<sequence>
 			<element name="metaData" type="caaml:MetaDataType" minOccurs="0"/>
-			<element name="publishTime" type="gml:TimePositionType"/>
+			<element name="publicationTime" type="gml:TimePositionType"/>
 			<element name="validTime" type="caaml:ValidTimeType"/>
 			<element name="source" type="caaml:SourceType"/>
 			<element name="region" type="caaml:RegionType" maxOccurs="unbounded"/>
@@ -51,15 +51,22 @@
 	<complexType name="DangerRatingType">
 		<sequence>
 			<element name="mainValue" type="caaml:DangerRatingValueType"/>
-			<element name="artificialValue" type="caaml:DangerRatingValueType" minOccurs="0"/>
+			<element name="aspect" type="caaml:AspectType" minOccurs="0" maxOccurs="unbounded"/>
+			<element name="elevation" type="caaml:ElevationType" minOccurs="0"/>
+			<element name="matrixInformation" type="caaml:MatrixInformationType" minOccurs="0"/>
+			<element name="comment" type="string" minOccurs="0"/>
+			<element name="customData" type="caaml:CustomDataType" minOccurs="0"/>
+		</sequence>
+	</complexType>
+	<complexType name="MatrixInformationType">
+		<sequence>
+			<element name="artificialDangerRating" type="caaml:DangerRatingValueType" minOccurs="0"/>
 			<element name="artificialAvSize" type="caaml:AvalancheSizeType" minOccurs="0"/>
 			<element name="artificialAvalancheReleaseProbability" type="caaml:ArtificialAvalancheReleaseProbabilityType" minOccurs="0"/>
 			<element name="artificialHazardSiteDistribution" type="caaml:HazardSiteDistributionType" minOccurs="0"/>
-			<element name="naturalValue" type="caaml:DangerRatingValueType" minOccurs="0"/>
+			<element name="naturalDangerRating" type="caaml:DangerRatingValueType" minOccurs="0"/>
 			<element name="naturalAvalancheReleaseProbability" type="caaml:NaturalAvalancheReleaseProbabilityType" minOccurs="0"/>
 			<element name="naturalHazardSiteDistribution" type="caaml:HazardSiteDistributionType" minOccurs="0"/>
-			<element name="comment" type="string" minOccurs="0"/>
-			<element name="customData" type="caaml:CustomDataType" minOccurs="0"/>
 		</sequence>
 	</complexType>
 	<simpleType name="DangerRatingValueType">
@@ -104,10 +111,10 @@
 	<complexType name="AvalancheProblemType">
 		<sequence>
 			<element name="type" type="caaml:AvalancheProblemTypeType"/>
-			<element name="dangerRating" type="caaml:DangerRatingType"/>
 			<element name="aspect" type="caaml:AspectType" minOccurs="0" maxOccurs="unbounded"/>
 			<element name="elevation" type="caaml:ElevationType" minOccurs="0"/>
 			<element name="terrainFeature" type="string" minOccurs="0"/>
+			<element name="matrixInformation" type="caaml:MatrixInformationType" minOccurs="0"/>
 			<element name="comment" type="string" minOccurs="0"/>
 			<element name="customData" type="caaml:CustomDataType" minOccurs="0"/>
 		</sequence>
@@ -285,20 +292,9 @@
 	<!--***                 TIME ELEMENTS                      ***-->
 	<!--**********************************************************-->
 	<complexType name="ValidTimeType" final="#all">
-		<choice>
-			<element name="timeInstant" type="caaml:TimeInstantType"/>
-			<element name="timePeriod" type="caaml:TimePeriodType"/>
-		</choice>
-	</complexType>
-	<complexType name="TimeInstantType">
 		<sequence>
-			<element name="timePosition" type="gml:TimePositionType"/>
-		</sequence>
-	</complexType>
-	<complexType name="TimePeriodType">
-		<sequence>
-			<element name="beginPosition" type="gml:TimePositionType"/>
-			<element name="endPosition" type="gml:TimePositionType"/>
+			<element name="startTime" type="gml:TimePositionType"/>
+			<element name="endTime" type="gml:TimePositionType"/>
 		</sequence>
 	</complexType>
 
