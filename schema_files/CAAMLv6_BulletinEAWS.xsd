@@ -6,119 +6,42 @@
 	<!--**********************************************************-->
 	<!--***         OBSERVATION COLLECTION ELEMENTS            ***-->
 	<!--**********************************************************-->
-	<element name="ObsCollection" type="caaml:ObsCollectionType"/>
-	<complexType name="ObsCollectionType">
+	<element name="bulletins" type="caaml:BulletinsType"/>
+	<complexType name="BulletinsType">
 		<sequence>
-			<element name="metaData" type="caaml:MetaDataBaseType" minOccurs="0"/>
-			<element name="observations">
-				<complexType>
-					<sequence maxOccurs="unbounded">
-						<element ref="caaml:Bulletin"/>
-					</sequence>
-				</complexType>
-			</element>
+			<element name="metaData" type="caaml:MetaDataType" minOccurs="0"/>
+			<element name="bulletin" type="caaml:BulletinType" maxOccurs="unbounded"/>
 		</sequence>
-		<attribute ref="xml:lang" use="required"/>
 	</complexType>
 
 	<!--**********************************************************-->
 	<!--***                 BULLETIN ELEMENTS                  ***-->
 	<!--**********************************************************-->
-	<element name="Bulletin" type="caaml:BulletinType"/>
+	<element name="bulletin" type="caaml:BulletinType"/>
 	<complexType name="BulletinType" final="#all">
 		<sequence>
-			<element name="metaData" type="caaml:MetaDataBaseType" minOccurs="0"/>
+			<element name="metaData" type="caaml:MetaDataType" minOccurs="0"/>
+			<element name="publishTime" type="gml:TimePositionType"/>
 			<element name="validTime" type="caaml:ValidTimeType"/>
 			<element name="source" type="caaml:SourceType"/>
-			<element name="locations" type="caaml:LocationsType"/>			
+			<element name="region" type="caaml:RegionType" maxOccurs="unbounded"/>
 			<element name="complexity" type="caaml:ComplexityType" minOccurs="0"/>
-			<element name="dangerRatings" minOccurs="0">
-				<annotation>
-					<documentation>Complex property element type of list of danger ratings</documentation>
-				</annotation>
-				<complexType>
-					<sequence maxOccurs="unbounded">
-						<element name="DangerRating" type="caaml:DangerRatingType"/>
-					</sequence>
-				</complexType>
-			</element>
-			<element name="dangerPatterns" minOccurs="0">
-				<annotation>
-					<documentation>Complex property element type of list of danger patterns</documentation>
-				</annotation>
-				<complexType>
-					<sequence maxOccurs="unbounded">
-						<element name="DangerPattern" type="caaml:DangerPatternType"/>
-					</sequence>
-				</complexType>
-			</element>
-			<element name="avProblems" minOccurs="0">
-				<annotation>
-					<documentation>Complex property element type of list of avalanche problems</documentation>
-				</annotation>
-				<complexType>
-					<sequence maxOccurs="unbounded">
-						<element name="AvProblem" type="caaml:AvProblemType"/>
-					</sequence>
-				</complexType>
-			</element>
-			<element name="tendency" type="caaml:TendencyType" minOccurs="0">
-				<annotation>
-					<documentation>Complex property element type of tendency</documentation>
-				</annotation>
-			</element>
-			<element name="highlights" type="string" minOccurs="0">
-				<annotation>
-					<documentation>Property element for general highlight</documentation>
-				</annotation>
-			</element>
-			<element name="wxSynopsisHighlights" type="string" minOccurs="0">
-				<annotation>
-					<documentation>Property element for highlights of weather synopsis</documentation>
-				</annotation>
-			</element>
-			<element name="wxSynopsisComment" type="string" minOccurs="0">
-				<annotation>
-					<documentation>Property element for weather synopsis</documentation>
-				</annotation>
-			</element>
-			<element name="avActivityHighlights" type="string" minOccurs="0">
-				<annotation>
-					<documentation>Property element for highlights of avalanche activity</documentation>
-				</annotation>
-			</element>
-			<element name="avActivityComment" type="string" minOccurs="0">
-				<annotation>
-					<documentation>Property element for avalanche activity</documentation>
-				</annotation>
-			</element>
-			<element name="snowpackStructureHighlights" type="string" minOccurs="0">
-				<annotation>
-					<documentation>Property element for highlights of snowpack structure</documentation>
-				</annotation>
-			</element>
-			<element name="snowpackStructureComment" type="string" minOccurs="0">
-				<annotation>
-					<documentation>Property element for snowpack structure</documentation>
-				</annotation>
-			</element>
-			<element name="travelAdvisoryHighlights" type="string" minOccurs="0">
-				<annotation>
-					<documentation>Property element for highlights of travel advisory</documentation>
-				</annotation>
-			</element>
-			<element name="travelAdvisoryComment" type="string" minOccurs="0">
-				<annotation>
-					<documentation>Property element for travel advisory</documentation>
-				</annotation>
-			</element>
-			<element name="tendencyComment" type="string" minOccurs="0">
-				<annotation>
-					<documentation>Property element for tendency</documentation>
-				</annotation>
-			</element>
+			<element name="dangerRating" type="caaml:DangerRatingType" minOccurs="0" maxOccurs="unbounded"/>
+			<element name="dangerPattern" type="caaml:DangerPatternType" minOccurs="0" maxOccurs="unbounded"/>
+			<element name="avalancheProblem" type="caaml:AvalancheProblemType" minOccurs="0" maxOccurs="unbounded"/>
+			<element name="tendency" type="caaml:TendencyType" minOccurs="0"/>
+			<element name="highlights" type="string" minOccurs="0"/>
+			<element name="wxSynopsisHighlights" type="string" minOccurs="0"/>
+			<element name="wxSynopsisComment" type="string" minOccurs="0"/>
+			<element name="avalancheActivityHighlights" type="string" minOccurs="0"/>
+			<element name="avalancheActivityComment" type="string" minOccurs="0"/>
+			<element name="snowpackStructureHighlights" type="string" minOccurs="0"/>
+			<element name="snowpackStructureComment" type="string" minOccurs="0"/>
+			<element name="travelAdvisoryHighlights" type="string" minOccurs="0"/>
+			<element name="travelAdvisoryComment" type="string" minOccurs="0"/>
+			<element name="tendencyComment" type="string" minOccurs="0"/>
 		</sequence>
-		<attribute ref="gml:id" use="required"/>
+		<attribute ref="xml:id" use="required"/>
 		<attribute ref="xml:lang" use="required"/>
 	</complexType>
 
@@ -127,73 +50,77 @@
 	<!--**********************************************************-->
 	<complexType name="DangerRatingType">
 		<sequence>
-			<sequence>
-				<element name="mainValue" type="caaml:DangerRatingValueType"/>
-				<element name="pocketValue" type="caaml:DangerRatingValueType" minOccurs="0"/>
-			</sequence>
-			<element name="validAspect" type="caaml:ValidAspectType" minOccurs="0" maxOccurs="unbounded"/>
-			<element name="validElevation" type="caaml:ValidElevationType" minOccurs="0"/>
-			<element name="artificialDangerRating" type="caaml:DangerRatingValueBaseType" minOccurs="0"/>
-			<element name="artificialAvSize" type="caaml:AvSizeValueBaseType" minOccurs="0"/>
-			<element name="artificialAvReleaseProbability" type="caaml:ArtificialAvReleaseProbabilityType" minOccurs="0"/>
+			<element name="mainValue" type="caaml:DangerRatingValueType"/>
+			<element name="artificialValue" type="caaml:DangerRatingValueType" minOccurs="0"/>
+			<element name="artificialAvSize" type="caaml:AvalancheSizeType" minOccurs="0"/>
+			<element name="artificialAvalancheReleaseProbability" type="caaml:ArtificialAvalancheReleaseProbabilityType" minOccurs="0"/>
 			<element name="artificialHazardSiteDistribution" type="caaml:HazardSiteDistributionType" minOccurs="0"/>
-			<element name="naturalDangerRating" type="caaml:DangerRatingValueBaseType" minOccurs="0"/>
-			<element name="naturalAvReleaseProbability" type="caaml:NaturalAvReleaseProbabilityType" minOccurs="0"/>
+			<element name="naturalValue" type="caaml:DangerRatingValueType" minOccurs="0"/>
+			<element name="naturalAvalancheReleaseProbability" type="caaml:NaturalAvalancheReleaseProbabilityType" minOccurs="0"/>
 			<element name="naturalHazardSiteDistribution" type="caaml:HazardSiteDistributionType" minOccurs="0"/>
-			<element name="terrainFeature" type="string" minOccurs="0">
-				<annotation>
-					<documentation>property element for the description of relevant terrain features</documentation>
-				</annotation>
-			</element>
 			<element name="comment" type="string" minOccurs="0"/>
 			<element name="customData" type="caaml:CustomDataType" minOccurs="0"/>
 		</sequence>
 	</complexType>
-	<simpleType name="DangerRatingValueType" final="#all">
-		<union memberTypes="gml:NilReasonEnumeration caaml:DangerRatingValueBaseType"/>
-	</simpleType>
-	<simpleType name="DangerRatingValueBaseType">
+	<simpleType name="DangerRatingValueType">
 		<restriction base="string">
-			<enumeration value="1"/>
-			<enumeration value="2"/>
-			<enumeration value="3"/>
-			<enumeration value="4"/>
-			<enumeration value="5"/>
-			<enumeration value="n/a"/>
+			<enumeration value="low"/>
+			<enumeration value="moderate"/>
+			<enumeration value="considerable"/>
+			<enumeration value="high"/>
+			<enumeration value="very_high"/>
+			<enumeration value="no_snow"/>
+			<enumeration value="no_rating"/>
 		</restriction>
 	</simpleType>
-	<simpleType name="AvSizeValueBaseType">
-		<restriction base="string">
-			<enumeration value="1"/>
-			<enumeration value="2"/>
-			<enumeration value="3"/>
-			<enumeration value="4"/>
-			<enumeration value="5"/>
+	<simpleType name="AvalancheSizeType">
+		<restriction base="integer">
+			<minInclusive value="1"/>
+			<maxInclusive value="5"/>
 		</restriction>
 	</simpleType>
-	<simpleType name="ArtificialAvReleaseProbabilityType">
-		<restriction base="string">
-			<enumeration value="one"/>
-			<enumeration value="two"/>
-			<enumeration value="three"/>
-			<enumeration value="four"/>
+	<simpleType name="ArtificialAvalancheReleaseProbabilityType">
+		<restriction base="integer">
+			<minInclusive value="1"/>
+			<maxInclusive value="4"/>
 		</restriction>
 	</simpleType>
-	<simpleType name="NaturalAvReleaseProbabilityType">
-		<restriction base="string">
-			<enumeration value="one"/>
-			<enumeration value="two"/>
-			<enumeration value="three"/>
-			<enumeration value="four"/>
+	<simpleType name="NaturalAvalancheReleaseProbabilityType">
+		<restriction base="integer">
+			<minInclusive value="1"/>
+			<maxInclusive value="4"/>
 		</restriction>
 	</simpleType>
 	<simpleType name="HazardSiteDistributionType">
+		<restriction base="integer">
+			<minInclusive value="1"/>
+			<maxInclusive value="5"/>
+		</restriction>
+	</simpleType>
+
+	<!--**********************************************************-->
+	<!--***           AVALANCHE PROBLEM ELEMENTS               ***-->
+	<!--**********************************************************-->
+	<complexType name="AvalancheProblemType">
+		<sequence>
+			<element name="type" type="caaml:AvalancheProblemTypeType"/>
+			<element name="dangerRating" type="caaml:DangerRatingType"/>
+			<element name="aspect" type="caaml:AspectType" minOccurs="0" maxOccurs="unbounded"/>
+			<element name="elevation" type="caaml:ElevationType" minOccurs="0"/>
+			<element name="terrainFeature" type="string" minOccurs="0"/>
+			<element name="comment" type="string" minOccurs="0"/>
+			<element name="customData" type="caaml:CustomDataType" minOccurs="0"/>
+		</sequence>
+	</complexType>
+	<simpleType name="AvalancheProblemTypeType">
 		<restriction base="string">
-			<enumeration value="single"/>
-			<enumeration value="some"/>
-			<enumeration value="many"/>
-			<enumeration value="many_most"/>
-			<enumeration value="moderately_steep"/>
+			<enumeration value="new_snow"/>
+			<enumeration value="wind_drifted_snow"/>
+			<enumeration value="persistent_weak_layer"/>
+			<enumeration value="wet_snow"/>
+			<enumeration value="gliding_snow"/>
+			<enumeration value="cornice_failure"/>
+			<enumeration value="favourable_situation"/>
 		</restriction>
 	</simpleType>
 
@@ -202,64 +129,25 @@
 	<!--**********************************************************-->
 	<complexType name="DangerPatternType">
 		<sequence>
-			<element name="type" type="caaml:DangerPatternTypeType">
-				<annotation>
-					<documentation>Property element for name of danger pattern</documentation>
-				</annotation>
-			</element>
-			<element name="validAspect" type="caaml:ValidAspectType" minOccurs="0" maxOccurs="unbounded"/>
-			<element name="validElevation" type="caaml:ValidElevationType" minOccurs="0"/>
+			<element name="type" type="caaml:DangerPatternTypeType"/>
+			<element name="aspect" type="caaml:AspectType" minOccurs="0" maxOccurs="unbounded"/>
+			<element name="elevation" type="caaml:ElevationType" minOccurs="0"/>
 			<element name="comment" type="string" minOccurs="0"/>
 			<element name="customData" type="caaml:CustomDataType" minOccurs="0"/>
 		</sequence>
 	</complexType>
 	<simpleType name="DangerPatternTypeType">
 		<restriction base="string">
-			<enumeration value="DP1"/>
-			<enumeration value="DP2"/>
-			<enumeration value="DP3"/>
-			<enumeration value="DP4"/>
-			<enumeration value="DP5"/>
-			<enumeration value="DP6"/>
-			<enumeration value="DP7"/>
-			<enumeration value="DP8"/>
-			<enumeration value="DP9"/>
-			<enumeration value="DP10"/>
-		</restriction>
-	</simpleType>
-
-	<!--**********************************************************-->
-	<!--***           AVALANCHE PROBLEM ELEMENTS               ***-->
-	<!--**********************************************************-->
-	<complexType name="AvProblemType">
-		<sequence>
-			<element name="type" type="caaml:AvProblemTypeType">
-				<annotation>
-					<documentation>Property element for name of avalanche problem</documentation>
-				</annotation>
-			</element>
-			<element name="DangerRating" type="caaml:DangerRatingType"/>
-			<element name="validTime" type="caaml:ValidTimeType" minOccurs="0"/>
-			<element name="validAspect" type="caaml:ValidAspectType" minOccurs="0" maxOccurs="unbounded"/>
-			<element name="validElevation" type="caaml:ValidElevationType" minOccurs="0"/>
-			<element name="matrixInformation" type="caaml:MatrixInformationType" minOccurs="0"/>
-			<element name="terrainFeature" type="string" minOccurs="0">
-				<annotation>
-					<documentation>property element for the description of relevant terrain features</documentation>
-				</annotation>
-			</element>
-			<element name="comment" type="string" minOccurs="0"/>
-			<element name="customData" type="caaml:CustomDataType" minOccurs="0"/>
-		</sequence>
-	</complexType>
-	<simpleType name="AvProblemTypeType">
-		<restriction base="string">
-			<enumeration value="new snow"/>
-			<enumeration value="drifting snow"/>
-			<enumeration value="old snow"/>
-			<enumeration value="wet snow"/>
-			<enumeration value="gliding snow"/>
-			<enumeration value="favourable situation"/>
+			<enumeration value="dp1"/>
+			<enumeration value="dp2"/>
+			<enumeration value="dp3"/>
+			<enumeration value="dp4"/>
+			<enumeration value="dp5"/>
+			<enumeration value="dp6"/>
+			<enumeration value="dp7"/>
+			<enumeration value="dp8"/>
+			<enumeration value="dp9"/>
+			<enumeration value="dp10"/>
 		</restriction>
 	</simpleType>
 
@@ -268,11 +156,7 @@
 	<!--**********************************************************-->
 	<complexType name="TendencyType">
 		<sequence>
-			<element name="type" type="caaml:TendencyTypeType">
-				<annotation>
-					<documentation>Property element for name of tendency</documentation>
-				</annotation>
-			</element>
+			<element name="type" type="caaml:TendencyTypeType"/>
 			<element name="validTime" type="caaml:ValidTimeType" minOccurs="0"/>
 			<element name="comment" type="string" minOccurs="0"/>
 			<element name="customData" type="caaml:CustomDataType" minOccurs="0"/>
@@ -289,33 +173,35 @@
 	<!--**********************************************************-->
 	<!--***                 META DATA ELEMENTS                 ***-->
 	<!--**********************************************************-->
-	<complexType name="MetaDataBaseType">
+	<complexType name="MetaDataType">
 		<sequence>
-			<element name="dateTimeReport" type="gml:TimePositionType" minOccurs="0"/>
-			<element name="extFiles" type="caaml:ExtFilesType" minOccurs="0"/>
+			<element name="extFile" type="caaml:ExtFileType" minOccurs="0" maxOccurs="unbounded"/>
 			<element name="comment" type="string" minOccurs="0"/>
 			<element name="customData" type="caaml:CustomDataType" minOccurs="0"/>
 		</sequence>
 	</complexType>
 	<!-- EXTERNAL FILES -->
-	<complexType name="ExtFilesType">
-		<sequence maxOccurs="unbounded">
-			<element name="extFile" type="caaml:ExtFileType"/>
-		</sequence>
-	</complexType>
 	<complexType name="ExtFileType">
 		<sequence>
+			<element name="type" type="caaml:ExtFileTypeType" minOccurs="0"/>
 			<element name="description" type="string" minOccurs="0"/>
 			<element name="fileReferenceURI" type="anyURI"/>
 			<element name="customData" type="caaml:CustomDataType" minOccurs="0"/>
 		</sequence>
-		<attribute ref="gml:id" use="required"/>
 	</complexType>
+	<simpleType name="ExtFileTypeType">
+	    <union memberTypes="ExtFileEnumType xsd:string"/>
+	</simpleType>
+	<simpleType name="ExtFileEnumType">
+		<restriction base="string">
+			<enumeration value="dangerRatingMapOverlay"/>
+			<enumeration value="dangerRatingMap"/>
+			<enumeration value="printOut"/>
+			<enumeration value="website"/>
+		</restriction>
+	</simpleType>
 	<!-- CUSTOM DATA-->
 	<complexType name="CustomDataType" final="#all">
-		<annotation>
-			<documentation>Property element for custom data</documentation>
-		</annotation>
 		<sequence>
 			<any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
 		</sequence>
@@ -326,8 +212,8 @@
 	<!--**********************************************************-->
 	<complexType name="SourceType">
 		<choice>
-			<element name="Operation" type="caaml:OperationType"/>
-			<element name="Person" type="caaml:PersonType"/>
+			<element name="operation" type="caaml:OperationType"/>
+			<element name="person" type="caaml:PersonType"/>
 		</choice>
 	</complexType>
 	<!--  OPERATION  -->
@@ -348,68 +234,27 @@
 	</complexType>
 	<complexType name="SourceBaseType">
 		<sequence>
-			<element name="metaData" type="caaml:MetaDataBaseType" minOccurs="0">
-				<annotation>
-					<documentation>Property element for description of source</documentation>
-				</annotation>
-			</element>
+			<element name="metaData" type="caaml:MetaDataType" minOccurs="0"/>
 			<element name="name" type="string"/>
+			<element name="website" type="anyURI"/>
 		</sequence>
-		<attribute ref="gml:id" use="optional"/>
 	</complexType>
 
 	<!--**********************************************************-->
 	<!--***                 LOCATION ELEMENTS                  ***-->
 	<!--**********************************************************-->
 	<!-- LOCATION -->
-	<complexType name="LocationsType">
-		<sequence maxOccurs="unbounded">
-			<element name="Region" type="caaml:RegionType"/>
-		</sequence>
-	</complexType>
 	<complexType name="RegionType" final="#all">
 		<sequence>
-			<element name="metaData" type="caaml:MetaDataBaseType"/>
-			<element name="description" type="string" minOccurs="0">
-				<annotation>
-					<documentation>Property element for description of location</documentation>
-				</annotation>
-			</element>
-			<element name="name" type="string">
-				<annotation>
-					<documentation>Property element for name of location</documentation>
-				</annotation>
-			</element>
-			<element name="regionSubType" type="string">
-				<annotation>
-					<documentation>Required property element for specifying sub type of region (forecast area, drainage,..)</documentation>
-				</annotation>
-			</element>
-			<element name="centerPoint" minOccurs="0">
-				<annotation>
-					<documentation>Property element for coordinates of center point</documentation>
-				</annotation>
-				<complexType>
-					<sequence>
-						<element ref="gml:Point"/>
-					</sequence>
-				</complexType>
-			</element>
-			<element name="outline" minOccurs="0">
-				<annotation>
-					<documentation>Property element for coordinates of region outline</documentation>
-				</annotation>
-				<complexType>
-					<sequence>
-						<element ref="gml:Polygon"/>
-					</sequence>
-				</complexType>
-			</element>
+			<element name="metaData" type="caaml:MetaDataType" minOccurs="0"/>
+			<element name="name" type="string"/>
+			<element name="centerPoint" type="gml:Point" minOccurs="0"/>
+			<element name="outline" type="gml:Polygon"/>
 		</sequence>
-		<attribute ref="gml:id" use="required"/>
+		<attribute ref="xml:id" use="required"/>
 	</complexType>
 	<!-- ASPECT -->
-	<simpleType name="ValidAspectType">
+	<simpleType name="AspectType">
 		<restriction base="string">
 			<enumeration value="N"/>
 			<enumeration value="NE"/>
@@ -423,25 +268,12 @@
 		</restriction>
 	</simpleType>
 	<!-- ELEVATION -->
-	<complexType name="ValidElevationType" final="#all">
-		<annotation>
-			<documentation>Property element for elevation</documentation>
-		</annotation>
-		<choice>
-			<element name="elevationPosition" type="caaml:ElevationPositionType"/>
-			<element name="elevationRange" type="caaml:ElevationRangeType"/>
-		</choice>
-	</complexType>
-	<complexType name="ElevationPositionType">
-		<element name="position" type="caaml:ElevationBaseType"/>
-		<attribute name="uom" type="caaml:UomLengthType" use="required" fixed="m"/>
-	</complexType>
-	<complexType name="ElevationRangeType">
+	<complexType name="ElevationType" final="#all">
 		<sequence>
 			<element name="lowerBound" type="caaml:ElevationBaseType" minOccurs="0"/>
 			<element name="upperBound" type="caaml:ElevationBaseType" minOccurs="0"/>
 		</sequence>
-		<attribute name="uom" type="caaml:UomLengthType" use="required" fixed="m"/>
+		<attribute name="uom" type="string" use="required" fixed="m"/>
 	</complexType>
 	<simpleType name="ElevationBaseType">
 		<restriction base="string">
@@ -453,12 +285,9 @@
 	<!--***                 TIME ELEMENTS                      ***-->
 	<!--**********************************************************-->
 	<complexType name="ValidTimeType" final="#all">
-		<annotation>
-			<documentation>Property element for time reference</documentation>
-		</annotation>
 		<choice>
-			<element name="TimeInstant" type="caaml:TimeInstantType"/>
-			<element name="TimePeriod" type="caaml:TimePeriodType"/>
+			<element name="timeInstant" type="caaml:TimeInstantType"/>
+			<element name="timePeriod" type="caaml:TimePeriodType"/>
 		</choice>
 	</complexType>
 	<complexType name="TimeInstantType">
@@ -477,26 +306,10 @@
 	<!--***              COMPLEXITY ELEMENTS                   ***-->
 	<!--**********************************************************-->
 	<simpleType name="ComplexityType" final="#all">
-		<annotation>
-			<documentation>Property element for complexity</documentation>
-		</annotation>
 		<restriction base="string">
 			<enumeration value="easy"/>
 			<enumeration value="challenging"/>
 			<enumeration value="complex"/>
-		</restriction>
-	</simpleType>
-
-	<!--**********************************************************-->
-	<!--***            MEASUREMENT TYPE DEFINITIONS            ***-->
-	<!--**********************************************************-->
-	<simpleType name="UomLengthType" final="#all">
-		<restriction base="string">
-			<enumeration value="cm"/>
-			<enumeration value="mm"/>
-			<enumeration value="m"/>
-			<enumeration value="in"/>
-			<enumeration value="ft"/>
 		</restriction>
 	</simpleType>
 
