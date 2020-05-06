@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<schema xmlns:caaml="http://caaml.org/Schemas/V6.0/Profiles/BulletinEAWS" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:gml="http://www.opengis.net/gml" targetNamespace="http://caaml.org/Schemas/V6.0/Profiles/BulletinEAWS" version="6.0.0">
-	<import namespace="http://www.opengis.net/gml" schemaLocation="CAAMLv5_BulletinEAWS_GML.xsd"/>
-	<import namespace="http://www.w3.org/XML/1998/namespace" schemaLocation="xml.xsd"/>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+		targetNamespace="http://caaml.org/Schemas/V6.0/Profiles/BulletinEAWS"
+		xmlns:caaml="http://caaml.org/Schemas/V6.0/Profiles/BulletinEAWS"
+		xmlns:gml="http://www.opengis.net/gml/3.2"
+		version="6.0.0">
+	<import namespace="http://www.opengis.net/gml/3.2" schemaLocation="gml/3.2.2/gml.xsd"/>
 
 	<!--**********************************************************-->
 	<!--***         OBSERVATION COLLECTION ELEMENTS            ***-->
@@ -255,8 +258,8 @@
 		<sequence>
 			<element name="metaData" type="caaml:MetaDataType" minOccurs="0"/>
 			<element name="name" type="string"/>
-			<element name="centerPoint" type="gml:Point" minOccurs="0"/>
-			<element name="outline" type="gml:Polygon"/>
+			<element name="centerPoint" type="gml:PointType" minOccurs="0"/>
+			<element name="outline" type="gml:PolygonType"/>
 		</sequence>
 		<attribute ref="xml:id" use="required"/>
 	</complexType>
