@@ -197,7 +197,7 @@
 		</sequence>
 	</complexType>
 	<simpleType name="ExtFileTypeType">
-	    <union memberTypes="ExtFileEnumType xsd:string"/>
+	    <union memberTypes="caaml:ExtFileEnumType string"/>
 	</simpleType>
 	<simpleType name="ExtFileEnumType">
 		<restriction base="string">
