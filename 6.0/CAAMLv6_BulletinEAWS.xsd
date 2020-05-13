@@ -306,6 +306,7 @@
 			<enumeration value="easy"/>
 			<enumeration value="challenging"/>
 			<enumeration value="complex"/>
+			<enumeration value="n/a"/>
 		</restriction>
 	</simpleType>
 
