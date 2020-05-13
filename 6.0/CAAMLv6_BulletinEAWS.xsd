@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<schema xmlns:caaml="http://caaml.org/Schemas/V6.0/Profiles/BulletinEAWS" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:gml="http://www.opengis.net/gml" targetNamespace="http://caaml.org/Schemas/V6.0/Profiles/BulletinEAWS" version="6.0.0">
-	<import namespace="http://www.opengis.net/gml" schemaLocation="CAAMLv5_BulletinEAWS_GML.xsd"/>
-	<import namespace="http://www.w3.org/XML/1998/namespace" schemaLocation="xml.xsd"/>
+<schema xmlns:caaml="http://caaml.org/Schemas/V6.0/Profiles/BulletinEAWS" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:gml="http://www.opengis.net/gml/3.2" targetNamespace="http://caaml.org/Schemas/V6.0/Profiles/BulletinEAWS" version="6.0.0" elementFormDefault="qualified">
+	<import namespace="http://www.opengis.net/gml/3.2" schemaLocation="http://schemas.opengis.net/gml/3.2.1/gml.xsd"/>
+	<import namespace="http://www.w3.org/XML/1998/namespace" schemaLocation="http://www.w3.org/2001/xml.xsd"/>
 
 	<!--**********************************************************-->
 	<!--***         OBSERVATION COLLECTION ELEMENTS            ***-->
@@ -61,7 +61,7 @@
 	<complexType name="MatrixInformationType">
 		<sequence>
 			<element name="artificialDangerRating" type="caaml:DangerRatingValueType" minOccurs="0"/>
-			<element name="artificialAvSize" type="caaml:AvalancheSizeType" minOccurs="0"/>
+			<element name="artificialAvalancheSize" type="caaml:AvalancheSizeType" minOccurs="0"/>
 			<element name="artificialAvalancheReleaseProbability" type="caaml:ArtificialAvalancheReleaseProbabilityType" minOccurs="0"/>
 			<element name="artificialHazardSiteDistribution" type="caaml:HazardSiteDistributionType" minOccurs="0"/>
 			<element name="naturalDangerRating" type="caaml:DangerRatingValueType" minOccurs="0"/>
@@ -197,7 +197,7 @@
 		</sequence>
 	</complexType>
 	<simpleType name="ExtFileTypeType">
-	    <union memberTypes="ExtFileEnumType xsd:string"/>
+	    <union memberTypes="caaml:ExtFileEnumType string"/>
 	</simpleType>
 	<simpleType name="ExtFileEnumType">
 		<restriction base="string">
@@ -255,10 +255,10 @@
 		<sequence>
 			<element name="metaData" type="caaml:MetaDataType" minOccurs="0"/>
 			<element name="name" type="string"/>
-			<element name="centerPoint" type="gml:Point" minOccurs="0"/>
-			<element name="outline" type="gml:Polygon"/>
+			<element name="centerPoint" type="gml:PointType" minOccurs="0"/>
+			<element name="outline" type="gml:PolygonType" minOccurs="0"/>
 		</sequence>
-		<attribute ref="xml:id" use="required"/>
+		<attribute name="id" type="string" use="required"/>
 	</complexType>
 	<!-- ASPECT -->
 	<simpleType name="AspectType">
