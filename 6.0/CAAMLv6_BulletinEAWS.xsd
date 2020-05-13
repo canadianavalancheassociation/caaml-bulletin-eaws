@@ -26,7 +26,7 @@
 	<complexType name="BulletinType" final="#all">
 		<sequence>
 			<element name="metaData" type="caaml:MetaDataType" minOccurs="0"/>
-			<element name="publicationTime" type="gml:TimePositionType"/>
+			<element name="publicationTime" type="dateTime"/>
 			<element name="validTime" type="caaml:ValidTimeType"/>
 			<element name="source" type="caaml:SourceType"/>
 			<element name="region" type="caaml:RegionType" maxOccurs="unbounded"/>
@@ -298,8 +298,8 @@
 	<!--**********************************************************-->
 	<complexType name="ValidTimeType" final="#all">
 		<sequence>
-			<element name="startTime" type="gml:TimePositionType"/>
-			<element name="endTime" type="gml:TimePositionType"/>
+			<element name="startTime" type="dateTime"/>
+			<element name="endTime" type="dateTime"/>
 		</sequence>
 	</complexType>
 
