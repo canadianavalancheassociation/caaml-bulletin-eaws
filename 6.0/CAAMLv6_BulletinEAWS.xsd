@@ -6,7 +6,6 @@
 		version="6.0.0"
 		elementFormDefault="qualified">
 	<import namespace="http://www.opengis.net/gml/3.2" schemaLocation="gml/3.2.2/gml.xsd"/>
-	<import namespace="http://www.w3.org/XML/1998/namespace" schemaLocation="http://www.w3.org/2001/xml.xsd"/>
 
 	<!--**********************************************************-->
 	<!--***         OBSERVATION COLLECTION ELEMENTS            ***-->
@@ -46,8 +45,8 @@
 			<element name="travelAdvisoryComment" type="string" minOccurs="0"/>
 			<element name="tendencyComment" type="string" minOccurs="0"/>
 		</sequence>
-		<attribute ref="xml:id" use="required"/>
-		<attribute ref="xml:lang" use="required"/>
+		<attribute name="id" type="ID" use="required"/>
+		<attribute name="lang" type="language" use="required"/>
 	</complexType>
 
 	<!--**********************************************************-->
