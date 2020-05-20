@@ -57,13 +57,7 @@
 			<element name="mainValue" type="caaml:DangerRatingValueType"/>
 			<element name="aspect" type="caaml:AspectType" minOccurs="0" maxOccurs="unbounded"/>
 			<element name="elevation" type="caaml:ElevationType" minOccurs="0"/>
-			<element name="matrixInformation" type="caaml:MatrixInformationType" minOccurs="0"/>
-			<element name="comment" type="string" minOccurs="0"/>
-			<element name="customData" type="caaml:CustomDataType" minOccurs="0"/>
-		</sequence>
-	</complexType>
-	<complexType name="MatrixInformationType">
-		<sequence>
+			<element name="terrainFeature" type="string" minOccurs="0"/>
 			<element name="artificialDangerRating" type="caaml:DangerRatingValueType" minOccurs="0"/>
 			<element name="artificialAvalancheSize" type="caaml:AvalancheSizeType" minOccurs="0"/>
 			<element name="artificialAvalancheReleaseProbability" type="caaml:ArtificialAvalancheReleaseProbabilityType" minOccurs="0"/>
@@ -71,6 +65,8 @@
 			<element name="naturalDangerRating" type="caaml:DangerRatingValueType" minOccurs="0"/>
 			<element name="naturalAvalancheReleaseProbability" type="caaml:NaturalAvalancheReleaseProbabilityType" minOccurs="0"/>
 			<element name="naturalHazardSiteDistribution" type="caaml:HazardSiteDistributionType" minOccurs="0"/>
+			<element name="comment" type="string" minOccurs="0"/>
+			<element name="customData" type="caaml:CustomDataType" minOccurs="0"/>
 		</sequence>
 	</complexType>
 	<simpleType name="DangerRatingValueType">
@@ -115,10 +111,7 @@
 	<complexType name="AvalancheProblemType">
 		<sequence>
 			<element name="type" type="caaml:AvalancheProblemTypeType"/>
-			<element name="aspect" type="caaml:AspectType" minOccurs="0" maxOccurs="unbounded"/>
-			<element name="elevation" type="caaml:ElevationType" minOccurs="0"/>
-			<element name="terrainFeature" type="string" minOccurs="0"/>
-			<element name="matrixInformation" type="caaml:MatrixInformationType" minOccurs="0"/>
+			<element name="dangerRating" type="caaml:DangerRatingType"/>
 			<element name="comment" type="string" minOccurs="0"/>
 			<element name="customData" type="caaml:CustomDataType" minOccurs="0"/>
 		</sequence>
