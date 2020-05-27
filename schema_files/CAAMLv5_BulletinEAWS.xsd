@@ -168,6 +168,16 @@
 							</sequence>
 						</complexType>
 					</element>
+					<element name="tendency" minOccurs="0">
+						<annotation>
+							<documentation>Complex property element type of tendency</documentation>
+						</annotation>
+						<complexType>
+							<sequence>
+								<element name="Tendency" type="caaml:TendencyType"/>
+							</sequence>
+						</complexType>
+					</element>
 					<element name="wxSynopsisHighlights" type="string" minOccurs="0">
 						<annotation>
 							<documentation>Property element for highlights of weather synopsis</documentation>
@@ -206,6 +216,11 @@
 					<element name="travelAdvisoryComment" type="string" minOccurs="0">
 						<annotation>
 							<documentation>Property element for travel advisory</documentation>
+						</annotation>
+					</element>
+					<element name="tendencyComment" type="string" minOccurs="0">
+						<annotation>
+							<documentation>Property element for tendency</documentation>
 						</annotation>
 					</element>
 				</sequence>
@@ -316,6 +331,26 @@
 			<enumeration value="wet snow"/>
 			<enumeration value="gliding snow"/>
 			<enumeration value="favourable situation"/>
+		</restriction>
+	</simpleType>
+	<!--***-->
+	<complexType name="TendencyType">
+		<sequence>
+			<element name="type" type="caaml:TendencyTypeType">
+				<annotation>
+					<documentation>Property element for name of tendency</documentation>
+				</annotation>
+			</element>
+			<element ref="caaml:validTime" minOccurs="0"/>
+			<element ref="caaml:comment" minOccurs="0"/>
+			<element ref="caaml:customData" minOccurs="0"/>
+		</sequence>
+	</complexType>
+	<simpleType name="TendencyTypeType">
+		<restriction base="string">
+			<enumeration value="decreasing"/>
+			<enumeration value="steady"/>
+			<enumeration value="increasing"/>
 		</restriction>
 	</simpleType>
 	<!--***-->
