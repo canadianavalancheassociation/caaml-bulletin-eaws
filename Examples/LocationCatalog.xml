@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<caaml:LocationCollection xmlns:caaml="http://caaml.org/Schemas/V5.0/Profiles/BulletinEAWS" xmlns:gml="http://www.opengis.net/gml" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://caaml.org/Schemas/V5.0/Profiles/BulletinEAWS
+http://caaml.org/Schemas/V5.0/Profiles/BulletinEAWS/CAAMLv5_BulletinEAWS.xsd">
+	<caaml:metaDataProperty>
+		<caaml:MetaData>
+			<caaml:dateTimeReport>2010-10-29T19:23:00+8:00</caaml:dateTimeReport>
+			<caaml:srcRef>
+				<caaml:Operation gml:id="Avisualanche">
+					<caaml:name>Avisualanche Consulting</caaml:name>
+				</caaml:Operation>
+			</caaml:srcRef>
+			<caaml:comment>This file is an example of a location catalogue for the exchange of public avalanche bulletions by the EAWS.</caaml:comment>
+		</caaml:MetaData>
+	</caaml:metaDataProperty>
+	<caaml:locations>
+		<caaml:Region gml:id="Region01">
+			<caaml:name>Forecast Region Example 1</caaml:name>
+			<caaml:regionSubType/>
+			<caaml:outline>
+				<gml:Polygon gml:id="Polygon01" srsDimension="2" srsName="urn:ogc:def:crs:OGC:1.3:CRS84">
+					<gml:exterior>
+						<gml:LinearRing>
+							<gml:posList>0 0 1 0 1 1 0 1</gml:posList>
+						</gml:LinearRing>
+					</gml:exterior>
+				</gml:Polygon>
+			</caaml:outline>
+		</caaml:Region>
+		<caaml:Region gml:id="Region02">
+			<caaml:name>Forecast Region Example 2</caaml:name>
+			<caaml:regionSubType/>
+			<caaml:outline>
+				<gml:Polygon gml:id="Polygon02" srsDimension="2" srsName="urn:ogc:def:crs:OGC:1.3:CRS84">
+					<gml:exterior>
+						<gml:LinearRing>
+							<gml:posList>0 0 1 0  1 -1  0 -1</gml:posList>
+						</gml:LinearRing>
+					</gml:exterior>
+				</gml:Polygon>
+			</caaml:outline>
+		</caaml:Region>
+	</caaml:locations>
+</caaml:LocationCollection>
