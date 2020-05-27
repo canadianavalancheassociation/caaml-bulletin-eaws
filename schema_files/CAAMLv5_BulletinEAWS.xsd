@@ -208,11 +208,6 @@
 							<documentation>Property element for travel advisory</documentation>
 						</annotation>
 					</element>
-					<element name="tendencyComment" type="string" minOccurs="0">
-						<annotation>
-							<documentation>Property element for tendency</documentation>
-						</annotation>
-					</element>
 				</sequence>
 			</extension>
 		</complexContent>
@@ -639,14 +634,14 @@
 	</element>
 	<complexType name="ValidElevationType" final="#all">
 		<choice minOccurs="0">
-			<element name="ElevationPosition">
+			<element name="elevationPosition">
 				<complexType>
 					<complexContent>
 						<extension base="caaml:ElevationPositionType"/>
 					</complexContent>
 				</complexType>
 			</element>
-			<element name="ElevationRange">
+			<element name="elevationRange">
 				<complexType>
 					<complexContent>
 						<extension base="caaml:ElevationRangeType"/>
