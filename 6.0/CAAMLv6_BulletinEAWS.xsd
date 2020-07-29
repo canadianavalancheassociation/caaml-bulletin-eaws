@@ -111,7 +111,7 @@
 	<complexType name="AvalancheProblemType">
 		<sequence>
 			<element name="type" type="caaml:AvalancheProblemTypeType"/>
-			<element name="dangerRating" type="caaml:DangerRatingType"/>
+			<element name="dangerRating" type="caaml:DangerRatingType" minOccurs="0"/>
 			<element name="comment" type="string" minOccurs="0"/>
 			<element name="customData" type="caaml:CustomDataType" minOccurs="0"/>
 		</sequence>
