@@ -45,7 +45,7 @@
 			<element name="travelAdvisoryComment" type="string" minOccurs="0"/>
 			<element name="tendencyComment" type="string" minOccurs="0"/>
 		</sequence>
-		<attribute name="id" type="ID" use="required"/>
+		<attribute name="id" type="string" use="required"/>
 		<attribute name="lang" type="language" use="required"/>
 	</complexType>
 
