@@ -54,7 +54,7 @@
 	<!--**********************************************************-->
 	<complexType name="DangerRatingType">
 		<sequence>
-			<element name="mainValue" type="caaml:DangerRatingValueType" maxOccurs="unbounded"/>
+			<element name="mainValue" type="caaml:DangerRatingValueType" minOccurs="0"/>
 			<element name="aspect" type="caaml:AspectType" minOccurs="0" maxOccurs="unbounded"/>
 			<element name="elevation" type="caaml:ElevationType" minOccurs="0"/>
 			<element name="terrainFeature" type="string" minOccurs="0"/>
