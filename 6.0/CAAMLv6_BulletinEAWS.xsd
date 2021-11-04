@@ -29,7 +29,6 @@
 			<element name="validTime" type="caaml:ValidTimeType"/>
 			<element name="source" type="caaml:SourceType"/>
 			<element name="region" type="caaml:RegionType" maxOccurs="unbounded"/>
-			<element name="complexity" type="caaml:ComplexityType" minOccurs="0"/>
 			<element name="dangerRating" type="caaml:DangerRatingType" minOccurs="0" maxOccurs="unbounded"/>
 			<element name="dangerPattern" type="caaml:DangerPatternType" minOccurs="0" maxOccurs="unbounded"/>
 			<element name="avalancheProblem" type="caaml:AvalancheProblemType" minOccurs="0" maxOccurs="unbounded"/>
@@ -216,12 +215,12 @@
 	<!--**********************************************************-->
 	<complexType name="SourceType">
 		<choice>
-			<element name="operation" type="caaml:OperationType"/>
+			<element name="provider" type="caaml:ProviderType"/>
 			<element name="person" type="caaml:PersonType"/>
 		</choice>
 	</complexType>
-	<!--  OPERATION  -->
-	<complexType name="OperationType" final="#all">
+	<!--  PROVIDER  -->
+	<complexType name="ProviderType" final="#all">
 		<complexContent>
 			<extension base="caaml:SourceBaseType">
 				<sequence>
@@ -294,17 +293,5 @@
 			<element name="endTime" type="dateTime"/>
 		</sequence>
 	</complexType>
-
-	<!--**********************************************************-->
-	<!--***              COMPLEXITY ELEMENTS                   ***-->
-	<!--**********************************************************-->
-	<simpleType name="ComplexityType" final="#all">
-		<restriction base="string">
-			<enumeration value="easy"/>
-			<enumeration value="challenging"/>
-			<enumeration value="complex"/>
-			<enumeration value="n/a"/>
-		</restriction>
-	</simpleType>
 
 </schema>
