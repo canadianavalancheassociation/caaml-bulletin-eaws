@@ -44,7 +44,7 @@
 			<element name="travelAdvisoryComment" type="string" minOccurs="0"/>
 			<element name="tendencyComment" type="string" minOccurs="0"/>
 		</sequence>
-		<attribute name="id" type="string" use="required"/>
+		<attribute name="reportID" type="string" use="required"/>
 		<attribute name="lang" type="language" use="required"/>
 	</complexType>
 
@@ -109,7 +109,7 @@
 	<!--**********************************************************-->
 	<complexType name="AvalancheProblemType">
 		<sequence>
-			<element name="type" type="caaml:AvalancheProblemTypeType"/>
+			<element name="problemType" type="caaml:AvalancheProblemTypeType"/>
 			<element name="dangerRating" type="caaml:DangerRatingType" minOccurs="0"/>
 			<element name="comment" type="string" minOccurs="0"/>
 			<element name="customData" type="caaml:CustomDataType" minOccurs="0"/>
@@ -132,7 +132,7 @@
 	<!--**********************************************************-->
 	<complexType name="DangerPatternType">
 		<sequence>
-			<element name="type" type="caaml:DangerPatternTypeType"/>
+			<element name="dpType" type="caaml:DangerPatternTypeType"/>
 			<element name="aspect" type="caaml:AspectType" minOccurs="0" maxOccurs="unbounded"/>
 			<element name="elevation" type="caaml:ElevationType" minOccurs="0"/>
 			<element name="comment" type="string" minOccurs="0"/>
@@ -159,7 +159,7 @@
 	<!--**********************************************************-->
 	<complexType name="TendencyType">
 		<sequence>
-			<element name="type" type="caaml:TendencyTypeType"/>
+			<element name="tendencyType" type="caaml:TendencyTypeType"/>
 			<element name="validTime" type="caaml:ValidTimeType" minOccurs="0"/>
 			<element name="comment" type="string" minOccurs="0"/>
 			<element name="customData" type="caaml:CustomDataType" minOccurs="0"/>
@@ -186,7 +186,7 @@
 	<!-- EXTERNAL FILES -->
 	<complexType name="ExtFileType">
 		<sequence>
-			<element name="type" type="caaml:ExtFileTypeType" minOccurs="0"/>
+			<element name="fileType" type="caaml:ExtFileTypeType" minOccurs="0"/>
 			<element name="description" type="string" minOccurs="0"/>
 			<element name="fileReferenceURI" type="anyURI"/>
 			<element name="customData" type="caaml:CustomDataType" minOccurs="0"/>
