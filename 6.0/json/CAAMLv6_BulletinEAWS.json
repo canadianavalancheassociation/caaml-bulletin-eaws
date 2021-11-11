@@ -7,12 +7,19 @@
         "bulletinID" : {
             "type" : "string"
         },
-        "lang" : { "$ref" : "#/definitions/languageCode"},
+        "lang" : { 
+            "$ref" : "#/definitions/languageCode"
+        },
         "publicationTime" : {
             "type" : "string",
             "format" : "date-time"
         },
-        "source" : { "$ref" : "#/definitions/source" },
+        "validTime" : {
+            "$ref" : "#/definitions/validTime"
+        },
+        "source" : { 
+            "$ref" : "#/definitions/source" 
+        },
         "region" : {
             "additionalProperties" : {
                 "type" : "string"
@@ -29,7 +36,34 @@
             "items" : {
               "$ref" : "#/definitions/avalancheProblem",
             }
-        }
+        },
+        "tendency" : {
+            "type" : "object",
+            "properties" : {
+                "tendencyType" : {
+                    "type" : "string",
+                    "enum" : [ "decreasing", "steady", "increasing"]
+                },
+                "validTime" : {
+                    "$ref" : "#/definitions/validTime"
+                },
+            }
+        },
+        "highlights" : {
+            "type" : "string"
+        },
+        "avalancheActivityHighlights" : {
+            "type" : "string"
+        },
+        "avalancheActivityComment" : {
+            "type" : "string"
+        },
+        "snowpackStructureComment" : {
+            "type" : "string"
+        },
+        "tendencyComment" : {
+            "type" : "string"
+        },
         
     },
     
@@ -73,7 +107,6 @@
                 }
             }
         },
-        
         "dangerRating" : {
             "id" : "#dangerRating",
             "$schema" : "http://json-schema.org/draft-04/schema#",
@@ -86,7 +119,6 @@
                 "terrainFeature" : { "type" : "string" },
             }
         },
-        
         "avalancheProblem" : {
             "type" : "object",
             "properties" : {
@@ -95,7 +127,6 @@
                 "problemType" : { "$ref" : "#/definitions/avalancheProblemType" }
             }
         },
-        
         "elevation" : {
             "type" : "object",
             "properties" : {
@@ -109,7 +140,6 @@
                 }
             }
         },
-        
         "aspect" : {
             "id" : "#aspect",
             "$schema" : "http://json-schema.org/draft-04/schema#",
@@ -121,13 +151,10 @@
               "enum" : [ "N", "NE", "E", "SE", "S", "SW", "W", "NW", "n/a" ]
             }
         },
-        
         "dangerRatingValue" : {
             "type" : "string",
             "enum" : [ "no_snow", "no_rating", "low", "moderate", "considerable", "high", "very_high" ]
         },
-
-        
         "avalancheProblemType" : {
             "id" : "#avalancheProblemType",
             "$schema" : "http://json-schema.org/draft-04/schema#",
