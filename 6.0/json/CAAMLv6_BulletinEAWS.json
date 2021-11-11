@@ -19,12 +19,17 @@
             }
         },
         "dangerRating" : { 
-          	"type" : "array",
+            "type" : "array",
             "items" : {
               "$ref" : "#/definitions/dangerRating",
             }
-            
         },
+        "avalancheProblem" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/definitions/avalancheProblem",
+            }
+        }
         
     },
     
@@ -75,12 +80,19 @@
             "title" : "Danger Rating",
             "description" : "Danger rating used in an avalanche bulletin.",
             "properties" : {
-                "mainValue": {
-                    "dangerRatingValue" : { "$ref" : "#/definitions/dangerRatingValue" }
-                },
-                "elevation" : { "$ref" : "#/definitions/elevation"},
+                "mainValue": { "$ref" : "#/definitions/dangerRatingValue" },
+                "elevation" : { "$ref" : "#/definitions/elevation" },
                 "aspect" : { "$ref" : "#/definitions/aspect" },
                 "terrainFeature" : { "type" : "string" },
+            }
+        },
+        
+        "avalancheProblem" : {
+            "type" : "object",
+            "properties" : {
+                "mainValue": { "$ref" : "#/definitions/dangerRatingValue" },
+                "dangerRating" : { "$ref" : "#/definitions/dangerRating" },
+                "problemType" : { "$ref" : "#/definitions/avalancheProblemType" }
             }
         },
         
@@ -115,13 +127,14 @@
             "enum" : [ "no_snow", "no_rating", "low", "moderate", "considerable", "high", "very_high" ]
         },
 
-        "avalancheProblem" : {
-            "id" : "#avalancheProblem",
+        
+        "avalancheProblemType" : {
+            "id" : "#avalancheProblemType",
             "$schema" : "http://json-schema.org/draft-04/schema#",
             "title" : "Avalanche Problem",
-            "description" : "The five avalanche problems.",
+            "description" : "The six avalanche problems.",
             "type" : "string",
-            "enum" : [ "new_snow", "wind_drifted_snow", "weak_persistent_layer", "wet_snow", "gliding_snow", "favourable_situation" ]
+            "enum" : [ "new_snow", "wind_drifted_snow", "persistent_weak_layers", "wet_snow", "gliding_snow", "cornice_failure", "favourable_situation" ]
         }
     }
 }
