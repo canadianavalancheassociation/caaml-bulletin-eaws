@@ -1,0 +1,127 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "Avalanche Bulletin CAAMLv6",
+    "description": "JSON schema for Avalanche Bulletin following the CAAMLv6 schema",
+    "type": "object",
+    "properties" : {
+        "bulletinID" : {
+            "type" : "string"
+        },
+        "lang" : { "$ref" : "#/definitions/languageCode"},
+        "publicationTime" : {
+            "type" : "string",
+            "format" : "date-time"
+        },
+        "source" : { "$ref" : "#/definitions/source" },
+        "region" : {
+            "additionalProperties" : {
+                "type" : "string"
+            }
+        },
+        "dangerRating" : { 
+          	"type" : "array",
+            "items" : {
+              "$ref" : "#/definitions/dangerRating",
+            }
+            
+        },
+        
+    },
+    
+    "definitions" : {
+        "languageCode" : {
+            "id" : "#languageCode",
+            "$schema": "http://json-schema.org/draft-04/schema#",
+            "title": "Language Code",
+            "description": "Two-letter language codes (ISO 639-1).",
+            "type" : "string",
+            "enum" : [ "aa", "ab", "ae", "af", "ak", "am", "an", "ar", "as", "av", "ay", "az", "ba", "be", "bg", "bh", "bi", "bm", "bn", "bo", "br", "bs", "ca", "ce", "ch", "co", "cr", "cs", "cu", "cv", "cy", "da", "de", "dv", "dz", "ee", "el", "en", "eo", "es", "et", "eu", "fa", "ff", "fi", "fj", "fo", "fr", "fy", "ga", "gd", "gl", "gn", "gu", "gv", "ha", "he", "hi", "ho", "hr", "ht", "hu", "hy", "hz", "ia", "id","ie", "ig", "ii", "ik", "io", "is", "it", "iu", "ja", "jv", "ka", "kg", "ki", "kj", "kk", "kl", "km", "kn", "ko", "kr", "ks", "ku", "kv", "kw", "ky", "la", "lb", "lg", "li", "ln", "lo", "lt", "lu", "lv", "mg", "mh", "mi", "mk", "ml", "mn", "mr", "ms", "mt", "my", "na", "nb", "nd", "ne", "ng", "nl", "nn", "no", "nr", "nv", "ny", "oc", "oj", "om", "or", "os", "pa", "pi", "pl", "ps", "pt", "qu", "rm", "rn", "ro", "ru", "rw", "sa", "sc", "sd", "se", "sg", "si", "sk", "sl", "sm", "sn", "so", "sq", "sr", "ss", "st", "su", "sv", "sw", "ta", "te", "tg", "th", "ti", "tk", "tl", "tn", "to", "tr", "ts", "tt", "tw", "ty", "ug", "uk", "ur", "uz", "ve", "vi", "vo", "wa", "wo", "xh", "yi", "yo", "za", "zh", "zu" ]
+        },
+        "validTime" : {
+            "type" : "object",
+            "properties" : {
+                "startTime" : {
+                    "type" : "string",
+                    "format" : "date-time"
+                },
+                "endTime" : {
+                    "type" : "string",
+                    "format" : "date-time"
+                }
+            }
+        },
+        "source" : {
+            "type" : "object",
+            "properties" : {
+                "provider" : { "$ref" : "#/definitions/provider" }
+            }
+        },
+        "provider" : {
+            "type" : "object",
+            "properties" : {
+                "name" : {
+                    "type" : "string",
+                },
+                "website" : {
+                    "type" : "string",
+                    "format" : "uri"
+                }
+            }
+        },
+        
+        "dangerRating" : {
+            "id" : "#dangerRating",
+            "$schema" : "http://json-schema.org/draft-04/schema#",
+            "title" : "Danger Rating",
+            "description" : "Danger rating used in an avalanche bulletin.",
+            "properties" : {
+                "mainValue": {
+                    "dangerRatingValue" : { "$ref" : "#/definitions/dangerRatingValue" }
+                },
+                "elevation" : { "$ref" : "#/definitions/elevation"},
+                "aspect" : { "$ref" : "#/definitions/aspect" },
+                "terrainFeature" : { "type" : "string" },
+            }
+        },
+        
+        "elevation" : {
+            "type" : "object",
+            "properties" : {
+                "lowerBound" : { 
+                    "type" : "string",
+                    "pattern" : "^[0-9]+$|treeline$"
+                },
+                "upperBound" : { 
+                    "type" : "string",
+                    "pattern" : "^[0-9]+$|treeline$"
+                }
+            }
+        },
+        
+        "aspect" : {
+            "id" : "#aspect",
+            "$schema" : "http://json-schema.org/draft-04/schema#",
+            "title" : "Aspect",
+            "description" : "All aspects.",
+            "type" : "array",
+            "items" : {
+              "type" : "string",
+              "enum" : [ "N", "NE", "E", "SE", "S", "SW", "W", "NW", "n/a" ]
+            }
+        },
+        
+        "dangerRatingValue" : {
+            "type" : "string",
+            "enum" : [ "no_snow", "no_rating", "low", "moderate", "considerable", "high", "very_high" ]
+        },
+
+        "avalancheProblem" : {
+            "id" : "#avalancheProblem",
+            "$schema" : "http://json-schema.org/draft-04/schema#",
+            "title" : "Avalanche Problem",
+            "description" : "The five avalanche problems.",
+            "type" : "string",
+            "enum" : [ "new_snow", "wind_drifted_snow", "weak_persistent_layer", "wet_snow", "gliding_snow", "favourable_situation" ]
+        }
+    }
+}
