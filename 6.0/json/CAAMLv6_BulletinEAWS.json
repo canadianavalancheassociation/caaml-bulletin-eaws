@@ -176,6 +176,7 @@
         "ExtFileType" : {
             "type" : "object",
             "properties" : {
+              	"fileType" : { "$ref" : "#/definitions/ExtFileTypeType" },
                 "description" : "string",
                 "fileReferenceURI" : {
                     "type" : "string",
