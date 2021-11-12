@@ -5,10 +5,15 @@
     "type": "object",
     "properties" : {
         "bulletinID" : {
+            "title": "ID of the Bulletin",
             "type" : "string"
         },
         "lang" : { 
+            "title": "Language Key of the Bulletin",
             "$ref" : "#/definitions/languageCode"
+        },
+        "metaData" : { 
+            "$ref" : "#/definitions/MetaData" 
         },
         "publicationTime" : {
             "type" : "string",
@@ -162,6 +167,29 @@
             "description" : "The six avalanche problems.",
             "type" : "string",
             "enum" : [ "new_snow", "wind_drifted_snow", "persistent_weak_layers", "wet_snow", "gliding_snow", "cornice_failure", "favourable_situation" ]
+        },
+        "MetaData" : {
+            "extFile" : { "$ref" : "#/definitions/ExtFileType" },
+            "comment" : "string",
+            "customData" : { "$ref" : "#/definitions/" },
+        },
+        "ExtFileType" : {
+            "type" : "object",
+            "properties" : {
+                "description" : "string",
+                "fileReferenceURI" : {
+                    "type" : "string",
+                    "format" : "uri"
+                },
+                "customData" : { "$ref" : "#/definitions/customData" },
+            }
+        },
+        "ExtFileTypeType" : {
+            "type" : "string",
+            "enum" : [ "dangerRatingMapOverlay", "dangerRatingMap", "printOut", "website" ]
+        },
+        "customData" : {
+            "type" : "any"
         }
     }
 }
