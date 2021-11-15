@@ -122,8 +122,38 @@
                 "elevation" : { "$ref" : "#/definitions/elevation" },
                 "aspect" : { "$ref" : "#/definitions/aspect" },
                 "terrainFeature" : { "type" : "string" },
+                "artificialDangerRating" : { "$ref" : "#/definitions/dangerRatingValue" },
+                "artificialAvalancheSize" : {
+                    "type" : "number",
+                    "minimum" : 1,
+                    "maximum" : 5,
+                },
+                "artificialAvalancheReleaseProbability" : {
+                    "type" : "number",
+                    "minimum" : 1,
+                    "maximum" : 4,
+                },
+                "artificialHazardSiteDistribution" : {
+                    "type" : "number",
+                    "minimum" : 1,
+                    "maximum" : 5,
+                },
+                "naturalDangerRating" : { "$ref" : "#/definitions/dangerRatingValue" },
+                "naturalAvalancheReleaseProbability" : {
+                    "type" : "number",
+                    "minimum" : 1,
+                    "maximum" : 4,
+                },
+                "naturalHazardSiteDistribution" : {
+                    "type" : "number",
+                    "minimum" : 1,
+                    "maximum" : 5,
+                },
+                "comment" : { "type" : "string" },
+                "customData" : { "$ref" : "#/definitions/customData" },
+                
             }
-        },
+        },     
         "avalancheProblem" : {
             "type" : "object",
             "properties" : {
@@ -149,7 +179,7 @@
             "id" : "#aspect",
             "$schema" : "http://json-schema.org/draft-04/schema#",
             "title" : "Aspect",
-            "description" : "All aspects.",
+            "description" : "All aspects.","customData" : { "$ref" : "#/definitions/customData" },
             "type" : "array",
             "items" : {
               "type" : "string",
@@ -190,7 +220,6 @@
             "enum" : [ "dangerRatingMapOverlay", "dangerRatingMap", "printOut", "website" ]
         },
         "customData" : {
-            "type" : "any"
         }
     }
 }
