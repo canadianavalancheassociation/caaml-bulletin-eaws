@@ -33,13 +33,13 @@
         "dangerRating" : { 
             "type" : "array",
             "items" : {
-              "$ref" : "#/definitions/dangerRating",
+              "$ref" : "#/definitions/dangerRating"
             }
         },
         "avalancheProblem" : {
             "type" : "array",
             "items" : {
-              "$ref" : "#/definitions/avalancheProblem",
+              "$ref" : "#/definitions/avalancheProblem"
             }
         },
         "tendency" : {
@@ -51,7 +51,7 @@
                 },
                 "validTime" : {
                     "$ref" : "#/definitions/validTime"
-                },
+                }
             }
         },
         "highlights" : {
@@ -68,8 +68,7 @@
         },
         "tendencyComment" : {
             "type" : "string"
-        },
-        
+        }        
     },
     
     "definitions" : {
@@ -104,7 +103,7 @@
             "type" : "object",
             "properties" : {
                 "name" : {
-                    "type" : "string",
+                    "type" : "string"
                 },
                 "website" : {
                     "type" : "string",
@@ -126,32 +125,31 @@
                 "artificialAvalancheSize" : {
                     "type" : "number",
                     "minimum" : 1,
-                    "maximum" : 5,
+                    "maximum" : 5
                 },
                 "artificialAvalancheReleaseProbability" : {
                     "type" : "number",
                     "minimum" : 1,
-                    "maximum" : 4,
+                    "maximum" : 4
                 },
                 "artificialHazardSiteDistribution" : {
                     "type" : "number",
                     "minimum" : 1,
-                    "maximum" : 5,
+                    "maximum" : 5
                 },
                 "naturalDangerRating" : { "$ref" : "#/definitions/dangerRatingValue" },
                 "naturalAvalancheReleaseProbability" : {
                     "type" : "number",
                     "minimum" : 1,
-                    "maximum" : 4,
+                    "maximum" : 4
                 },
                 "naturalHazardSiteDistribution" : {
                     "type" : "number",
                     "minimum" : 1,
-                    "maximum" : 5,
+                    "maximum" : 5
                 },
                 "comment" : { "type" : "string" },
-                "customData" : { "$ref" : "#/definitions/customData" },
-                
+                "customData" : { "$ref" : "#/definitions/customData" }
             }
         },     
         "avalancheProblem" : {
@@ -201,7 +199,7 @@
         "MetaData" : {
             "extFile" : { "$ref" : "#/definitions/ExtFileType" },
             "comment" : "string",
-            "customData" : { "$ref" : "#/definitions/" },
+            "customData" : { "$ref" : "#/definitions/" }
         },
         "ExtFileType" : {
             "type" : "object",
@@ -212,7 +210,7 @@
                     "type" : "string",
                     "format" : "uri"
                 },
-                "customData" : { "$ref" : "#/definitions/customData" },
+                "customData" : { "$ref" : "#/definitions/customData" }
             }
         },
         "ExtFileTypeType" : {
