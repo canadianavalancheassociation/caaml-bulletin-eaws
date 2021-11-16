@@ -1,5 +1,5 @@
 {
-    "$schema": "http://json-schema.org/draft-04/schema#",
+    "$schema": "http://json-schema.org/draft-07/schema#",
     "title": "Avalanche Bulletin CAAMLv6",
     "description": "JSON schema for EAWS Avalanche Bulletin following the CAAMLv6 schema",
     "type": "object",
@@ -74,7 +74,7 @@
     "definitions" : {
         "languageCode" : {
             "id" : "#languageCode",
-            "$schema": "http://json-schema.org/draft-04/schema#",
+            "$schema": "http://json-schema.org/draft-07/schema#",
             "title": "Language Code",
             "description": "Two-letter language codes (ISO 639-1).",
             "type" : "string",
@@ -113,7 +113,7 @@
         },
         "dangerRating" : {
             "id" : "#dangerRating",
-            "$schema" : "http://json-schema.org/draft-04/schema#",
+            "$schema" : "http://json-schema.org/draft-07/schema#",
             "title" : "Danger Rating",
             "description" : "Danger rating used in an avalanche bulletin.",
             "properties" : {
@@ -121,33 +121,13 @@
                 "elevation" : { "$ref" : "#/definitions/elevation" },
                 "aspect" : { "$ref" : "#/definitions/aspect" },
                 "terrainFeature" : { "type" : "string" },
-                "artificialDangerRating" : { "$ref" : "#/definitions/dangerRatingValue" },
-                "artificialAvalancheSize" : {
+                "avalancheSize" : {
                     "type" : "number",
                     "minimum" : 1,
                     "maximum" : 5
                 },
-                "artificialAvalancheReleaseProbability" : {
-                    "type" : "number",
-                    "minimum" : 1,
-                    "maximum" : 4
-                },
-                "artificialHazardSiteDistribution" : {
-                    "type" : "number",
-                    "minimum" : 1,
-                    "maximum" : 5
-                },
-                "naturalDangerRating" : { "$ref" : "#/definitions/dangerRatingValue" },
-                "naturalAvalancheReleaseProbability" : {
-                    "type" : "number",
-                    "minimum" : 1,
-                    "maximum" : 4
-                },
-                "naturalHazardSiteDistribution" : {
-                    "type" : "number",
-                    "minimum" : 1,
-                    "maximum" : 5
-                },
+                "snowpackStability" : { "$ref" : "#/definitions/snowpackStabilityType" },
+                "frequency" : { "$ref" : "#/definitions/frequencyType" },
                 "comment" : { "type" : "string" },
                 "customData" : { "$ref" : "#/definitions/customData" }
             }
@@ -175,7 +155,7 @@
         },
         "aspect" : {
             "id" : "#aspect",
-            "$schema" : "http://json-schema.org/draft-04/schema#",
+            "$schema" : "http://json-schema.org/draft-07/schema#",
             "title" : "Aspect",
             "description" : "All aspects.","customData" : { "$ref" : "#/definitions/customData" },
             "type" : "array",
@@ -188,9 +168,17 @@
             "type" : "string",
             "enum" : [ "no_snow", "no_rating", "low", "moderate", "considerable", "high", "very_high" ]
         },
+        "snowpackStabilityType" : {
+            "type" : "string",
+            "enum" : [ "very_poor", "poor", "fair", "good" ]
+        },
+        "frequencyType" : {
+            "type" : "string",
+            "enum" : [ "few", "some", "many" ]
+        },
         "avalancheProblemType" : {
             "id" : "#avalancheProblemType",
-            "$schema" : "http://json-schema.org/draft-04/schema#",
+            "$schema" : "http://json-schema.org/draft-07/schema#",
             "title" : "Avalanche Problem",
             "description" : "The six avalanche problems.",
             "type" : "string",
