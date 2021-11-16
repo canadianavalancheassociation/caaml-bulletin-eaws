@@ -1,7 +1,7 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
     "title": "Avalanche Bulletin CAAMLv6",
-    "description": "JSON schema for Avalanche Bulletin following the CAAMLv6 schema",
+    "description": "JSON schema for EAWS Avalanche Bulletin following the CAAMLv6 schema",
     "type": "object",
     "properties" : {
         "bulletinID" : {
