@@ -30,7 +30,6 @@
 			<element name="source" type="caaml:SourceType"/>
 			<element name="region" type="caaml:RegionType" maxOccurs="unbounded"/>
 			<element name="dangerRating" type="caaml:DangerRatingType" minOccurs="0" maxOccurs="unbounded"/>
-			<element name="dangerPattern" type="caaml:DangerPatternType" minOccurs="0" maxOccurs="unbounded"/>
 			<element name="avalancheProblem" type="caaml:AvalancheProblemType" minOccurs="0" maxOccurs="unbounded"/>
 			<element name="tendency" type="caaml:TendencyType" minOccurs="0"/>
 			<element name="highlights" type="string" minOccurs="0"/>
@@ -124,33 +123,6 @@
 			<enumeration value="gliding_snow"/>
 			<enumeration value="cornice_failure"/>
 			<enumeration value="favourable_situation"/>
-		</restriction>
-	</simpleType>
-
-	<!--**********************************************************-->
-	<!--***              DANGER PATTERN ELEMENTS               ***-->
-	<!--**********************************************************-->
-	<complexType name="DangerPatternType">
-		<sequence>
-			<element name="dpType" type="caaml:DangerPatternTypeType"/>
-			<element name="aspect" type="caaml:AspectType" minOccurs="0" maxOccurs="unbounded"/>
-			<element name="elevation" type="caaml:ElevationType" minOccurs="0"/>
-			<element name="comment" type="string" minOccurs="0"/>
-			<element name="customData" type="caaml:CustomDataType" minOccurs="0"/>
-		</sequence>
-	</complexType>
-	<simpleType name="DangerPatternTypeType">
-		<restriction base="string">
-			<enumeration value="dp1"/>
-			<enumeration value="dp2"/>
-			<enumeration value="dp3"/>
-			<enumeration value="dp4"/>
-			<enumeration value="dp5"/>
-			<enumeration value="dp6"/>
-			<enumeration value="dp7"/>
-			<enumeration value="dp8"/>
-			<enumeration value="dp9"/>
-			<enumeration value="dp10"/>
 		</restriction>
 	</simpleType>
 
