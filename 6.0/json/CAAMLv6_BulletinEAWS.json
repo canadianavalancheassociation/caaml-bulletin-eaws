@@ -26,8 +26,9 @@
             "$ref" : "#/definitions/source" 
         },
         "region" : {
-            "additionalProperties" : {
-                "type" : "string"
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/definitions/region"
             }
         },
         "dangerRating" : { 
@@ -72,6 +73,14 @@
     },
     
     "definitions" : {
+        "region" : {
+            "type" : "object",
+            "properties" : {
+                "metaData": { "$ref" : "#/definitions/MetaData" },
+                "regionID" : { "type" : "string" },
+                "name" : { "type" : "string" }
+            }
+        },
         "languageCode" : {
             "id" : "#languageCode",
             "$schema": "http://json-schema.org/draft-07/schema#",
