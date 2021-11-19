@@ -219,7 +219,7 @@
 			<element name="centerPoint" type="gml:PointType" minOccurs="0"/>
 			<element name="outline" type="gml:PolygonType" minOccurs="0"/>
 		</sequence>
-		<attribute name="id" type="string" use="required"/>
+		<attribute name="regionID" type="string" use="required"/>
 	</complexType>
 	<!-- ASPECT -->
 	<simpleType name="AspectType">
