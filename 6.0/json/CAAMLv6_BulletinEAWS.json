@@ -90,6 +90,7 @@
     "definitions" : {
         "region" : {
             "type" : "object",
+            "required": ["regionID"],
             "properties" : {
                 "metaData": { "$ref" : "#/definitions/MetaData" },
                 "regionID" : { "type" : "string" },
