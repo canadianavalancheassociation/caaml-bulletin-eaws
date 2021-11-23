@@ -211,7 +211,7 @@
         "MetaData" : {
             "extFile" : { "$ref" : "#/definitions/ExtFileType" },
             "comment" : "string",
-            "customData" : { "$ref" : "#/definitions/" }
+            "customData" : { "$ref" : "#/definitions/customData" }
         },
         "ExtFileType" : {
             "type" : "object",
