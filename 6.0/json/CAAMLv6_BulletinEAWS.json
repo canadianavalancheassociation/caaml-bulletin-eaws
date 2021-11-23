@@ -169,11 +169,11 @@
             "properties" : {
                 "lowerBound" : { 
                     "type" : "string",
-                    "pattern" : "^[0-9]+$|treeline$"
+                    "pattern" : "treeline|0|[1-9][0-9]*[0][0]+"
                 },
                 "upperBound" : { 
                     "type" : "string",
-                    "pattern" : "^[0-9]+$|treeline$"
+                    "pattern" : "treeline|0|[1-9][0-9]*[0][0]+"
                 }
             }
         },
@@ -181,7 +181,7 @@
             "id" : "#aspect",
             "$schema" : "http://json-schema.org/draft-07/schema#",
             "title" : "Aspect",
-            "description" : "All aspects.","customData" : { "$ref" : "#/definitions/customData" },
+            "description" : "All aspects.",
             "type" : "array",
             "items" : {
               "type" : "string",
@@ -211,7 +211,7 @@
         "MetaData" : {
             "extFile" : { "$ref" : "#/definitions/ExtFileType" },
             "comment" : "string",
-            "customData" : { "$ref" : "#/definitions/" }
+            "customData" : { "$ref" : "#/definitions/customData" }
         },
         "ExtFileType" : {
             "type" : "object",
