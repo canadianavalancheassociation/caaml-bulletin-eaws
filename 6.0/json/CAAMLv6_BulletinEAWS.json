@@ -58,13 +58,28 @@
         "highlights" : {
             "type" : "string"
         },
+        "wxSynopsisHighlights" : {
+            "type" : "string"
+        },
+        "wxSynopsisComment" : {
+            "type" : "string"
+        },        
         "avalancheActivityHighlights" : {
             "type" : "string"
         },
         "avalancheActivityComment" : {
             "type" : "string"
         },
+        "snowpackStructureHighlights" : {
+            "type" : "string"
+        },
         "snowpackStructureComment" : {
+            "type" : "string"
+        },
+        "travelAdvisoryHighlights" : {
+            "type" : "string"
+        },
+        "travelAdvisoryComment" : {
             "type" : "string"
         },
         "tendencyComment" : {
