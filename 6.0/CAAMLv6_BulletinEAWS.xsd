@@ -125,7 +125,6 @@
 			<element name="tendencyType" type="caaml:TendencyTypeType"/>
 			<element name="tendencyComment" type="string" minOccurs="0"/>
 			<element name="validTime" type="caaml:ValidTimeType" minOccurs="0"/>
-			<element name="comment" type="string" minOccurs="0"/>
 			<element name="customData" type="caaml:CustomDataType" minOccurs="0"/>
 		</sequence>
 	</complexType>
