@@ -46,6 +46,9 @@
         "tendency" : {
             "type" : "object",
             "properties" : {
+                "tendencyComment" : {
+                    "type" : "string"
+                },    
                 "tendencyType" : {
                     "type" : "string",
                     "enum" : [ "decreasing", "steady", "increasing"]
@@ -81,10 +84,7 @@
         },
         "travelAdvisoryComment" : {
             "type" : "string"
-        },
-        "tendencyComment" : {
-            "type" : "string"
-        }        
+        }    
     },
     
     "definitions" : {

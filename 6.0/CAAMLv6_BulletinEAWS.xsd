@@ -41,7 +41,6 @@
 			<element name="snowpackStructureComment" type="string" minOccurs="0"/>
 			<element name="travelAdvisoryHighlights" type="string" minOccurs="0"/>
 			<element name="travelAdvisoryComment" type="string" minOccurs="0"/>
-			<element name="tendencyComment" type="string" minOccurs="0"/>
 		</sequence>
 		<attribute name="bulletinID" type="string" use="required"/>
 		<attribute name="lang" type="language" use="required"/>
@@ -124,6 +123,7 @@
 	<complexType name="TendencyType">
 		<sequence>
 			<element name="tendencyType" type="caaml:TendencyTypeType"/>
+			<element name="tendencyComment" type="string" minOccurs="0"/>
 			<element name="validTime" type="caaml:ValidTimeType" minOccurs="0"/>
 			<element name="comment" type="string" minOccurs="0"/>
 			<element name="customData" type="caaml:CustomDataType" minOccurs="0"/>
