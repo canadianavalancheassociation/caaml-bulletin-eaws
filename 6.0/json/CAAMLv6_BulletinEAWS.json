@@ -144,7 +144,6 @@
                 "mainValue": { "$ref" : "#/definitions/dangerRatingValue" },
                 "elevation" : { "$ref" : "#/definitions/elevation" },
                 "aspect" : { "$ref" : "#/definitions/aspect" },
-                "terrainFeature" : { "type" : "string" },
                 "avalancheSize" : {
                     "type" : "number",
                     "minimum" : 1,
@@ -161,7 +160,8 @@
             "properties" : {
                 "mainValue": { "$ref" : "#/definitions/dangerRatingValue" },
                 "dangerRating" : { "$ref" : "#/definitions/dangerRating" },
-                "problemType" : { "$ref" : "#/definitions/avalancheProblemType" }
+                "problemType" : { "$ref" : "#/definitions/avalancheProblemType" },
+                "comment" : { "type" : "string" }
             }
         },
         "elevation" : {

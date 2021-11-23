@@ -55,7 +55,6 @@
 			<element name="mainValue" type="caaml:DangerRatingValueType" minOccurs="0"/>
 			<element name="aspect" type="caaml:AspectType" minOccurs="0" maxOccurs="unbounded"/>
 			<element name="elevation" type="caaml:ElevationType" minOccurs="0"/>
-			<element name="terrainFeature" type="string" minOccurs="0"/>
 			<element name="avalancheSize" type="caaml:AvalancheSizeType" minOccurs="0"/>
 			<element name="snowpackStability" type="caaml:SnowpackStabilityType" minOccurs="0"/>
 			<element name="frequency" type="caaml:FrequencyType" minOccurs="0"/>
