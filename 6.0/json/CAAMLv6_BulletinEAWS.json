@@ -210,9 +210,12 @@
             "enum" : [ "new_snow", "wind_drifted_snow", "persistent_weak_layers", "wet_snow", "gliding_snow", "cornice_failure", "favourable_situation" ]
         },
         "MetaData" : {
+            "type" : "object",
+            "properties" : {
             "extFile" : { "$ref" : "#/definitions/ExtFileType" },
             "comment" : "string",
             "customData" : { "$ref" : "#/definitions/customData" }
+            }
         },
         "ExtFileType" : {
             "type" : "object",
