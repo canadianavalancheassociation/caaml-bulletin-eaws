@@ -237,17 +237,17 @@
                 "extFiles" : {
                     "type" : "array",
                     "items" : {
-                        "$ref" : "#/definitions/ExtFileType"
+                        "$ref" : "#/definitions/ExtFile"
                     }
                 },
                 "comment" : { "type" : "string" },
                 "customData" : { "$ref" : "#/definitions/CustomData" }
             }
         },
-        "ExtFileType" : {
+        "ExtFile" : {
             "type" : "object",
             "properties" : {
-              	"fileType" : { "$ref" : "#/definitions/ExtFileTypeType" },
+              	"fileType" : { "$ref" : "#/definitions/ExtFileType" },
                 "description" : { "type" : "string" },
                 "fileReferenceURI" : {
                     "type" : "string",
@@ -256,7 +256,7 @@
                 "customData" : { "$ref" : "#/definitions/CustomData" }
             }
         },
-        "ExtFileTypeType" : {
+        "ExtFileType" : {
             "type" : "string",
             "enum" : [ "dangerRatingMapOverlay", "dangerRatingMap", "printOut", "website" ]
         },
