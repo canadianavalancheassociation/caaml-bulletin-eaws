@@ -1,93 +1,110 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "title": "Avalanche Bulletin CAAMLv6",
-    "description": "JSON schema for EAWS Avalanche Bulletin following the CAAMLv6 schema",
+    "title": "Avalanche Bulletin CAAMLv6 Collection",
+    "description": "JSON schema for EAWS Avalanche Bulletin Collection following the CAAMLv6 schema",
     "type": "object",
     "properties" : {
-        "bulletinID" : {
-            "title": "ID of the Bulletin",
-            "type" : "string"
-        },
-        "lang" : { 
-            "title": "Language Key of the Bulletin",
-            "$ref" : "#/definitions/languageCode"
-        },
         "metaData" : { 
             "$ref" : "#/definitions/MetaData" 
         },
-        "publicationTime" : {
-            "type" : "string",
-            "format" : "date-time"
-        },
-        "validTime" : {
-            "$ref" : "#/definitions/validTime"
-        },
-        "source" : { 
-            "$ref" : "#/definitions/source" 
-        },
-        "regions" : {
+        "bulletins" : {
             "type" : "array",
             "items" : {
-              "$ref" : "#/definitions/region"
+                "$ref" : "#/definitions/bulletin"
             }
-        },
-        "dangerRatings" : { 
-            "type" : "array",
-            "items" : {
-              "$ref" : "#/definitions/dangerRating"
-            }
-        },
-        "avalancheProblems" : {
-            "type" : "array",
-            "items" : {
-              "$ref" : "#/definitions/avalancheProblem"
-            }
-        },
-        "tendency" : {
-            "type" : "object",
+        }
+        
+    },
+    "definitions" : {
+        "bulletin" : {
+            "$schema": "http://json-schema.org/draft-07/schema#",
+            "title": "Avalanche Bulletin CAAMLv6",
+            "description": "JSON schema for EAWS Avalanche Bulletin following the CAAMLv6 schema",
+            "type": "object",
             "properties" : {
-                "tendencyComment" : {
+                "bulletinID" : {
+                    "title": "ID of the Bulletin",
                     "type" : "string"
-                },    
-                "tendencyType" : {
+                },
+                "lang" : { 
+                    "title": "Language Key of the Bulletin",
+                    "$ref" : "#/definitions/languageCode"
+                },
+                "metaData" : { 
+                    "$ref" : "#/definitions/MetaData" 
+                },
+                "publicationTime" : {
                     "type" : "string",
-                    "enum" : [ "decreasing", "steady", "increasing"]
+                    "format" : "date-time"
                 },
                 "validTime" : {
                     "$ref" : "#/definitions/validTime"
+                },
+                "source" : { 
+                    "$ref" : "#/definitions/source" 
+                },
+                "regions" : {
+                    "type" : "array",
+                    "items" : {
+                        "$ref" : "#/definitions/region"
+                    }
+                },
+                "dangerRatings" : { 
+                    "type" : "array",
+                    "items" : {
+                        "$ref" : "#/definitions/dangerRating"
+                    }
+                },
+                "avalancheProblems" : {
+                    "type" : "array",
+                    "items" : {
+                        "$ref" : "#/definitions/avalancheProblem"
+                    }
+                },
+                "tendency" : {
+                    "type" : "object",
+                    "properties" : {
+                        "tendencyComment" : {
+                            "type" : "string"
+                        },    
+                        "tendencyType" : {
+                            "type" : "string",
+                            "enum" : [ "decreasing", "steady", "increasing"]
+                        },
+                        "validTime" : {
+                            "$ref" : "#/definitions/validTime"
+                        }
+                    }
+                },
+                "highlights" : {
+                    "type" : "string"
+                },
+                "wxSynopsisHighlights" : {
+                    "type" : "string"
+                },
+                "wxSynopsisComment" : {
+                    "type" : "string"
+                },        
+                "avalancheActivityHighlights" : {
+                    "type" : "string"
+                },
+                "avalancheActivityComment" : {
+                    "type" : "string"
+                },
+                "snowpackStructureHighlights" : {
+                    "type" : "string"
+                },
+                "snowpackStructureComment" : {
+                    "type" : "string"
+                },
+                "travelAdvisoryHighlights" : {
+                    "type" : "string"
+                },
+                "travelAdvisoryComment" : {
+                    "type" : "string"
                 }
             }
         },
-        "highlights" : {
-            "type" : "string"
-        },
-        "wxSynopsisHighlights" : {
-            "type" : "string"
-        },
-        "wxSynopsisComment" : {
-            "type" : "string"
-        },        
-        "avalancheActivityHighlights" : {
-            "type" : "string"
-        },
-        "avalancheActivityComment" : {
-            "type" : "string"
-        },
-        "snowpackStructureHighlights" : {
-            "type" : "string"
-        },
-        "snowpackStructureComment" : {
-            "type" : "string"
-        },
-        "travelAdvisoryHighlights" : {
-            "type" : "string"
-        },
-        "travelAdvisoryComment" : {
-            "type" : "string"
-        }    
-    },
-    
-    "definitions" : {
         "region" : {
             "type" : "object",
             "required": ["regionID"],
@@ -212,16 +229,16 @@
         "MetaData" : {
             "type" : "object",
             "properties" : {
-            "extFile" : { "$ref" : "#/definitions/ExtFileType" },
-            "comment" : "string",
-            "customData" : { "$ref" : "#/definitions/customData" }
+                "extFile" : { "$ref" : "#/definitions/ExtFileType" },
+                "comment" : { "type" : "string" },
+                "customData" : { "$ref" : "#/definitions/customData" }
             }
         },
         "ExtFileType" : {
             "type" : "object",
             "properties" : {
               	"fileType" : { "$ref" : "#/definitions/ExtFileTypeType" },
-                "description" : "string",
+                "description" : { "type" : "string" },
                 "fileReferenceURI" : {
                     "type" : "string",
                     "format" : "uri"
