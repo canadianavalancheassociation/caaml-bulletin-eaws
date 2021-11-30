@@ -162,6 +162,7 @@
             "$schema" : "http://json-schema.org/draft-07/schema#",
             "title" : "Danger Rating",
             "description" : "Danger rating used in an avalanche bulletin.",
+            "type": "object",
             "properties" : {
                 "mainValue": { "$ref" : "#/definitions/DangerRatingValue" },
                 "elevation" : { "$ref" : "#/definitions/Elevation" },
