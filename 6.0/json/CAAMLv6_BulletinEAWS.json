@@ -1,0 +1,266 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "Avalanche Bulletin CAAMLv6 Collection",
+    "description": "JSON schema for EAWS Avalanche Bulletin Collection following the CAAMLv6 schema",
+    "type": "object",
+    "required": ["bulletins"],
+    "properties" : {
+        "metaData" : { 
+            "$ref" : "#/definitions/MetaData" 
+        },
+        "bulletins" : {
+            "type" : "array",
+            "items" : {
+                "$ref" : "#/definitions/Bulletin"
+            }
+        }
+    },
+    "definitions" : {
+        "Bulletin" : {
+            "$schema": "http://json-schema.org/draft-07/schema#",
+            "title": "Avalanche Bulletin CAAMLv6",
+            "description": "JSON schema for EAWS Avalanche Bulletin following the CAAMLv6 schema",
+            "type": "object",
+            "required": ["bulletinID", "publicationTime", "validTime", "regions", "lang"],
+            "properties" : {
+                "bulletinID" : {
+                    "title": "ID of the Bulletin",
+                    "type" : "string"
+                },
+                "lang" : { 
+                    "title": "Language Key of the Bulletin",
+                    "$ref" : "#/definitions/LanguageCode"
+                },
+                "metaData" : { 
+                    "$ref" : "#/definitions/MetaData" 
+                },
+                "publicationTime" : {
+                    "type" : "string",
+                    "format" : "date-time"
+                },
+                "validTime" : {
+                    "$ref" : "#/definitions/ValidTime"
+                },
+                "source" : { 
+                    "$ref" : "#/definitions/Source" 
+                },
+                "regions" : {
+                    "type" : "array",
+                    "items" : {
+                        "$ref" : "#/definitions/Region"
+                    }
+                },
+                "dangerRatings" : { 
+                    "type" : "array",
+                    "items" : {
+                        "$ref" : "#/definitions/DangerRating"
+                    }
+                },
+                "avalancheProblems" : {
+                    "type" : "array",
+                    "items" : {
+                        "$ref" : "#/definitions/AvalancheProblem"
+                    }
+                },
+                "tendency" : {
+                    "$ref" : "#/definitions/Tendency"
+                },
+                "highlights" : {
+                    "type" : "string"
+                },
+                "wxSynopsisHighlights" : {
+                    "type" : "string"
+                },
+                "wxSynopsisComment" : {
+                    "type" : "string"
+                },        
+                "avalancheActivityHighlights" : {
+                    "type" : "string"
+                },
+                "avalancheActivityComment" : {
+                    "type" : "string"
+                },
+                "snowpackStructureHighlights" : {
+                    "type" : "string"
+                },
+                "snowpackStructureComment" : {
+                    "type" : "string"
+                },
+                "travelAdvisoryHighlights" : {
+                    "type" : "string"
+                },
+                "travelAdvisoryComment" : {
+                    "type" : "string"
+                }
+            }
+        },
+        "Region" : {
+            "type" : "object",
+            "required": ["regionID"],
+            "properties" : {
+                "metaData": { "$ref" : "#/definitions/MetaData" },
+                "regionID" : { "type" : "string" },
+                "name" : { "type" : "string" }
+            }
+        },
+        "LanguageCode" : {
+            "id" : "#languageCode",
+            "$schema": "http://json-schema.org/draft-07/schema#",
+            "title": "Language Code",
+            "description": "Two-letter language codes (ISO 639-1).",
+            "type" : "string",
+            "enum" : [ "aa", "ab", "ae", "af", "ak", "am", "an", "ar", "as", "av", "ay", "az", "ba", "be", "bg", "bh", "bi", "bm", "bn", "bo", "br", "bs", "ca", "ce", "ch", "co", "cr", "cs", "cu", "cv", "cy", "da", "de", "dv", "dz", "ee", "el", "en", "eo", "es", "et", "eu", "fa", "ff", "fi", "fj", "fo", "fr", "fy", "ga", "gd", "gl", "gn", "gu", "gv", "ha", "he", "hi", "ho", "hr", "ht", "hu", "hy", "hz", "ia", "id","ie", "ig", "ii", "ik", "io", "is", "it", "iu", "ja", "jv", "ka", "kg", "ki", "kj", "kk", "kl", "km", "kn", "ko", "kr", "ks", "ku", "kv", "kw", "ky", "la", "lb", "lg", "li", "ln", "lo", "lt", "lu", "lv", "mg", "mh", "mi", "mk", "ml", "mn", "mr", "ms", "mt", "my", "na", "nb", "nd", "ne", "ng", "nl", "nn", "no", "nr", "nv", "ny", "oc", "oj", "om", "or", "os", "pa", "pi", "pl", "ps", "pt", "qu", "rm", "rn", "ro", "ru", "rw", "sa", "sc", "sd", "se", "sg", "si", "sk", "sl", "sm", "sn", "so", "sq", "sr", "ss", "st", "su", "sv", "sw", "ta", "te", "tg", "th", "ti", "tk", "tl", "tn", "to", "tr", "ts", "tt", "tw", "ty", "ug", "uk", "ur", "uz", "ve", "vi", "vo", "wa", "wo", "xh", "yi", "yo", "za", "zh", "zu" ]
+        },
+        "ValidTime" : {
+            "type" : "object",
+            "properties" : {
+                "startTime" : {
+                    "type" : "string",
+                    "format" : "date-time"
+                },
+                "endTime" : {
+                    "type" : "string",
+                    "format" : "date-time"
+                }
+            }
+        },
+        "Source" : {
+            "type" : "object",
+            "properties" : {
+                "provider" : { "$ref" : "#/definitions/Provider" }
+            }
+        },
+        "Tendency" : {
+            "type" : "object",
+            "properties" : {
+                "tendencyComment" : {
+                    "type" : "string"
+                },    
+                "tendencyType" : {
+                    "type" : "string",
+                    "enum" : [ "decreasing", "steady", "increasing"]
+                },
+                "validTime" : {
+                    "$ref" : "#/definitions/ValidTime"
+                }
+            }
+        },
+        "Provider" : {
+            "type" : "object",
+            "properties" : {
+                "name" : {
+                    "type" : "string"
+                },
+                "website" : {
+                    "type" : "string",
+                    "format" : "uri"
+                }
+            }
+        },
+        "DangerRating" : {
+            "id" : "#dangerRating",
+            "$schema" : "http://json-schema.org/draft-07/schema#",
+            "title" : "Danger Rating",
+            "description" : "Danger rating used in an avalanche bulletin.",
+            "type": "object",
+            "properties" : {
+                "mainValue": { "$ref" : "#/definitions/DangerRatingValue" },
+                "elevation" : { "$ref" : "#/definitions/Elevation" },
+                "aspect" : { "$ref" : "#/definitions/Aspect" },
+                "avalancheSize" : {
+                    "type" : "number",
+                    "minimum" : 1,
+                    "maximum" : 5
+                },
+                "snowpackStability" : { "$ref" : "#/definitions/SnowpackStabilityType" },
+                "frequency" : { "$ref" : "#/definitions/FrequencyType" },
+                "comment" : { "type" : "string" },
+                "customData" : { "$ref" : "#/definitions/CustomData" }
+            }
+        },     
+        "AvalancheProblem" : {
+            "type" : "object",
+            "properties" : {
+                "mainValue": { "$ref" : "#/definitions/DangerRatingValue" },
+                "dangerRating" : { "$ref" : "#/definitions/DangerRating" },
+                "problemType" : { "$ref" : "#/definitions/AvalancheProblemType" },
+                "comment" : { "type" : "string" }
+            }
+        },
+        "Elevation" : {
+            "type" : "object",
+            "properties" : {
+                "lowerBound" : { 
+                    "type" : "string",
+                    "pattern" : "treeline|0|[1-9][0-9]*[0][0]+"
+                },
+                "upperBound" : { 
+                    "type" : "string",
+                    "pattern" : "treeline|0|[1-9][0-9]*[0][0]+"
+                }
+            }
+        },
+        "Aspect" : {
+            "id" : "#Aspect",
+            "$schema" : "http://json-schema.org/draft-07/schema#",
+            "title" : "Aspect",
+            "description" : "All aspects.",
+            "type" : "array",
+            "items" : {
+              "type" : "string",
+              "enum" : [ "N", "NE", "E", "SE", "S", "SW", "W", "NW", "n/a" ]
+            }
+        },
+        "DangerRatingValue" : {
+            "type" : "string",
+            "enum" : [ "no_snow", "no_rating", "low", "moderate", "considerable", "high", "very_high" ]
+        },
+        "SnowpackStabilityType" : {
+            "type" : "string",
+            "enum" : [ "very_poor", "poor", "fair", "good" ]
+        },
+        "FrequencyType" : {
+            "type" : "string",
+            "enum" : [ "few", "some", "many" ]
+        },
+        "AvalancheProblemType" : {
+            "id" : "#AvalancheProblemType",
+            "$schema" : "http://json-schema.org/draft-07/schema#",
+            "title" : "Avalanche Problem",
+            "description" : "The six avalanche problems.",
+            "type" : "string",
+            "enum" : [ "new_snow", "wind_drifted_snow", "persistent_weak_layers", "wet_snow", "gliding_snow", "cornice_failure", "favourable_situation" ]
+        },
+        "MetaData" : {
+            "type" : "object",
+            "properties" : {
+                "extFiles" : {
+                    "type" : "array",
+                    "items" : {
+                        "$ref" : "#/definitions/ExtFile"
+                    }
+                },
+                "comment" : { "type" : "string" },
+                "customData" : { "$ref" : "#/definitions/CustomData" }
+            }
+        },
+        "ExtFile" : {
+            "type" : "object",
+            "properties" : {
+              	"fileType" : { "$ref" : "#/definitions/ExtFileType" },
+                "description" : { "type" : "string" },
+                "fileReferenceURI" : {
+                    "type" : "string",
+                    "format" : "uri"
+                },
+                "customData" : { "$ref" : "#/definitions/CustomData" }
+            }
+        },
+        "ExtFileType" : {
+            "type" : "string",
+            "enum" : [ "dangerRatingMapOverlay", "dangerRatingMap", "printOut", "website" ]
+        },
+        "CustomData" : {
+        }
+    }
+}

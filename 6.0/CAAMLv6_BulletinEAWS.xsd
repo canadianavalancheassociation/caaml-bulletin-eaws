@@ -30,7 +30,6 @@
 			<element name="source" type="caaml:SourceType"/>
 			<element name="region" type="caaml:RegionType" maxOccurs="unbounded"/>
 			<element name="dangerRating" type="caaml:DangerRatingType" minOccurs="0" maxOccurs="unbounded"/>
-			<element name="dangerPattern" type="caaml:DangerPatternType" minOccurs="0" maxOccurs="unbounded"/>
 			<element name="avalancheProblem" type="caaml:AvalancheProblemType" minOccurs="0" maxOccurs="unbounded"/>
 			<element name="tendency" type="caaml:TendencyType" minOccurs="0"/>
 			<element name="highlights" type="string" minOccurs="0"/>
@@ -42,9 +41,8 @@
 			<element name="snowpackStructureComment" type="string" minOccurs="0"/>
 			<element name="travelAdvisoryHighlights" type="string" minOccurs="0"/>
 			<element name="travelAdvisoryComment" type="string" minOccurs="0"/>
-			<element name="tendencyComment" type="string" minOccurs="0"/>
 		</sequence>
-		<attribute name="id" type="string" use="required"/>
+		<attribute name="bulletinID" type="string" use="required"/>
 		<attribute name="lang" type="language" use="required"/>
 	</complexType>
 
@@ -56,14 +54,9 @@
 			<element name="mainValue" type="caaml:DangerRatingValueType" minOccurs="0"/>
 			<element name="aspect" type="caaml:AspectType" minOccurs="0" maxOccurs="unbounded"/>
 			<element name="elevation" type="caaml:ElevationType" minOccurs="0"/>
-			<element name="terrainFeature" type="string" minOccurs="0"/>
-			<element name="artificialDangerRating" type="caaml:DangerRatingValueType" minOccurs="0"/>
-			<element name="artificialAvalancheSize" type="caaml:AvalancheSizeType" minOccurs="0"/>
-			<element name="artificialAvalancheReleaseProbability" type="caaml:ArtificialAvalancheReleaseProbabilityType" minOccurs="0"/>
-			<element name="artificialHazardSiteDistribution" type="caaml:HazardSiteDistributionType" minOccurs="0"/>
-			<element name="naturalDangerRating" type="caaml:DangerRatingValueType" minOccurs="0"/>
-			<element name="naturalAvalancheReleaseProbability" type="caaml:NaturalAvalancheReleaseProbabilityType" minOccurs="0"/>
-			<element name="naturalHazardSiteDistribution" type="caaml:HazardSiteDistributionType" minOccurs="0"/>
+			<element name="avalancheSize" type="caaml:AvalancheSizeType" minOccurs="0"/>
+			<element name="snowpackStability" type="caaml:SnowpackStabilityType" minOccurs="0"/>
+			<element name="frequency" type="caaml:FrequencyType" minOccurs="0"/>
 			<element name="comment" type="string" minOccurs="0"/>
 			<element name="customData" type="caaml:CustomDataType" minOccurs="0"/>
 		</sequence>
@@ -85,22 +78,19 @@
 			<maxInclusive value="5"/>
 		</restriction>
 	</simpleType>
-	<simpleType name="ArtificialAvalancheReleaseProbabilityType">
-		<restriction base="integer">
-			<minInclusive value="1"/>
-			<maxInclusive value="4"/>
+	<simpleType name="SnowpackStabilityType">
+		<restriction base="string">
+			<enumeration value="very_poor"/>
+			<enumeration value="poor"/>
+			<enumeration value="fair"/>
+			<enumeration value="good"/>
 		</restriction>
 	</simpleType>
-	<simpleType name="NaturalAvalancheReleaseProbabilityType">
-		<restriction base="integer">
-			<minInclusive value="1"/>
-			<maxInclusive value="4"/>
-		</restriction>
-	</simpleType>
-	<simpleType name="HazardSiteDistributionType">
-		<restriction base="integer">
-			<minInclusive value="1"/>
-			<maxInclusive value="5"/>
+	<simpleType name="FrequencyType">
+		<restriction base="string">
+			<enumeration value="few"/>
+			<enumeration value="some"/>
+			<enumeration value="many"/>
 		</restriction>
 	</simpleType>
 
@@ -109,7 +99,7 @@
 	<!--**********************************************************-->
 	<complexType name="AvalancheProblemType">
 		<sequence>
-			<element name="type" type="caaml:AvalancheProblemTypeType"/>
+			<element name="problemType" type="caaml:AvalancheProblemTypeType"/>
 			<element name="dangerRating" type="caaml:DangerRatingType" minOccurs="0"/>
 			<element name="comment" type="string" minOccurs="0"/>
 			<element name="customData" type="caaml:CustomDataType" minOccurs="0"/>
@@ -128,40 +118,13 @@
 	</simpleType>
 
 	<!--**********************************************************-->
-	<!--***              DANGER PATTERN ELEMENTS               ***-->
-	<!--**********************************************************-->
-	<complexType name="DangerPatternType">
-		<sequence>
-			<element name="type" type="caaml:DangerPatternTypeType"/>
-			<element name="aspect" type="caaml:AspectType" minOccurs="0" maxOccurs="unbounded"/>
-			<element name="elevation" type="caaml:ElevationType" minOccurs="0"/>
-			<element name="comment" type="string" minOccurs="0"/>
-			<element name="customData" type="caaml:CustomDataType" minOccurs="0"/>
-		</sequence>
-	</complexType>
-	<simpleType name="DangerPatternTypeType">
-		<restriction base="string">
-			<enumeration value="dp1"/>
-			<enumeration value="dp2"/>
-			<enumeration value="dp3"/>
-			<enumeration value="dp4"/>
-			<enumeration value="dp5"/>
-			<enumeration value="dp6"/>
-			<enumeration value="dp7"/>
-			<enumeration value="dp8"/>
-			<enumeration value="dp9"/>
-			<enumeration value="dp10"/>
-		</restriction>
-	</simpleType>
-
-	<!--**********************************************************-->
 	<!--***                 TENDENCY ELEMENTS                  ***-->
 	<!--**********************************************************-->
 	<complexType name="TendencyType">
 		<sequence>
-			<element name="type" type="caaml:TendencyTypeType"/>
+			<element name="tendencyType" type="caaml:TendencyTypeType"/>
+			<element name="tendencyComment" type="string" minOccurs="0"/>
 			<element name="validTime" type="caaml:ValidTimeType" minOccurs="0"/>
-			<element name="comment" type="string" minOccurs="0"/>
 			<element name="customData" type="caaml:CustomDataType" minOccurs="0"/>
 		</sequence>
 	</complexType>
@@ -186,7 +149,7 @@
 	<!-- EXTERNAL FILES -->
 	<complexType name="ExtFileType">
 		<sequence>
-			<element name="type" type="caaml:ExtFileTypeType" minOccurs="0"/>
+			<element name="fileType" type="caaml:ExtFileTypeType" minOccurs="0"/>
 			<element name="description" type="string" minOccurs="0"/>
 			<element name="fileReferenceURI" type="anyURI"/>
 			<element name="customData" type="caaml:CustomDataType" minOccurs="0"/>
@@ -254,7 +217,7 @@
 			<element name="centerPoint" type="gml:PointType" minOccurs="0"/>
 			<element name="outline" type="gml:PolygonType" minOccurs="0"/>
 		</sequence>
-		<attribute name="id" type="string" use="required"/>
+		<attribute name="regionID" type="string" use="required"/>
 	</complexType>
 	<!-- ASPECT -->
 	<simpleType name="AspectType">
