@@ -25,19 +25,19 @@
         "source" : { 
             "$ref" : "#/definitions/source" 
         },
-        "region" : {
+        "regions" : {
             "type" : "array",
             "items" : {
               "$ref" : "#/definitions/region"
             }
         },
-        "dangerRating" : { 
+        "dangerRatings" : { 
             "type" : "array",
             "items" : {
               "$ref" : "#/definitions/dangerRating"
             }
         },
-        "avalancheProblem" : {
+        "avalancheProblems" : {
             "type" : "array",
             "items" : {
               "$ref" : "#/definitions/avalancheProblem"
