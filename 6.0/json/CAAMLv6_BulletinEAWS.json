@@ -21,7 +21,7 @@
             "title": "Avalanche Bulletin CAAMLv6",
             "description": "JSON schema for EAWS Avalanche Bulletin following the CAAMLv6 schema",
             "type": "object",
-            "required": ["bulletinID", "publicationTime", "validTime", "region", "bulletinID", "lang"],
+            "required": ["bulletinID", "publicationTime", "validTime", "region", "lang"],
             "properties" : {
                 "bulletinID" : {
                     "title": "ID of the Bulletin",
