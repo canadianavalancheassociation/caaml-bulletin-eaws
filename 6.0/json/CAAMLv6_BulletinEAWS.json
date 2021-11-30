@@ -234,7 +234,12 @@
         "MetaData" : {
             "type" : "object",
             "properties" : {
-                "extFile" : { "$ref" : "#/definitions/ExtFileType" },
+                "extFiles" : {
+                    "type" : "array",
+                    "items" : {
+                        "$ref" : "#/definitions/ExtFileType"
+                    }
+                },
                 "comment" : { "type" : "string" },
                 "customData" : { "$ref" : "#/definitions/CustomData" }
             }
