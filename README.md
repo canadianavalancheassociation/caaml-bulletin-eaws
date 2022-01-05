@@ -1,6 +1,6 @@
 # CAAML V5.0
 
-##Introduction 
+## Introduction 
 
 The CAAML V5.0 Profile 'EAWS Bulletin' aims to facilitate the exchange of avalanche bulletin information among the European Avalanche Warning Services. This standard only contains the subset of CAAML elements needed for exchanging the information contained in the standard bulletins.
 
