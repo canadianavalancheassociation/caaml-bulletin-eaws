@@ -16,8 +16,6 @@
     
     "definitions" : {
         "bulletin" : {
-            "title" : "Danger Rating",
-            "description" : "Danger rating used in an avalanche bulletin.",
             "properties": {
                 "bulletinID" : { "type" : "string" },
                 "lang" : { "$ref" : "#/definitions/languageCode" },
@@ -62,8 +60,6 @@
             "additionalProperties" : false
         },
         "dangerRating" : {
-            "title" : "Danger Rating",
-            "description" : "Danger rating used in an avalanche bulletin.",
             "properties" : {
                 "mainValue": { "$ref" : "#/definitions/dangerRatingValue" },
                 "elevation" : { "$ref" : "#/definitions/elevation" },
@@ -77,8 +73,6 @@
             "enum" : [ "low", "moderate", "considerable", "high", "very_high", "no_snow", "no_rating" ]
         },
         "avalancheProblem" : {
-            "title" : "Avalanche Problem",
-            "description" : "Definition of an avalanche problem.",
             "type" : "object",
             "properties" : {
                 "problemType" : { "$ref" : "#/definitions/avalancheProblemType" },
@@ -94,27 +88,19 @@
             "additionalProperties": false
         },
         "avalancheProblemType" : {
-            "title" : "Avalanche Problem Type",
-            "description" : "The six avalanche problems.",
             "type" : "string",
             "enum" : [ "new_snow", "wind_drifted_snow", "persistent_weak_layers", "wet_snow", "gliding_snow", "cornice_failure", "favourable_situation" ]
         },
         "avalancheSizeType" : {
-            "title" : "Avalanche Size",
-            "description": "The avalanche size defined by the EAWS.",
             "type" : "number",
             "minimum" : 1,
             "maximum" : 5
         },
         "snowpackStabilityType" : {
-            "title": "Snowpack Stability",
-            "description": "The snowpack stability class defined by EAWS",
             "type" : "string",
             "enum" : [ "very_poor", "poor", "fair", "good"]
         },
         "frequencyType" : {
-            "title": "Frequency",
-            "description": "The frequency of instable points defined by EAWS",
             "type" : "string",
             "enum" : [ "few", "some", "many"]
         },
@@ -134,8 +120,6 @@
             "additionalProperties": false
         },
         "metaData" : {
-            "title" : "Meta Data",
-            "description" : "Additional information.",
             "type" : "object",
             "properties": {
                 "extFile" : { "$ref" : "#/definitions/ExtFileType" },
@@ -144,8 +128,6 @@
             "additionalProperties": false
         },
         "ExtFileType" : {
-            "title" : "External files",
-            "description" : "Reference to external files assocciated with this bulletin.",
             "type" : "object",
             "properties" : {
               	"fileType" : { "$ref" : "#/definitions/ExtFileTypeType" },
@@ -215,8 +197,6 @@
             "additionalProperties": false
         },
         "aspects" : {
-            "title" : "Aspect",
-            "description" : "All aspects.",
             "type" : "array",
             "items" : {
               "type" : "string",
@@ -253,7 +233,7 @@
         },
         "languageCode" : {
             "title": "Language Code",
-            "description": "Two-letter language codes (ISO 639-1).",
+            "description": "Two-letter language code (ISO 639-1).",
             "type" : "string",
             "minLength" : 2,
             "maxLength" : 2
