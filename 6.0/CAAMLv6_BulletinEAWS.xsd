@@ -55,10 +55,6 @@
 			<element name="mainValue" type="caaml:DangerRatingValueType" minOccurs="0"/>
 			<element name="aspect" type="caaml:AspectType" minOccurs="0" maxOccurs="unbounded"/>
 			<element name="elevation" type="caaml:ElevationType" minOccurs="0"/>
-			<element name="terrainFeature" type="string" minOccurs="0"/>
-			<element name="avalancheSize" type="caaml:AvalancheSizeType" minOccurs="0"/>
-			<element name="snowpackStability" type="caaml:SnowpackStabilityType" minOccurs="0"/>
-			<element name="frequency" type="caaml:FrequencyType" minOccurs="0"/>
 			<element name="comment" type="string" minOccurs="0"/>
 			<element name="customData" type="caaml:CustomDataType" minOccurs="0"/>
 		</sequence>
@@ -72,6 +68,34 @@
 			<enumeration value="very_high"/>
 			<enumeration value="no_snow"/>
 			<enumeration value="no_rating"/>
+		</restriction>
+	</simpleType>
+
+	<!--**********************************************************-->
+	<!--***           AVALANCHE PROBLEM ELEMENTS               ***-->
+	<!--**********************************************************-->
+	<complexType name="AvalancheProblemType">
+		<sequence>
+			<element name="problemType" type="caaml:AvalancheProblemTypeType"/>
+			<element name="elevation" type="caaml:ElevationType" minOccurs="0"/>
+			<element name="aspect" type="caaml:AspectType" minOccurs="0" maxOccurs="unbounded"/>
+			<element name="terrainFeature" type="string" minOccurs="0"/>
+			<element name="avalancheSize" type="caaml:AvalancheSizeType" minOccurs="0"/>
+			<element name="snowpackStability" type="caaml:SnowpackStabilityType" minOccurs="0"/>
+			<element name="frequency" type="caaml:FrequencyType" minOccurs="0"/>
+			<element name="comment" type="string" minOccurs="0"/>
+			<element name="customData" type="caaml:CustomDataType" minOccurs="0"/>
+		</sequence>
+	</complexType>
+	<simpleType name="AvalancheProblemTypeType">
+		<restriction base="string">
+			<enumeration value="new_snow"/>
+			<enumeration value="wind_drifted_snow"/>
+			<enumeration value="persistent_weak_layers"/>
+			<enumeration value="wet_snow"/>
+			<enumeration value="gliding_snow"/>
+			<enumeration value="cornice_failure"/>
+			<enumeration value="favourable_situation"/>
 		</restriction>
 	</simpleType>
 	<simpleType name="AvalancheSizeType">
@@ -93,29 +117,6 @@
 			<enumeration value="few"/>
 			<enumeration value="some"/>
 			<enumeration value="many"/>
-		</restriction>
-	</simpleType>
-
-	<!--**********************************************************-->
-	<!--***           AVALANCHE PROBLEM ELEMENTS               ***-->
-	<!--**********************************************************-->
-	<complexType name="AvalancheProblemType">
-		<sequence>
-			<element name="problemType" type="caaml:AvalancheProblemTypeType"/>
-			<element name="dangerRating" type="caaml:DangerRatingType" minOccurs="0"/>
-			<element name="comment" type="string" minOccurs="0"/>
-			<element name="customData" type="caaml:CustomDataType" minOccurs="0"/>
-		</sequence>
-	</complexType>
-	<simpleType name="AvalancheProblemTypeType">
-		<restriction base="string">
-			<enumeration value="new_snow"/>
-			<enumeration value="wind_drifted_snow"/>
-			<enumeration value="persistent_weak_layers"/>
-			<enumeration value="wet_snow"/>
-			<enumeration value="gliding_snow"/>
-			<enumeration value="cornice_failure"/>
-			<enumeration value="favourable_situation"/>
 		</restriction>
 	</simpleType>
 
