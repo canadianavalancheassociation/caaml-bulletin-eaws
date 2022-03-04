@@ -111,7 +111,6 @@
             }
         },
         "dangerRating" : {
-            "id" : "#dangerRating",
             "title" : "Danger Rating",
             "description" : "Danger rating used in an avalanche bulletin.",
             "properties" : {
@@ -172,9 +171,9 @@
             }
         },
         "aspect" : {
-            "id" : "#aspect",
             "title" : "Aspect",
-            "description" : "All aspects.","customData" : { "$ref" : "#/definitions/customData" },
+            "description" : "All aspects.",
+            "customData" : { "$ref" : "#/definitions/customData" },
             "type" : "array",
             "items" : {
               "type" : "string",
@@ -186,7 +185,6 @@
             "enum" : [ "no_snow", "no_rating", "low", "moderate", "considerable", "high", "very_high" ]
         },
         "avalancheProblemType" : {
-            "id" : "#avalancheProblemType",
             "title" : "Avalanche Problem",
             "description" : "The six avalanche problems.",
             "type" : "string",
@@ -198,10 +196,11 @@
             "customData" : { "$ref" : "#/definitions/customData" }
         },
         "ExtFileType" : {
+            "title" : "External files",
+            "description" : "Reference to external files assocciated with this bulletin.",
             "type" : "object",
             "properties" : {
               	"fileType" : { "$ref" : "#/definitions/ExtFileTypeType" },
-                "description" : "string",
                 "fileReferenceURI" : {
                     "type" : "string",
                     "format" : "uri"
