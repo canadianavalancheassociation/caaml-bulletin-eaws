@@ -4,79 +4,61 @@
     "description": "JSON schema for EAWS Avalanche Bulletin following the CAAMLv6 schema",
     "type": "object",
     "properties" : {
-        "bulletinID" : {
-            "title": "ID of the Bulletin",
-            "type" : "string"
-        },
-        "lang" : { 
-            "title": "Language Key of the Bulletin",
-            "$ref" : "#/definitions/languageCode"
-        },
-        "metaData" : { 
-            "$ref" : "#/definitions/metaData" 
-        },
-        "publicationTime" : {
-            "type" : "string",
-            "format" : "date-time"
-        },
-        "validTime" : {
-            "$ref" : "#/definitions/validTime"
-        },
-        "source" : { 
-            "$ref" : "#/definitions/source" 
-        },
-        "regions" : {
+        "metaData" : { "$ref" : "#/definitions/metaData"},
+        "bulletins" : {
             "type" : "array",
             "items" : {
-                "$ref" : "#/definitions/region"
+                "$ref" : "#/definitions/bulletin"
             }
-        },
-        "dangerRatings" : { 
-            "type" : "array",
-            "items" : {
-              "$ref" : "#/definitions/dangerRating"
-            }
-        },
-        "avalancheProblems" : {
-            "type" : "array",
-            "items" : {
-              "$ref" : "#/definitions/avalancheProblem"
-            }
-        },
-        "tendency" : { "$ref" : "#/definitions/tendencyType"},
-        "highlights" : {
-            "type" : "string"
-        },
-        "wxSynopsisHighlights" : {
-            "type" : "string"
-        },
-        "wxSynopsisComment" : {
-            "type" : "string"
-        },
-        "avalancheActivityHighlights" : {
-            "type" : "string"
-        },
-        "avalancheActivityComment" : {
-            "type" : "string"
-        },
-        "snowpackStructureHighlights" : {
-            "type" : "string"
-        },
-        "snowpackStructureComment" : {
-            "type" : "string"
-        },
-        "travelAdvisoryHighlights" : {
-            "type" : "string"
-        },
-        "travelAdvisoryComment" : {
-            "type" : "string"
-        },
-        "tendencyComment" : {
-            "type" : "string"
-        }        
+        }
     },
     
     "definitions" : {
+        "bulletin" : {
+            "title" : "Danger Rating",
+            "description" : "Danger rating used in an avalanche bulletin.",
+            "properties": {
+                "bulletinID" : { "type" : "string" },
+                "lang" : { "$ref" : "#/definitions/languageCode" },
+                "metaData" : { "$ref" : "#/definitions/metaData" },
+                "publicationTime" : {
+                    "type" : "string",
+                    "format" : "date-time"
+                },
+                "validTime" : { "$ref" : "#/definitions/validTime" },
+                "source" : { "$ref" : "#/definitions/source" },
+                "regions" : {
+                    "type" : "array",
+                    "items" : {
+                        "$ref" : "#/definitions/region"
+                    }
+                },
+                "dangerRatings" : { 
+                    "type" : "array",
+                    "items" : {
+                        "$ref" : "#/definitions/dangerRating"
+                    }
+                },
+                "avalancheProblems" : {
+                    "type" : "array",
+                    "items" : {
+                        "$ref" : "#/definitions/avalancheProblem"
+                    }
+                },
+                "tendency" : { "$ref" : "#/definitions/tendencyType"},
+                "highlights" : { "type" : "string" },
+                "wxSynopsisHighlights" : { "type" : "string" },
+                "wxSynopsisComment" : { "type" : "string" },
+                "avalancheActivityHighlights" : { "type" : "string" },
+                "avalancheActivityComment" : { "type" : "string" },
+                "snowpackStructureHighlights" : { "type" : "string" },
+                "snowpackStructureComment" : { "type" : "string" },
+                "travelAdvisoryHighlights" : { "type" : "string" },
+                "travelAdvisoryComment" : { "type" : "string" },
+                "tendencyComment" : { "type" : "string" }
+            },
+            "additionalProperties" : false
+        },
         "dangerRating" : {
             "title" : "Danger Rating",
             "description" : "Danger rating used in an avalanche bulletin.",
