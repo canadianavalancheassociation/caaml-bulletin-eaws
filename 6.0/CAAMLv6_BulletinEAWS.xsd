@@ -13,8 +13,9 @@
 	<element name="bulletins" type="caaml:BulletinsType"/>
 	<complexType name="BulletinsType">
 		<sequence>
-			<element name="metaData" type="caaml:MetaDataType" minOccurs="0"/>
 			<element name="bulletin" type="caaml:BulletinType" maxOccurs="unbounded"/>
+			<element name="metaData" type="caaml:MetaDataType" minOccurs="0"/>
+			<element name="customData" type="caaml:CustomDataType" minOccurs="0"/>
 		</sequence>
 	</complexType>
 
@@ -24,7 +25,6 @@
 	<element name="bulletin" type="caaml:BulletinType"/>
 	<complexType name="BulletinType" final="#all">
 		<sequence>
-			<element name="metaData" type="caaml:MetaDataType" minOccurs="0"/>
 			<element name="publicationTime" type="dateTime"/>
 			<element name="validTime" type="caaml:ValidTimeType"/>
 			<element name="source" type="caaml:SourceType"/>
@@ -42,6 +42,8 @@
 			<element name="travelAdvisoryHighlights" type="string" minOccurs="0"/>
 			<element name="travelAdvisoryComment" type="string" minOccurs="0"/>
 			<element name="tendencyComment" type="string" minOccurs="0"/>
+			<element name="metaData" type="caaml:MetaDataType" minOccurs="0"/>
+			<element name="customData" type="caaml:CustomDataType" minOccurs="0"/>
 		</sequence>
 		<attribute name="bulletinID" type="string" use="required"/>
 		<attribute name="lang" type="language" use="required"/>
@@ -55,7 +57,7 @@
 			<element name="mainValue" type="caaml:DangerRatingValueType" minOccurs="0"/>
 			<element name="aspect" type="caaml:AspectType" minOccurs="0" maxOccurs="unbounded"/>
 			<element name="elevation" type="caaml:ElevationType" minOccurs="0"/>
-			<element name="comment" type="string" minOccurs="0"/>
+			<element name="metaData" type="caaml:MetaDataType" minOccurs="0"/>
 			<element name="customData" type="caaml:CustomDataType" minOccurs="0"/>
 		</sequence>
 	</complexType>
@@ -83,7 +85,7 @@
 			<element name="avalancheSize" type="caaml:AvalancheSizeType" minOccurs="0"/>
 			<element name="snowpackStability" type="caaml:SnowpackStabilityType" minOccurs="0"/>
 			<element name="frequency" type="caaml:FrequencyType" minOccurs="0"/>
-			<element name="comment" type="string" minOccurs="0"/>
+			<element name="metaData" type="caaml:MetaDataType" minOccurs="0"/>
 			<element name="customData" type="caaml:CustomDataType" minOccurs="0"/>
 		</sequence>
 	</complexType>
@@ -127,7 +129,7 @@
 		<sequence>
 			<element name="tendencyType" type="caaml:TendencyTypeType"/>
 			<element name="validTime" type="caaml:ValidTimeType" minOccurs="0"/>
-			<element name="comment" type="string" minOccurs="0"/>
+			<element name="metaData" type="caaml:MetaDataType" minOccurs="0"/>
 			<element name="customData" type="caaml:CustomDataType" minOccurs="0"/>
 		</sequence>
 	</complexType>
@@ -146,7 +148,6 @@
 		<sequence>
 			<element name="extFile" type="caaml:ExtFileType" minOccurs="0" maxOccurs="unbounded"/>
 			<element name="comment" type="string" minOccurs="0"/>
-			<element name="customData" type="caaml:CustomDataType" minOccurs="0"/>
 		</sequence>
 	</complexType>
 	<!-- EXTERNAL FILES -->
@@ -155,7 +156,6 @@
 			<element name="fileType" type="caaml:ExtFileTypeType" minOccurs="0"/>
 			<element name="description" type="string" minOccurs="0"/>
 			<element name="fileReferenceURI" type="anyURI"/>
-			<element name="customData" type="caaml:CustomDataType" minOccurs="0"/>
 		</sequence>
 	</complexType>
 	<simpleType name="ExtFileTypeType">
@@ -203,9 +203,10 @@
 	</complexType>
 	<complexType name="SourceBaseType">
 		<sequence>
-			<element name="metaData" type="caaml:MetaDataType" minOccurs="0"/>
 			<element name="name" type="string"/>
 			<element name="website" type="anyURI"/>
+			<element name="metaData" type="caaml:MetaDataType" minOccurs="0"/>
+			<element name="customData" type="caaml:CustomDataType" minOccurs="0"/>
 		</sequence>
 	</complexType>
 
@@ -215,10 +216,11 @@
 	<!-- LOCATION -->
 	<complexType name="RegionType" final="#all">
 		<sequence>
-			<element name="metaData" type="caaml:MetaDataType" minOccurs="0"/>
 			<element name="name" type="string"/>
 			<element name="centerPoint" type="gml:PointType" minOccurs="0"/>
 			<element name="outline" type="gml:PolygonType" minOccurs="0"/>
+			<element name="metaData" type="caaml:MetaDataType" minOccurs="0"/>
+			<element name="customData" type="caaml:CustomDataType" minOccurs="0"/>
 		</sequence>
 		<attribute name="id" type="string" use="required"/>
 	</complexType>

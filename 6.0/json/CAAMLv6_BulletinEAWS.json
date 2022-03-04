@@ -4,13 +4,14 @@
     "description": "JSON schema for EAWS Avalanche Bulletin following the CAAMLv6 schema",
     "type": "object",
     "properties" : {
-        "metaData" : { "$ref" : "#/definitions/metaData"},
         "bulletins" : {
             "type" : "array",
             "items" : {
                 "$ref" : "#/definitions/bulletin"
             }
-        }
+        },
+        "metaData" : { "$ref" : "#/definitions/metaData" },
+        "customData" : { "$ref" : "#/definitions/customData" }
     },
     
     "definitions" : {
@@ -20,7 +21,6 @@
             "properties": {
                 "bulletinID" : { "type" : "string" },
                 "lang" : { "$ref" : "#/definitions/languageCode" },
-                "metaData" : { "$ref" : "#/definitions/metaData" },
                 "publicationTime" : {
                     "type" : "string",
                     "format" : "date-time"
@@ -55,7 +55,9 @@
                 "snowpackStructureComment" : { "type" : "string" },
                 "travelAdvisoryHighlights" : { "type" : "string" },
                 "travelAdvisoryComment" : { "type" : "string" },
-                "tendencyComment" : { "type" : "string" }
+                "tendencyComment" : { "type" : "string" },
+                "metaData" : { "$ref" : "#/definitions/metaData" },
+                "customData" : { "$ref" : "#/definitions/customData" }
             },
             "additionalProperties" : false
         },
@@ -65,7 +67,7 @@
             "properties" : {
                 "mainValue": { "$ref" : "#/definitions/dangerRatingValue" },
                 "elevation" : { "$ref" : "#/definitions/elevation" },
-                "comment" : { "type" : "string" },
+                "metaData" : { "$ref" : "#/definitions/metaData" },
                 "customData" : { "$ref" : "#/definitions/customData" }
             },
             "additionalProperties": false
@@ -86,7 +88,7 @@
                 "avalancheSize" : { "$ref" : "#/definitions/avalancheSizeType" },
                 "snowpackStability" : { "$ref" : "#/definitions/snowpackStabilityType" },
                 "frequency" : { "$ref" : "#/definitions/frequencyType" },
-                "comment" : { "type" : "string" },
+                "metaData" : { "$ref" : "#/definitions/metaData" },
                 "customData" : { "$ref" : "#/definitions/customData" }
             },
             "additionalProperties": false
@@ -126,7 +128,7 @@
                 "validTime" : {
                     "$ref" : "#/definitions/validTime"
                 },
-                "comment" : { "type" : "string" },
+                "metaData" : { "$ref" : "#/definitions/metaData" },
                 "customData" : { "$ref" : "#/definitions/customData" }
             },
             "additionalProperties": false
@@ -137,8 +139,7 @@
             "type" : "object",
             "properties": {
                 "extFile" : { "$ref" : "#/definitions/ExtFileType" },
-                "comment" : { "type" : "string" },
-                "customData" : { "$ref" : "#/definitions/customData" }
+                "comment" : { "type" : "string" }
             },
             "additionalProperties": false
         },
@@ -152,8 +153,7 @@
                 "fileReferenceURI" : {
                     "type" : "string",
                     "format" : "uri"
-                },
-                "customData" : { "$ref" : "#/definitions/customData" }
+                }
             },
             "additionalProperties": false
         },
@@ -176,7 +176,6 @@
         "provider" : {
             "type" : "object",
             "properties" : {
-                "metaData" : { "$ref" : "#/definitions/metaData"},
                 "name" : {
                     "type" : "string"
                 },
@@ -184,21 +183,24 @@
                     "type" : "string",
                     "format" : "uri"
                 },
-                "contactPerson" : { "$ref" : "#/definitions/person"}
+                "contactPerson" : { "$ref" : "#/definitions/person" },
+                "metaData" : { "$ref" : "#/definitions/metaData" },
+                "customData" : { "$ref" : "#/definitions/customData" }
             },
             "additionalProperties": false
         },
         "person" : {
             "type" : "object",
             "properties" : {
-                "metaData" : { "$ref" : "#/definitions/metaData"},
                 "name" : {
                     "type" : "string"
                 },
                 "website" : {
                     "type" : "string",
                     "format" : "uri"
-                }
+                },
+                "metaData" : { "$ref" : "#/definitions/metaData" },
+                "customData" : { "$ref" : "#/definitions/customData" }
             },
             "additionalProperties": false
         },
@@ -206,8 +208,9 @@
             "type" : "object",
             "properties": {
                 "id" : { "type" : "string" },
-                "metaData" : { "$ref" : "#/definitions/metaData"},
-                "name" : { "type" : "string" }
+                "name" : { "type" : "string" },
+                "metaData" : { "$ref" : "#/definitions/metaData" },
+                "customData" : { "$ref" : "#/definitions/customData" }
             },
             "additionalProperties": false
         },
