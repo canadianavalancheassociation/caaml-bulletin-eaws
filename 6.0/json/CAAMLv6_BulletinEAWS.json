@@ -13,7 +13,7 @@
             "$ref" : "#/definitions/languageCode"
         },
         "metaData" : { 
-            "$ref" : "#/definitions/MetaData" 
+            "$ref" : "#/definitions/metaData" 
         },
         "publicationTime" : {
             "type" : "string",
@@ -25,36 +25,32 @@
         "source" : { 
             "$ref" : "#/definitions/source" 
         },
-        "region" : {
-            "additionalProperties" : {
-                "type" : "string"
+        "regions" : {
+            "type" : "array",
+            "items" : {
+                "$ref" : "#/definitions/region"
             }
         },
-        "dangerRating" : { 
+        "dangerRatings" : { 
             "type" : "array",
             "items" : {
               "$ref" : "#/definitions/dangerRating"
             }
         },
-        "avalancheProblem" : {
+        "avalancheProblems" : {
             "type" : "array",
             "items" : {
               "$ref" : "#/definitions/avalancheProblem"
             }
         },
-        "tendency" : {
-            "type" : "object",
-            "properties" : {
-                "tendencyType" : {
-                    "type" : "string",
-                    "enum" : [ "decreasing", "steady", "increasing"]
-                },
-                "validTime" : {
-                    "$ref" : "#/definitions/validTime"
-                }
-            }
-        },
+        "tendency" : { "$ref" : "#/definitions/tendencyType"},
         "highlights" : {
+            "type" : "string"
+        },
+        "wxSynopsisHighlights" : {
+            "type" : "string"
+        },
+        "wxSynopsisComment" : {
             "type" : "string"
         },
         "avalancheActivityHighlights" : {
@@ -63,7 +59,16 @@
         "avalancheActivityComment" : {
             "type" : "string"
         },
+        "snowpackStructureHighlights" : {
+            "type" : "string"
+        },
         "snowpackStructureComment" : {
+            "type" : "string"
+        },
+        "travelAdvisoryHighlights" : {
+            "type" : "string"
+        },
+        "travelAdvisoryComment" : {
             "type" : "string"
         },
         "tendencyComment" : {
@@ -72,35 +77,139 @@
     },
     
     "definitions" : {
-        "languageCode" : {
-            "title": "Language Code",
-            "description": "Two-letter language codes (ISO 639-1).",
+        "dangerRating" : {
+            "title" : "Danger Rating",
+            "description" : "Danger rating used in an avalanche bulletin.",
+            "properties" : {
+                "mainValue": { "$ref" : "#/definitions/dangerRatingValue" },
+                "elevation" : { "$ref" : "#/definitions/elevation" },
+                "comment" : { "type" : "string" },
+                "customData" : { "$ref" : "#/definitions/customData" }
+            },
+            "additionalProperties": false
+        },     
+        "dangerRatingValue" : {
             "type" : "string",
-            "minLength" : 2,
-            "maxLength" : 2
+            "enum" : [ "low", "moderate", "considerable", "high", "very_high", "no_snow", "no_rating" ]
         },
-        "validTime" : {
+        "avalancheProblem" : {
+            "title" : "Avalanche Problem",
+            "description" : "Definition of an avalanche problem.",
             "type" : "object",
             "properties" : {
-                "startTime" : {
+                "problemType" : { "$ref" : "#/definitions/avalancheProblemType" },
+                "elevation" : { "$ref" : "#/definitions/elevation" },
+                "aspects" : { "$ref" : "#/definitions/aspects" },
+                "terrainFeature" : { "type" : "string" },
+                "avalancheSize" : { "$ref" : "#/definitions/avalancheSizeType" },
+                "snowpackStability" : { "$ref" : "#/definitions/snowpackStabilityType" },
+                "frequency" : { "$ref" : "#/definitions/frequencyType" },
+                "comment" : { "type" : "string" },
+                "customData" : { "$ref" : "#/definitions/customData" }
+            },
+            "additionalProperties": false
+        },
+        "avalancheProblemType" : {
+            "title" : "Avalanche Problem Type",
+            "description" : "The six avalanche problems.",
+            "type" : "string",
+            "enum" : [ "new_snow", "wind_drifted_snow", "persistent_weak_layers", "wet_snow", "gliding_snow", "cornice_failure", "favourable_situation" ]
+        },
+        "avalancheSizeType" : {
+            "title" : "Avalanche Size",
+            "description": "The avalanche size defined by the EAWS.",
+            "type" : "number",
+            "minimum" : 1,
+            "maximum" : 5
+        },
+        "snowpackStabilityType" : {
+            "title": "Snowpack Stability",
+            "description": "The snowpack stability class defined by EAWS",
+            "type" : "string",
+            "enum" : [ "very_poor", "poor", "fair", "good"]
+        },
+        "frequencyType" : {
+            "title": "Frequency",
+            "description": "The frequency of instable points defined by EAWS",
+            "type" : "string",
+            "enum" : [ "few", "some", "many"]
+        },
+        "tendencyType" : {
+            "type" : "object",
+            "properties" : {
+                "tendencyType" : {
                     "type" : "string",
-                    "format" : "date-time"
+                    "enum" : [ "decreasing", "steady", "increasing"]
                 },
-                "endTime" : {
+                "validTime" : {
+                    "$ref" : "#/definitions/validTime"
+                },
+                "comment" : { "type" : "string" },
+                "customData" : { "$ref" : "#/definitions/customData" }
+            },
+            "additionalProperties": false
+        },
+        "metaData" : {
+            "title" : "Meta Data",
+            "description" : "Additional information.",
+            "type" : "object",
+            "properties": {
+                "extFile" : { "$ref" : "#/definitions/ExtFileType" },
+                "comment" : { "type" : "string" },
+                "customData" : { "$ref" : "#/definitions/customData" }
+            },
+            "additionalProperties": false
+        },
+        "ExtFileType" : {
+            "title" : "External files",
+            "description" : "Reference to external files assocciated with this bulletin.",
+            "type" : "object",
+            "properties" : {
+              	"fileType" : { "$ref" : "#/definitions/ExtFileTypeType" },
+                "description" : { "type" : "string" },
+                "fileReferenceURI" : {
                     "type" : "string",
-                    "format" : "date-time"
-                }
-            }
+                    "format" : "uri"
+                },
+                "customData" : { "$ref" : "#/definitions/customData" }
+            },
+            "additionalProperties": false
+        },
+        "ExtFileTypeType" : {
+            "type" : "string",
+            "enum" : [ "dangerRatingMapOverlay", "dangerRatingMap", "printOut", "website" ]
+        },
+        "customData" : {
         },
         "source" : {
             "type" : "object",
             "properties" : {
-                "provider" : { "$ref" : "#/definitions/provider" }
-            }
+                "oneOf" : {
+                    "provider" : { "$ref" : "#/definitions/provider" },
+                    "person" : { "$ref" : "#/definitions/person" }
+                }
+            },
+            "additionalProperties": false
         },
         "provider" : {
             "type" : "object",
             "properties" : {
+                "metaData" : { "$ref" : "#/definitions/metaData"},
+                "name" : {
+                    "type" : "string"
+                },
+                "website" : {
+                    "type" : "string",
+                    "format" : "uri"
+                },
+                "contactPerson" : { "$ref" : "#/definitions/person"}
+            },
+            "additionalProperties": false
+        },
+        "person" : {
+            "type" : "object",
+            "properties" : {
+                "metaData" : { "$ref" : "#/definitions/metaData"},
                 "name" : {
                     "type" : "string"
                 },
@@ -108,53 +217,25 @@
                     "type" : "string",
                     "format" : "uri"
                 }
-            }
+            },
+            "additionalProperties": false
         },
-        "dangerRating" : {
-            "title" : "Danger Rating",
-            "description" : "Danger rating used in an avalanche bulletin.",
-            "properties" : {
-                "mainValue": { "$ref" : "#/definitions/dangerRatingValue" },
-                "elevation" : { "$ref" : "#/definitions/elevation" },
-                "aspect" : { "$ref" : "#/definitions/aspect" },
-                "terrainFeature" : { "type" : "string" },
-                "artificialDangerRating" : { "$ref" : "#/definitions/dangerRatingValue" },
-                "artificialAvalancheSize" : {
-                    "type" : "number",
-                    "minimum" : 1,
-                    "maximum" : 5
-                },
-                "artificialAvalancheReleaseProbability" : {
-                    "type" : "number",
-                    "minimum" : 1,
-                    "maximum" : 4
-                },
-                "artificialHazardSiteDistribution" : {
-                    "type" : "number",
-                    "minimum" : 1,
-                    "maximum" : 5
-                },
-                "naturalDangerRating" : { "$ref" : "#/definitions/dangerRatingValue" },
-                "naturalAvalancheReleaseProbability" : {
-                    "type" : "number",
-                    "minimum" : 1,
-                    "maximum" : 4
-                },
-                "naturalHazardSiteDistribution" : {
-                    "type" : "number",
-                    "minimum" : 1,
-                    "maximum" : 5
-                },
-                "comment" : { "type" : "string" },
-                "customData" : { "$ref" : "#/definitions/customData" }
-            }
-        },     
-        "avalancheProblem" : {
+        "region" : {
             "type" : "object",
-            "properties" : {
-                "mainValue": { "$ref" : "#/definitions/dangerRatingValue" },
-                "dangerRating" : { "$ref" : "#/definitions/dangerRating" },
-                "problemType" : { "$ref" : "#/definitions/avalancheProblemType" }
+            "properties": {
+                "id" : { "type" : "string" },
+                "metaData" : { "$ref" : "#/definitions/metaData"},
+                "name" : { "type" : "string" }
+            },
+            "additionalProperties": false
+        },
+        "aspects" : {
+            "title" : "Aspect",
+            "description" : "All aspects.",
+            "type" : "array",
+            "items" : {
+              "type" : "string",
+              "enum" : [ "N", "NE", "E", "SE", "S", "SW", "W", "NW", "n/a" ]
             }
         },
         "elevation" : {
@@ -168,51 +249,30 @@
                     "type" : "string",
                     "pattern" : "^[0-9]+$|treeline$"
                 }
-            }
+            },
+            "additionalProperties": false
         },
-        "aspect" : {
-            "title" : "Aspect",
-            "description" : "All aspects.",
-            "customData" : { "$ref" : "#/definitions/customData" },
-            "type" : "array",
-            "items" : {
-              "type" : "string",
-              "enum" : [ "N", "NE", "E", "SE", "S", "SW", "W", "NW", "n/a" ]
-            }
-        },
-        "dangerRatingValue" : {
-            "type" : "string",
-            "enum" : [ "no_snow", "no_rating", "low", "moderate", "considerable", "high", "very_high" ]
-        },
-        "avalancheProblemType" : {
-            "title" : "Avalanche Problem",
-            "description" : "The six avalanche problems.",
-            "type" : "string",
-            "enum" : [ "new_snow", "wind_drifted_snow", "persistent_weak_layers", "wet_snow", "gliding_snow", "cornice_failure", "favourable_situation" ]
-        },
-        "MetaData" : {
-            "extFile" : { "$ref" : "#/definitions/ExtFileType" },
-            "comment" : "string",
-            "customData" : { "$ref" : "#/definitions/customData" }
-        },
-        "ExtFileType" : {
-            "title" : "External files",
-            "description" : "Reference to external files assocciated with this bulletin.",
+        "validTime" : {
             "type" : "object",
             "properties" : {
-              	"fileType" : { "$ref" : "#/definitions/ExtFileTypeType" },
-                "fileReferenceURI" : {
+                "startTime" : {
                     "type" : "string",
-                    "format" : "uri"
+                    "format" : "date-time"
                 },
-                "customData" : { "$ref" : "#/definitions/customData" }
-            }
+                "endTime" : {
+                    "type" : "string",
+                    "format" : "date-time"
+                }
+            },
+            "additionalProperties": false
         },
-        "ExtFileTypeType" : {
+        "languageCode" : {
+            "title": "Language Code",
+            "description": "Two-letter language codes (ISO 639-1).",
             "type" : "string",
-            "enum" : [ "dangerRatingMapOverlay", "dangerRatingMap", "printOut", "website" ]
-        },
-        "customData" : {
+            "minLength" : 2,
+            "maxLength" : 2
         }
-    }
+    },
+    "additionalProperties": false
 }
