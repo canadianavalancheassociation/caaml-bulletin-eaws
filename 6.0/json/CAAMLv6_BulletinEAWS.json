@@ -74,7 +74,6 @@
     "definitions" : {
         "languageCode" : {
             "id" : "#languageCode",
-            "$schema": "http://json-schema.org/draft-04/schema#",
             "title": "Language Code",
             "description": "Two-letter language codes (ISO 639-1).",
             "type" : "string",
@@ -113,7 +112,6 @@
         },
         "dangerRating" : {
             "id" : "#dangerRating",
-            "$schema" : "http://json-schema.org/draft-04/schema#",
             "title" : "Danger Rating",
             "description" : "Danger rating used in an avalanche bulletin.",
             "properties" : {
@@ -175,7 +173,6 @@
         },
         "aspect" : {
             "id" : "#aspect",
-            "$schema" : "http://json-schema.org/draft-04/schema#",
             "title" : "Aspect",
             "description" : "All aspects.","customData" : { "$ref" : "#/definitions/customData" },
             "type" : "array",
@@ -190,7 +187,6 @@
         },
         "avalancheProblemType" : {
             "id" : "#avalancheProblemType",
-            "$schema" : "http://json-schema.org/draft-04/schema#",
             "title" : "Avalanche Problem",
             "description" : "The six avalanche problems.",
             "type" : "string",
