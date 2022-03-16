@@ -63,6 +63,7 @@
             "properties" : {
                 "mainValue": { "$ref" : "#/definitions/dangerRatingValue" },
                 "elevation" : { "$ref" : "#/definitions/elevation" },
+                "validTimePeriod" : { "$ref" : "#/definitions/validTimePeriod" },
                 "metaData" : { "$ref" : "#/definitions/metaData" },
                 "customData" : { "$ref" : "#/definitions/customData" }
             },
@@ -78,6 +79,7 @@
                 "problemType" : { "$ref" : "#/definitions/avalancheProblemType" },
                 "elevation" : { "$ref" : "#/definitions/elevation" },
                 "aspects" : { "$ref" : "#/definitions/aspects" },
+                "validTimePeriod" : { "$ref" : "#/definitions/validTimePeriod" },
                 "terrainFeature" : { "type" : "string" },
                 "avalancheSize" : { "$ref" : "#/definitions/avalancheSizeType" },
                 "snowpackStability" : { "$ref" : "#/definitions/snowpackStabilityType" },
@@ -230,6 +232,13 @@
                 }
             },
             "additionalProperties": false
+        },
+        "validTimePeriod" : {
+            "type" : "array",
+            "items" : {
+              "type" : "string",
+              "enum" : [ "all_day", "earlier", "later" ]
+            }
         },
         "languageCode" : {
             "title": "Language Code",

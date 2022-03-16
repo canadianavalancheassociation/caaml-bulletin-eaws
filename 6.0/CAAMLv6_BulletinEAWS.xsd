@@ -29,7 +29,7 @@
 			<element name="validTime" type="caaml:ValidTimeType"/>
 			<element name="source" type="caaml:SourceType"/>
 			<element name="region" type="caaml:RegionType" maxOccurs="unbounded"/>
-			<element name="dangerRating" type="caaml:DangerRatingType" minOccurs="0" maxOccurs="unbounded"/>
+			<element name="dangerRating" type="caaml:DangerRatingType" maxOccurs="unbounded"/>
 			<element name="avalancheProblem" type="caaml:AvalancheProblemType" minOccurs="0" maxOccurs="unbounded"/>
 			<element name="tendency" type="caaml:TendencyType" minOccurs="0"/>
 			<element name="highlights" type="string" minOccurs="0"/>
@@ -54,8 +54,9 @@
 	<!--**********************************************************-->
 	<complexType name="DangerRatingType">
 		<sequence>
-			<element name="mainValue" type="caaml:DangerRatingValueType" minOccurs="0"/>
+			<element name="mainValue" type="caaml:DangerRatingValueType"/>
 			<element name="elevation" type="caaml:ElevationType" minOccurs="0"/>
+			<element name="validTimePeriod" type="caaml:ValidTimePeriodType" minOccurs="0"/>
 			<element name="metaData" type="caaml:MetaDataType" minOccurs="0"/>
 			<element name="customData" type="caaml:CustomDataType" minOccurs="0"/>
 		</sequence>
@@ -80,6 +81,7 @@
 			<element name="problemType" type="caaml:AvalancheProblemTypeType"/>
 			<element name="elevation" type="caaml:ElevationType" minOccurs="0"/>
 			<element name="aspect" type="caaml:AspectType" minOccurs="0" maxOccurs="unbounded"/>
+			<element name="validTimePeriod" type="caaml:ValidTimePeriodType" minOccurs="0"/>
 			<element name="terrainFeature" type="string" minOccurs="0"/>
 			<element name="avalancheSize" type="caaml:AvalancheSizeType" minOccurs="0"/>
 			<element name="snowpackStability" type="caaml:SnowpackStabilityType" minOccurs="0"/>
@@ -260,5 +262,12 @@
 			<element name="endTime" type="dateTime"/>
 		</sequence>
 	</complexType>
+	<simpleType name="ValidTimePeriodType">
+		<restriction base="string">
+			<enumeration value="all_day"/>
+			<enumeration value="earlier"/>
+			<enumeration value="later"/>
+		</restriction>
+	</simpleType>
 
 </schema>
