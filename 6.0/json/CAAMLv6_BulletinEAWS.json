@@ -1,8 +1,9 @@
 {
-    "$schema": "http://json-schema.org/draft-04/schema#",
-    "title": "Avalanche Bulletin CAAMLv6",
-    "description": "JSON schema for EAWS Avalanche Bulletin following the CAAMLv6 schema",
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "Avalanche Bulletin CAAMLv6 Collection",
+    "description": "JSON schema for EAWS Avalanche Bulletin Collection following the CAAMLv6 schema",
     "type": "object",
+    "required": ["bulletins"],
     "properties" : {
         "bulletins" : {
             "type" : "array",
@@ -111,7 +112,7 @@
                 },
                 "tendencyType" : {
                     "type" : "string",
-                    "enum" : [ "decreasing", "steady", "increasing"]
+                    "format" : "date-time"
                 },
                 "validTime" : {
                     "$ref" : "#/definitions/validTime"
@@ -160,7 +161,7 @@
             },
             "additionalProperties": false
         },
-        "source" : {
+        "Source" : {
             "type" : "object",
             "properties": {
                 "provider" : { "$ref" : "#/definitions/provider" },
@@ -172,7 +173,22 @@
             ],
             "additionalProperties": false
         },
-        "provider" : {
+        "Tendency" : {
+            "type" : "object",
+            "properties" : {
+                "tendencyComment" : {
+                    "type" : "string"
+                },    
+                "tendencyType" : {
+                    "type" : "string",
+                    "enum" : [ "decreasing", "steady", "increasing"]
+                },
+                "validTime" : {
+                    "$ref" : "#/definitions/ValidTime"
+                }
+            }
+        },
+        "Provider" : {
             "type" : "object",
             "properties" : {
                 "name" : {
@@ -220,16 +236,16 @@
               "enum" : [ "N", "NE", "E", "SE", "S", "SW", "W", "NW", "n/a" ]
             }
         },
-        "elevation" : {
+        "Elevation" : {
             "type" : "object",
             "properties" : {
                 "lowerBound" : { 
                     "type" : "string",
-                    "pattern" : "^[0-9]+$|treeline$"
+                    "pattern" : "treeline|0|[1-9][0-9]*[0][0]+"
                 },
                 "upperBound" : { 
                     "type" : "string",
-                    "pattern" : "^[0-9]+$|treeline$"
+                    "pattern" : "treeline|0|[1-9][0-9]*[0][0]+"
                 }
             },
             "additionalProperties": false
