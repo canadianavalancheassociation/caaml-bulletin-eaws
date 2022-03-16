@@ -17,6 +17,7 @@
     
     "definitions" : {
         "bulletin" : {
+            "type" : "object",
             "properties": {
                 "bulletinID" : { "type" : "string" },
                 "lang" : { "$ref" : "#/definitions/languageCode" },
