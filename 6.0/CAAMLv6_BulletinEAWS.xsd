@@ -153,22 +153,11 @@
 	<!-- EXTERNAL FILES -->
 	<complexType name="ExtFileType">
 		<sequence>
-			<element name="fileType" type="caaml:ExtFileTypeType" minOccurs="0"/>
+			<element name="fileType" type="string" minOccurs="0"/>
 			<element name="description" type="string" minOccurs="0"/>
 			<element name="fileReferenceURI" type="anyURI"/>
 		</sequence>
 	</complexType>
-	<simpleType name="ExtFileTypeType">
-	    <union memberTypes="caaml:ExtFileEnumType string"/>
-	</simpleType>
-	<simpleType name="ExtFileEnumType">
-		<restriction base="string">
-			<enumeration value="danger_rating_map_overlay"/>
-			<enumeration value="danger_rating_map"/>
-			<enumeration value="print_out"/>
-			<enumeration value="website"/>
-		</restriction>
-	</simpleType>
 	<!-- CUSTOM DATA-->
 	<complexType name="CustomDataType" final="#all">
 		<sequence>

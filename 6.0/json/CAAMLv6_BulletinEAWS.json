@@ -124,7 +124,12 @@
         "metaData" : {
             "type" : "object",
             "properties": {
-                "extFile" : { "$ref" : "#/definitions/ExtFileType" },
+                "extFiles" : { 
+                    "type" : "array",
+                    "items" : {
+                        "$ref" : "#/definitions/ExtFileType"
+                    }
+                },
                 "comment" : { "type" : "string" }
             },
             "additionalProperties": false
@@ -132,7 +137,7 @@
         "ExtFileType" : {
             "type" : "object",
             "properties" : {
-              	"fileType" : { "$ref" : "#/definitions/ExtFileTypeType" },
+              	"fileType" : { "type" : "string" },
                 "description" : { "type" : "string" },
                 "fileReferenceURI" : {
                     "type" : "string",
@@ -140,10 +145,6 @@
                 }
             },
             "additionalProperties": false
-        },
-        "ExtFileTypeType" : {
-            "type" : "string",
-            "enum" : [ "danger_rating_map_overlay", "danger_rating_map", "print_out", "website" ]
         },
         "customData" : {
         },
