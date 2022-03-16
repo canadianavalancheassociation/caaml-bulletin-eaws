@@ -3,18 +3,19 @@
         {
             "bulletinID": "3846a8dd-97cc-4f6d-9616-a814c9876dbe",
             "lang": "de",
-            "highlights": "",
-            "avalancheActivityHighlights": "The snowpack will be in most cases stable. Wind slabs require caution.",
-            "avalancheActivityComment": "As a consequence of a strong northerly wind, sometimes avalanche prone wind slabs formed in some localities. These avalanche prone locations are to be found in particular on very steep shady slopes at elevated altitudes and in gullies and bowls, and behind abrupt changes in the terrain. They are mostly easy to recognise. Weak layers in the old snowpack can be released in isolated cases and mostly by large additional loads on steep shady slopes. At lower altitudes and below the tree line hardly any snow is lying.",
-            "snowpackStructureComment": "At high altitudes and in high Alpine regions less snow than usual is lying. As a consequence of solar radiation the snow drift accumulations stabilised during the last few days, in particular on sunny slopes. Here the snowpack is better bonded. <br/> The old snowpack will be prone to triggering in some places, especially on shady slopes above approximately 2400 m.",
-            "tendencyComment": "The avalanche danger will persist.",
-            "tendency": {
-                "tendencyType": "steady"
-            },
             "publicationTime": "2022-03-02T16:00:00.002869Z",
             "validTime": {
                 "startTime": "2022-03-02T23:00:00Z",
                 "endTime": "2022-03-03T23:00:00Z"
+            },
+            "source": {
+                "provider": {
+                    "name": "Avalanche.report",
+                    "website": "https://avalanche.report",
+                    "contactPerson": {
+                        "name": "Norbert Lanzanasto"
+                    }
+                }
             },
             "regions": [
                 {
@@ -55,13 +56,15 @@
                     "mainValue": "moderate",
                     "elevation": {
                         "lowerBound": "1800"
-                    }
+                    },
+                    "validTimePeriod": "all_day"
                 },
                 {
                     "mainValue": "low",
                     "elevation": {
                         "upperBound": "1800"
-                    }
+                    },
+                    "validTimePeriod": "all_day"
                 }
             ],
             "avalancheProblems": [
@@ -86,7 +89,19 @@
                     "snowpackStability": "poor",
                     "frequency": "few"
                 }
-            ]
-        }
+            ],
+            "highlights": "",
+            "avalancheActivity": {
+                "highlights": "The snowpack will be in most cases stable. Wind slabs require caution.",
+                "comment": "As a consequence of a strong northerly wind, sometimes avalanche prone wind slabs formed in some localities. These avalanche prone locations are to be found in particular on very steep shady slopes at elevated altitudes and in gullies and bowls, and behind abrupt changes in the terrain. They are mostly easy to recognise. Weak layers in the old snowpack can be released in isolated cases and mostly by large additional loads on steep shady slopes. At lower altitudes and below the tree line hardly any snow is lying."
+            },
+            "snowpackStructure": {
+                "comment": "At high altitudes and in high Alpine regions less snow than usual is lying. As a consequence of solar radiation the snow drift accumulations stabilised during the last few days, in particular on sunny slopes. Here the snowpack is better bonded. <br/> The old snowpack will be prone to triggering in some places, especially on shady slopes above approximately 2400 m."
+            },
+            "tendency": {
+                "comment": "The avalanche danger will persist.",
+                "tendencyType": "steady"
+            }
+       }
     ]
 }

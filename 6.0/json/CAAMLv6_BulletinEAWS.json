@@ -43,17 +43,12 @@
                         "$ref" : "#/definitions/avalancheProblem"
                     }
                 },
-                "tendency" : { "$ref" : "#/definitions/tendencyType"},
                 "highlights" : { "type" : "string" },
-                "wxSynopsisHighlights" : { "type" : "string" },
-                "wxSynopsisComment" : { "type" : "string" },
-                "avalancheActivityHighlights" : { "type" : "string" },
-                "avalancheActivityComment" : { "type" : "string" },
-                "snowpackStructureHighlights" : { "type" : "string" },
-                "snowpackStructureComment" : { "type" : "string" },
-                "travelAdvisoryHighlights" : { "type" : "string" },
-                "travelAdvisoryComment" : { "type" : "string" },
-                "tendencyComment" : { "type" : "string" },
+                "wxSynopsis" : { "$ref" : "#/definitions/texts" },
+                "avalancheActivity" : { "$ref" : "#/definitions/texts" },
+                "snowpackStructure" : { "$ref" : "#/definitions/texts" },
+                "travelAdvisory" : { "$ref" : "#/definitions/texts" },
+                "tendency" : { "$ref" : "#/definitions/tendencyType"},
                 "metaData" : { "$ref" : "#/definitions/metaData" },
                 "customData" : { "$ref" : "#/definitions/customData" }
             },
@@ -107,8 +102,13 @@
             "enum" : [ "few", "some", "many"]
         },
         "tendencyType" : {
-            "type" : "object",
             "properties" : {
+                "highlights" : {
+                    "type" : "string"
+                },
+                "comment" : {
+                    "type" : "string"
+                },
                 "tendencyType" : {
                     "type" : "string",
                     "enum" : [ "decreasing", "steady", "increasing"]
@@ -147,14 +147,28 @@
         },
         "customData" : {
         },
-        "source" : {
+        "texts" : {
             "type" : "object",
             "properties" : {
-                "oneOf" : {
-                    "provider" : { "$ref" : "#/definitions/provider" },
-                    "person" : { "$ref" : "#/definitions/person" }
+                "highlights" : {
+                    "type" : "string"
+                },
+                "comment" : {
+                    "type" : "string"
                 }
             },
+            "additionalProperties": false
+        },
+        "source" : {
+            "type" : "object",
+            "properties": {
+                "provider" : { "$ref" : "#/definitions/provider" },
+                "person" : { "$ref" : "#/definitions/person" }
+            },
+            "oneOf" : [
+                { "required" : [ "provider" ] },
+                { "required" : [ "person" ] }
+            ],
             "additionalProperties": false
         },
         "provider" : {
@@ -234,11 +248,8 @@
             "additionalProperties": false
         },
         "validTimePeriod" : {
-            "type" : "array",
-            "items" : {
-              "type" : "string",
-              "enum" : [ "all_day", "earlier", "later" ]
-            }
+            "type" : "string",
+            "enum" : [ "all_day", "earlier", "later" ]
         },
         "languageCode" : {
             "title": "Language Code",
