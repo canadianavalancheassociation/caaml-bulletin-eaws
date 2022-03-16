@@ -164,9 +164,9 @@
 	</simpleType>
 	<simpleType name="ExtFileEnumType">
 		<restriction base="string">
-			<enumeration value="dangerRatingMapOverlay"/>
-			<enumeration value="dangerRatingMap"/>
-			<enumeration value="printOut"/>
+			<enumeration value="danger_rating_map_overlay"/>
+			<enumeration value="danger_rating_map"/>
+			<enumeration value="print_out"/>
 			<enumeration value="website"/>
 		</restriction>
 	</simpleType>
