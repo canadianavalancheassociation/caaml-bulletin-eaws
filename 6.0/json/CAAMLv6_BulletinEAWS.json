@@ -128,14 +128,14 @@
                 "extFiles" : { 
                     "type" : "array",
                     "items" : {
-                        "$ref" : "#/definitions/ExtFileType"
+                        "$ref" : "#/definitions/ExtFile"
                     }
                 },
                 "comment" : { "type" : "string" }
             },
             "additionalProperties": false
         },
-        "ExtFileType" : {
+        "ExtFile" : {
             "type" : "object",
             "properties" : {
               	"fileType" : { "type" : "string" },
