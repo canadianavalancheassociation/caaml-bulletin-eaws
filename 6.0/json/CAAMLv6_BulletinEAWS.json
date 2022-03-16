@@ -49,7 +49,7 @@
                 "avalancheActivity" : { "$ref" : "#/definitions/texts" },
                 "snowpackStructure" : { "$ref" : "#/definitions/texts" },
                 "travelAdvisory" : { "$ref" : "#/definitions/texts" },
-                "tendency" : { "$ref" : "#/definitions/tendencyType"},
+                "tendency" : { "$ref" : "#/definitions/tendency"},
                 "metaData" : { "$ref" : "#/definitions/metaData" },
                 "customData" : { "$ref" : "#/definitions/customData" }
             },
@@ -77,9 +77,9 @@
                 "aspects" : { "$ref" : "#/definitions/aspects" },
                 "validTimePeriod" : { "$ref" : "#/definitions/validTimePeriod" },
                 "terrainFeature" : { "type" : "string" },
-                "avalancheSize" : { "$ref" : "#/definitions/avalancheSizeType" },
-                "snowpackStability" : { "$ref" : "#/definitions/snowpackStabilityType" },
-                "frequency" : { "$ref" : "#/definitions/frequencyType" },
+                "avalancheSize" : { "$ref" : "#/definitions/avalancheSize" },
+                "snowpackStability" : { "$ref" : "#/definitions/snowpackStability" },
+                "frequency" : { "$ref" : "#/definitions/frequency" },
                 "metaData" : { "$ref" : "#/definitions/metaData" },
                 "customData" : { "$ref" : "#/definitions/customData" }
             },
@@ -89,20 +89,21 @@
             "type" : "string",
             "enum" : [ "new_snow", "wind_drifted_snow", "persistent_weak_layers", "wet_snow", "gliding_snow", "cornice_failure", "favourable_situation" ]
         },
-        "avalancheSizeType" : {
+        "avalancheSize" : {
             "type" : "number",
             "minimum" : 1,
             "maximum" : 5
         },
-        "snowpackStabilityType" : {
+        "snowpackStability" : {
             "type" : "string",
             "enum" : [ "very_poor", "poor", "fair", "good"]
         },
-        "frequencyType" : {
+        "frequency" : {
             "type" : "string",
             "enum" : [ "few", "some", "many"]
         },
-        "tendencyType" : {
+        "tendency" : {
+            "type" : "object",
             "properties" : {
                 "highlights" : {
                     "type" : "string"
@@ -112,15 +113,14 @@
                 },
                 "tendencyType" : {
                     "type" : "string",
-                    "format" : "date-time"
+                    "enum" : [ "decreasing", "steady", "increasing"]
                 },
                 "validTime" : {
                     "$ref" : "#/definitions/validTime"
                 },
                 "metaData" : { "$ref" : "#/definitions/metaData" },
                 "customData" : { "$ref" : "#/definitions/customData" }
-            },
-            "additionalProperties": false
+            }
         },
         "metaData" : {
             "type" : "object",
@@ -128,14 +128,14 @@
                 "extFiles" : { 
                     "type" : "array",
                     "items" : {
-                        "$ref" : "#/definitions/ExtFile"
+                        "$ref" : "#/definitions/extFile"
                     }
                 },
                 "comment" : { "type" : "string" }
             },
             "additionalProperties": false
         },
-        "ExtFile" : {
+        "extFile" : {
             "type" : "object",
             "properties" : {
               	"fileType" : { "type" : "string" },
@@ -161,7 +161,7 @@
             },
             "additionalProperties": false
         },
-        "Source" : {
+        "source" : {
             "type" : "object",
             "properties": {
                 "provider" : { "$ref" : "#/definitions/provider" },
@@ -173,22 +173,7 @@
             ],
             "additionalProperties": false
         },
-        "Tendency" : {
-            "type" : "object",
-            "properties" : {
-                "tendencyComment" : {
-                    "type" : "string"
-                },    
-                "tendencyType" : {
-                    "type" : "string",
-                    "enum" : [ "decreasing", "steady", "increasing"]
-                },
-                "validTime" : {
-                    "$ref" : "#/definitions/ValidTime"
-                }
-            }
-        },
-        "Provider" : {
+        "provider" : {
             "type" : "object",
             "properties" : {
                 "name" : {
@@ -236,7 +221,7 @@
               "enum" : [ "N", "NE", "E", "SE", "S", "SW", "W", "NW", "n/a" ]
             }
         },
-        "Elevation" : {
+        "elevation" : {
             "type" : "object",
             "properties" : {
                 "lowerBound" : { 
