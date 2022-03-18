@@ -165,7 +165,7 @@
             "type" : "object",
             "properties": {
                 "provider" : { "$ref" : "#/definitions/provider" },
-                "person" : { "$ref" : "#/definitions/person" }
+                "contactPerson" : { "$ref" : "#/definitions/person" }
             },
             "oneOf" : [
                 { "required" : [ "provider" ] },
