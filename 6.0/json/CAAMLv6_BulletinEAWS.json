@@ -17,6 +17,7 @@
     
     "definitions" : {
         "bulletin" : {
+            "type" : "object",
             "properties": {
                 "bulletinID" : { "type" : "string" },
                 "lang" : { "$ref" : "#/definitions/languageCode" },
@@ -56,6 +57,7 @@
             "additionalProperties" : false
         },
         "dangerRating" : {
+            "type" : "object",
             "properties" : {
                 "mainValue": { "$ref" : "#/definitions/dangerRatingValue" },
                 "elevation" : { "$ref" : "#/definitions/elevation" },
