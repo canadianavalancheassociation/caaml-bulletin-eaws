@@ -19,35 +19,35 @@
             },
             "regions": [
                 {
-                    "id" : "IT-32-TN-13",
+                    "regionId" : "IT-32-TN-13",
                     "name" : "Primiero - Pale di S. Martino"
                 },
                 {
-                    "id" : "IT-32-TN-01",
+                    "regionId" : "IT-32-TN-01",
                     "name" : "Adamello - Presanella"
                 },
                 {
-                    "id" : "IT-32-TN-04",
+                    "regionId" : "IT-32-TN-04",
                     "name" : "Northern Brenta - Peller"
                 },
                 {
-                    "id" : "IT-32-TN-16",
+                    "regionId" : "IT-32-TN-16",
                     "name" : "Fassa Valley"
                 },
                 {
-                    "id" : "IT-32-TN-19",
+                    "regionId" : "IT-32-TN-19",
                     "name" : "Sole, Pejo and Rabbi"
                 },
                 {
-                    "id" : "IT-32-TN-07",
+                    "regionId" : "IT-32-TN-07",
                     "name" : "Northern Lagorai"
                 },
                 {
-                    "id" : "IT-32-TN-09",
+                    "regionId" : "IT-32-TN-09",
                     "name" : "Latemar"
                 },
                 {
-                    "id" : "IT-32-TN-20",
+                    "regionId" : "IT-32-TN-20",
                     "name" : "Maddalene"
                 }
             ],

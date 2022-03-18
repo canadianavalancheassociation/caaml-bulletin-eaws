@@ -207,7 +207,7 @@
         "region" : {
             "type" : "object",
             "properties": {
-                "id" : { "type" : "string" },
+                "regionId" : { "type" : "string" },
                 "name" : { "type" : "string" },
                 "metaData" : { "$ref" : "#/definitions/metaData" },
                 "customData" : { "$ref" : "#/definitions/customData" }
