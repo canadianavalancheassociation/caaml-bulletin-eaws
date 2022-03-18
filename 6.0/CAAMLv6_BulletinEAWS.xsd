@@ -211,7 +211,7 @@
 			<element name="metaData" type="caaml:MetaDataType" minOccurs="0"/>
 			<element name="customData" type="caaml:CustomDataType" minOccurs="0"/>
 		</sequence>
-		<attribute name="regionID" type="string" use="required"/>
+		<attribute name="regionId" type="string" use="required"/>
 	</complexType>
 	<!-- ASPECT -->
 	<simpleType name="AspectType">
