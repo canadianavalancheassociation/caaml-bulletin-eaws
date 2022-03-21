@@ -51,7 +51,6 @@
 		<sequence>
 			<element name="mainValue" type="caaml:DangerRatingValueType"/>
 			<element name="elevation" type="caaml:ElevationType" minOccurs="0"/>
-			<element name="aspect" type="caaml:AspectType" minOccurs="0" maxOccurs="unbounded"/>
 			<element name="validTimePeriod" type="caaml:ValidTimePeriodType" minOccurs="0"/>
 			<element name="metaData" type="caaml:MetaDataType" minOccurs="0"/>
 			<element name="customData" type="caaml:CustomDataType" minOccurs="0"/>
