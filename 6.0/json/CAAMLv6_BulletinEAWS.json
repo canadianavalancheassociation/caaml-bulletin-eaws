@@ -35,7 +35,7 @@
                 },
                 "validTime" : {
                     "title": "Valid Time",
-                    "description": "Date and Time from and until that Bulletin is valid. It is recommended to issue a Bulletin for each calendar day. The Timestamps ISO 8601 are confirmed in UTC, unless another time zone is indicated",
+                    "description": "Date and Time from and until this Bulletin is valid. It is recommended to issue a Bulletin for each calendar day. The Timestamps is compliant with ISO 8601 and in UTC, unless another time zone is indicated",
                     "$ref" : "#/definitions/validTime"
                 },
                 "source" : {
@@ -45,7 +45,7 @@
                 },
                 "regions" : {
                     "title": "Regions",
-                    "description": "Collection of region elements for which the Bulletin is valid.",
+                    "description": "Collection of region elements for which this Bulletin is valid.",
                     "type" : "array",
                     "items" : {
                         "$ref" : "#/definitions/region"
@@ -74,27 +74,27 @@
                 },
                 "wxSynopsis" : {
                     "title": "Weather Forecast Synopsis",
-                    "description": "Text elements that can be used to highlight and comment weather forcast information.",
+                    "description": "Texts element with Highlight and Comment for weather forcast information.",
                     "$ref" : "#/definitions/texts"
                 },
                 "avalancheActivity" : {
                     "title": "Avalanche Activity and Avalanche Activity Forecast",
-                    "description": "Text elements that can be used to highlight and comment the current avalanche activity and forecast.",
+                    "description": "Texts element with Highlight and Comment for the current avalanche activity and forecast.",
                     "$ref" : "#/definitions/texts"
                 },
                 "snowpackStructure" : {
                     "title": "Snowpack Structure",
-                    "description": "Text elements that can be used to highlight and comment details on the snowpack structure.",
+                    "description": "Texts element with Highlight and Comment for details on the Snowpack Structure.",
                     "$ref" : "#/definitions/texts"
                 },
                 "travelAdvisory" : {
                     "title": "Travel Advisory",
-                    "description": "Text elements that can be used to highlight and comment travel advisory.",
+                    "description": "Texts element with Highlight and Comment for travel Advisory.",
                     "$ref" : "#/definitions/texts"
                 },
                 "tendency" : {
                     "title": "Tendency",
-                    "description": "Tendency element for a detailed description of the expected avalanche situation tendency after the Bulletin's period of validity .",
+                    "description": "Tendency element for a detailed description of the expected avalanche situation tendency after the Bulletin's period of validity.",
                     "$ref" : "#/definitions/tendency"
                 },
                 "metaData" : { "$ref" : "#/definitions/metaData" },
@@ -221,7 +221,7 @@
         },
         "texts" : {
             "title": "Texts",
-            "description": "Texts contains a Highlight and a Comment string, where highlights could also be described as a kind of headline for the longer comment. For Text-Formating only the HTML-Tags <br/> for a new line and <b> followed by </b> for a bold text.",
+            "description": "Texts contains a Highlight and a Comment string, where Highlights could also be described as a kind of Headline for the longer Comment. For Text-Formating only the HTML-Tags <br/> for a new line and <b> followed by </b> for a bold text.",
             "type" : "object",
             "properties" : {
                 "highlights" : {
@@ -305,14 +305,14 @@
         },
         "elevation" : {
             "title": "Elevation Boundery or Band",
-            "description": "Elevation describes either an elevation range below a certain bound (only upperBound is set to a value) or above a certain bound (only lowerBound is set to a value). If both values are asset to a value, an elevation band is defined by its traits. The value uses a numeric value, not more detailed than 100m resolution. Additionally to the numeric values also 'treeline' is allowed.",
-            "type" : "object", 
+            "description": "Elevation describes either an elevation range below a certain bound (only upperBound is set to a value) or above a certain bound (only lowerBound is set to a value). If both values are set to a value, an elevation band is defined by this property. The value uses a numeric value, not more detailed than 100m resolution. Additionally to the numeric values also 'treeline' is allowed.",
+            "type" : "object",
             "properties" : {
-                "lowerBound" : { 
+                "lowerBound" : {
                     "type" : "string",
                     "pattern" : "treeline|0|[1-9][0-9]*[0][0]+"
                 },
-                "upperBound" : { 
+                "upperBound" : {
                     "type" : "string",
                     "pattern" : "treeline|0|[1-9][0-9]*[0][0]+"
                 }
