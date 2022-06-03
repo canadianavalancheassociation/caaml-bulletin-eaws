@@ -104,14 +104,15 @@
 	</simpleType>
 	<simpleType name="SnowpackStabilityType">
 		<restriction base="string">
-			<enumeration value="very_poor"/>
-			<enumeration value="poor"/>
-			<enumeration value="fair"/>
 			<enumeration value="good"/>
+			<enumeration value="fair"/>
+			<enumeration value="poor"/>
+			<enumeration value="very_poor"/>
 		</restriction>
 	</simpleType>
 	<simpleType name="FrequencyType">
 		<restriction base="string">
+			<enumeration value="none"/>
 			<enumeration value="few"/>
 			<enumeration value="some"/>
 			<enumeration value="many"/>
