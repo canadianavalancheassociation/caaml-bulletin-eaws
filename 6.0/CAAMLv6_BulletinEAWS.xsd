@@ -88,7 +88,7 @@
 	<simpleType name="AvalancheProblemTypeType">
 		<restriction base="string">
 			<enumeration value="new_snow"/>
-			<enumeration value="wind_drifted_snow"/>
+			<enumeration value="wind_slab"/>
 			<enumeration value="persistent_weak_layers"/>
 			<enumeration value="wet_snow"/>
 			<enumeration value="gliding_snow"/>
