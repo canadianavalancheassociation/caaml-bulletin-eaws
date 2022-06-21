@@ -92,7 +92,7 @@
 			<enumeration value="persistent_weak_layers"/>
 			<enumeration value="wet_snow"/>
 			<enumeration value="gliding_snow"/>
-			<enumeration value="cornice_failure"/>
+			<enumeration value="cornice"/>
 			<enumeration value="favourable_situation"/>
 		</restriction>
 	</simpleType>
