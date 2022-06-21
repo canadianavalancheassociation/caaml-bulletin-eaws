@@ -93,6 +93,7 @@
 			<enumeration value="wet_snow"/>
 			<enumeration value="gliding_snow"/>
 			<enumeration value="cornices"/>
+			<enumeration value="no_distinct_avalanche_problem"/>
 			<enumeration value="favourable_situation"/>
 		</restriction>
 	</simpleType>
