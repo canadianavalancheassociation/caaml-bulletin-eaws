@@ -99,7 +99,10 @@
                 "tendency" : {
                     "title": "Tendency",
                     "description": "Tendency element for a detailed description of the expected avalanche situation tendency after the bulletin's period of validity.",
-                    "$ref" : "#/definitions/tendency"
+                    "anyOf": [
+                        { "$ref": "#/definitions/texts" },
+                        { "$ref": "#/definitions/tendency" }
+                    ]
                 },
                 "metaData" : { "$ref" : "#/definitions/metaData" },
                 "customData" : { "$ref" : "#/definitions/customData" }
@@ -173,12 +176,6 @@
             "description": "Describes the expected tendency of the development of the avalanche situation for a defined time period.",
             "type" : "object",
             "properties" : {
-                "highlights" : {
-                    "type" : "string"
-                },
-                "comment" : {
-                    "type" : "string"
-                },
                 "tendencyType" : {
                     "type" : "string",
                     "enum" : [ "decreasing", "steady", "increasing"]
