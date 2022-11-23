@@ -78,7 +78,7 @@
                 },
                 "wxSynopsis" : {
                     "title": "Weather Forecast Synopsis",
-                    "description": "Texts element with highlight and comment for weather forcast information.",
+                    "description": "Texts element with highlight and comment for weather forecast information.",
                     "$ref" : "#/definitions/texts"
                 },
                 "avalancheActivity" : {
@@ -222,7 +222,7 @@
         },
         "texts" : {
             "title": "Texts",
-            "description": "Texts contains a highlight and a comment string, where highlights could also be described as a kind of headline for the longer comment. For text-formating only the HTML-Tags <br/> for a new line and <b> followed by </b> for a bold text.",
+            "description": "Texts contains a highlight and a comment string, where highlights could also be described as a kind of headline for the longer comment. For text-formatting only the HTML-Tags <br/> for a new line and <b> followed by </b> for a bold text.",
             "type" : "object",
             "properties" : {
                 "highlights" : {
@@ -338,7 +338,7 @@
         },
         "validTimePeriod" : {
             "title": "Valid Time Period",
-            "description": "Valid time period can be used to limit the validity of an element to an erlier or later period. It can be used to distinguish danger ratings or avalanche problems.",
+            "description": "Valid time period can be used to limit the validity of an element to an earlier or later period. It can be used to distinguish danger ratings or avalanche problems.",
             "type" : "string",
             "enum" : [ "all_day", "earlier", "later" ]
         },
