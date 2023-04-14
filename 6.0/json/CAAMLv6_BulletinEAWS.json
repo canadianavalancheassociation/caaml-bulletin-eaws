@@ -41,6 +41,17 @@
                     "title": "Valid Time",
                     "description": "Date and Time from and until this bulletin is valid. ISO 8601 Timestamp in UTC or with time zone information.",
                     "$ref" : "#/definitions/validTime"
+                },              
+                "nextUpdate" : {
+                    "title": "Next Update",
+                    "description": "Time and date when the next bulletin will be published by the AWS to the Public. ISO 8601 timestamp in UTC or with time zone information.",
+                    "type" : "string",
+                    "format" : "date-time"
+                },
+                "unscheduled" : {
+                    "title": "Unscheduled",
+                    "description": "Flag if bulletin is unscheduled or not.",
+                    "type" : "boolean"
                 },
                 "source" : {
                     "title": "Source",
