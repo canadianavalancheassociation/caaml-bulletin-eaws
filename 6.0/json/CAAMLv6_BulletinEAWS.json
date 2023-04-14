@@ -110,10 +110,15 @@
                 "tendency" : {
                     "title": "Tendency",
                     "description": "Tendency element for a detailed description of the expected avalanche situation tendency after the bulletin's period of validity.",
-                    "anyOf": [
-                        { "$ref": "#/definitions/texts" },
-                        { "$ref": "#/definitions/tendency" }
-                    ]
+                    "type" : "array",
+                    "items" : {
+                        "anyOf": [
+                            { "$ref": "#/definitions/texts" },
+                            { "$ref": "#/definitions/tendency" }
+                        ]
+                    }
+
+
                 },
                 "metaData" : { "$ref" : "#/definitions/metaData" },
                 "customData" : { "$ref" : "#/definitions/customData" }
