@@ -41,6 +41,17 @@
                     "title": "Valid Time",
                     "description": "Date and Time from and until this bulletin is valid. ISO 8601 Timestamp in UTC or with time zone information.",
                     "$ref" : "#/definitions/validTime"
+                },              
+                "nextUpdate" : {
+                    "title": "Next Update",
+                    "description": "Time and date when the next bulletin will be published by the AWS to the Public. ISO 8601 timestamp in UTC or with time zone information.",
+                    "type" : "string",
+                    "format" : "date-time"
+                },
+                "unscheduled" : {
+                    "title": "Unscheduled",
+                    "description": "Flag if bulletin is unscheduled or not.",
+                    "type" : "boolean"
                 },
                 "source" : {
                     "title": "Source",
@@ -99,10 +110,15 @@
                 "tendency" : {
                     "title": "Tendency",
                     "description": "Tendency element for a detailed description of the expected avalanche situation tendency after the bulletin's period of validity.",
-                    "anyOf": [
-                        { "$ref": "#/definitions/texts" },
-                        { "$ref": "#/definitions/tendency" }
-                    ]
+                    "type" : "array",
+                    "items" : {
+                        "anyOf": [
+                            { "$ref": "#/definitions/texts" },
+                            { "$ref": "#/definitions/tendency" }
+                        ]
+                    }
+
+
                 },
                 "metaData" : { "$ref" : "#/definitions/metaData" },
                 "customData" : { "$ref" : "#/definitions/customData" }
@@ -116,6 +132,7 @@
             "properties" : {
                 "mainValue": { "$ref" : "#/definitions/dangerRatingValue" },
                 "elevation" : { "$ref" : "#/definitions/elevation" },
+                "aspects" : { "$ref" : "#/definitions/aspects" },
                 "validTimePeriod" : { "$ref" : "#/definitions/validTimePeriod" },
                 "metaData" : { "$ref" : "#/definitions/metaData" },
                 "customData" : { "$ref" : "#/definitions/customData" }
@@ -130,14 +147,14 @@
         },
         "avalancheProblem" : {
             "title": "Avalanche Problem",
-            "description": "Defines an avalanche problem, its time, aspect, and elevation constraints. A textual detail about the affected terrain can be given in the terrainFeature field. Also, details about the expected avalanche size, snowpack stability and its frequency can be defined.",
+            "description": "Defines an avalanche problem, its time, aspect, and elevation constraints. A textual detail about the affected terrain can be given in the comment field. Also, details about the expected avalanche size, snowpack stability and its frequency can be defined.",
             "type" : "object",
             "properties" : {
                 "problemType" : { "$ref" : "#/definitions/avalancheProblemType" },
                 "elevation" : { "$ref" : "#/definitions/elevation" },
                 "aspects" : { "$ref" : "#/definitions/aspects" },
                 "validTimePeriod" : { "$ref" : "#/definitions/validTimePeriod" },
-                "terrainFeature" : { "type" : "string" },
+                "comment" : { "type" : "string" },
                 "avalancheSize" : { "$ref" : "#/definitions/avalancheSize" },
                 "snowpackStability" : { "$ref" : "#/definitions/snowpackStability" },
                 "frequency" : { "$ref" : "#/definitions/frequency" },
