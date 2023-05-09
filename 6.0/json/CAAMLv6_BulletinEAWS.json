@@ -92,6 +92,11 @@
                     "description": "Texts element with highlight and comment for weather forecast information.",
                     "$ref" : "#/definitions/texts"
                 },
+                "wrSynopsis" : {
+                    "title": "Weather Review Synopsis",
+                    "description": "Texts element with highlight and comment for weather review information.",
+                    "$ref" : "#/definitions/texts"
+                },
                 "avalancheActivity" : {
                     "title": "Avalanche Activity",
                     "description": "Texts element with highlight and comment for the avalanche activity.",
@@ -239,7 +244,7 @@
         },
         "texts" : {
             "title": "Texts",
-            "description": "Texts contains a highlight and a comment string, where highlights could also be described as a kind of headline for the longer comment. For text-formatting only the HTML-Tags <br/> for a new line and <b> followed by </b> for a bold text.",
+            "description": "Texts contains a highlight and a comment string, where highlights could also be described as a kind of headline for the longer comment. For text-formatting the HTML-Tags <br/> for a new line, (<ul>,<ul/>) and (<li>,<li/>) for lists, (<h1>,<h1/>) to (<h6>,<h6/>) for headings and (<b>,</b>) for a bold text are allowed.",
             "type" : "object",
             "properties" : {
                 "highlights" : {
