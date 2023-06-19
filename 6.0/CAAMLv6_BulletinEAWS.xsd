@@ -33,6 +33,7 @@
 			<element name="avalancheProblem" type="caaml:AvalancheProblemType" minOccurs="0" maxOccurs="unbounded"/>
 			<element name="highlights" type="string" minOccurs="0"/>
 			<element name="weatherForecast" type="caaml:TextsBaseType" minOccurs="0"/>
+			<element name="weatherReview" type="caaml:TextsBaseType" minOccurs="0"/>
 			<element name="avalancheActivity" type="caaml:TextsBaseType" minOccurs="0"/>
 			<element name="snowpackStructure" type="caaml:TextsBaseType" minOccurs="0"/>
 			<element name="travelAdvisory" type="caaml:TextsBaseType" minOccurs="0"/>

@@ -92,7 +92,7 @@
                     "description": "Texts element with highlight and comment for weather forecast information.",
                     "$ref" : "#/definitions/texts"
                 },
-                "wrSynopsis" : {
+                "weatherReview" : {
                     "title": "Weather Review Synopsis",
                     "description": "Texts element with highlight and comment for weather review information.",
                     "$ref" : "#/definitions/texts"
