@@ -87,7 +87,7 @@
                     "description": "Contains an optional short text to highlight an exceptionally dangerous situation.",
                     "type" : "string"
                 },
-                "wxSynopsis" : {
+                "weatherForecast" : {
                     "title": "Weather Forecast Synopsis",
                     "description": "Texts element with highlight and comment for weather forecast information.",
                     "$ref" : "#/definitions/texts"
