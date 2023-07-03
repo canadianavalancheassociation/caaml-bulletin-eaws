@@ -142,6 +142,7 @@
                 "metaData" : { "$ref" : "#/definitions/metaData" },
                 "customData" : { "$ref" : "#/definitions/customData" }
             },
+            "required": ["mainValue"],
             "additionalProperties": false
         },     
         "dangerRatingValue" : {
@@ -152,20 +153,22 @@
         },
         "avalancheProblem" : {
             "title": "Avalanche Problem",
-            "description": "Defines an avalanche problem, its time, aspect, and elevation constraints. A textual detail about the affected terrain can be given in the comment field. Also, details about the expected avalanche size, snowpack stability and its frequency can be defined.",
+            "description": "Defines an avalanche problem, its time, aspect, and elevation constraints. A textual detail about the affected terrain can be given in the comment field. Also, details about the expected avalanche size, snowpack stability and its frequency can be defined. The implied danger rating value is optional.",
             "type" : "object",
             "properties" : {
                 "problemType" : { "$ref" : "#/definitions/avalancheProblemType" },
-                "elevation" : { "$ref" : "#/definitions/elevation" },
-                "aspects" : { "$ref" : "#/definitions/aspects" },
-                "validTimePeriod" : { "$ref" : "#/definitions/validTimePeriod" },
                 "comment" : { "type" : "string" },
                 "avalancheSize" : { "$ref" : "#/definitions/avalancheSize" },
                 "snowpackStability" : { "$ref" : "#/definitions/snowpackStability" },
                 "frequency" : { "$ref" : "#/definitions/frequency" },
+                "dangerRatingValue": { "$ref" : "#/definitions/dangerRatingValue" },
+                "elevation" : { "$ref" : "#/definitions/elevation" },
+                "aspects" : { "$ref" : "#/definitions/aspects" },
+                "validTimePeriod" : { "$ref" : "#/definitions/validTimePeriod" },
                 "metaData" : { "$ref" : "#/definitions/metaData" },
                 "customData" : { "$ref" : "#/definitions/customData" }
             },
+            "required": ["problemType"],
             "additionalProperties": false
         },
         "avalancheProblemType" : {
