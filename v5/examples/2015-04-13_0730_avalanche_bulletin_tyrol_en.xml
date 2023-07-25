@@ -1,0 +1,854 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<caaml:Bulletin xmlns:caaml="http://caaml.org/Schemas/V5.0/Profiles/BulletinEAWS" xmlns:gml="http://www.opengis.net/gml" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://caaml.org/Schemas/V5.0/Profiles/BulletinEAWS http://caaml.org/Schemas/V5.0/Profiles/BulletinEAWS/CAAMLv5_BulletinEAWS.xsd" gml:id="BulletinEnID1347" xml:lang="en">
+  <caaml:metaDataProperty>
+    <caaml:MetaData>
+      <caaml:dateTimeReport>2015-04-13T07:30:00+02:00</caaml:dateTimeReport>
+      <caaml:srcRef xlink:href="OpIDLwdTirol"/>
+      <caaml:comment>Rudi Mair</caaml:comment>
+    </caaml:MetaData>
+  </caaml:metaDataProperty>
+  <caaml:validTime>
+    <caaml:TimeInstant>
+      <caaml:timePosition>2015-04-13+02:00</caaml:timePosition>
+    </caaml:TimeInstant>
+  </caaml:validTime>
+  <caaml:bulletinResultsOf>
+    <caaml:BulletinMeasurements>
+      <caaml:extFiles>
+        <caaml:ExtFile gml:id="ExtFileID01">
+          <caaml:description></caaml:description>
+          <caaml:fileReferenceURI>https://apps.tirol.gv.at/lwd/fotos/nassschneelawine_2.jpg</caaml:fileReferenceURI>
+        </caaml:ExtFile>
+      </caaml:extFiles>
+      <caaml:comment>Springtime conditions, daytime danger cycle.</caaml:comment>
+      <caaml:highlights>Favourable morning conditions, then avalanche danger rises swiftly</caaml:highlights>
+      <caaml:dangerRatings>
+        <caaml:DangerRating>
+          <caaml:validTime>
+            <caaml:TimeInstant>
+              <caaml:timePosition>2015-04-10+02:00</caaml:timePosition>
+            </caaml:TimeInstant>
+          </caaml:validTime>
+          <caaml:mainValue>2</caaml:mainValue>
+        </caaml:DangerRating>
+        <caaml:DangerRating>
+          <caaml:validTime>
+            <caaml:TimeInstant>
+              <caaml:timePosition>2015-04-11+02:00</caaml:timePosition>
+            </caaml:TimeInstant>
+          </caaml:validTime>
+          <caaml:mainValue>3</caaml:mainValue>
+        </caaml:DangerRating>
+        <caaml:DangerRating>
+          <caaml:validTime>
+            <caaml:TimeInstant>
+              <caaml:timePosition>2015-04-12+02:00</caaml:timePosition>
+            </caaml:TimeInstant>
+          </caaml:validTime>
+          <caaml:mainValue>3</caaml:mainValue>
+        </caaml:DangerRating>
+        <caaml:DangerRating>
+          <caaml:validTime>
+            <caaml:TimeInstant>
+              <caaml:timePosition>2015-04-13+02:00</caaml:timePosition>
+            </caaml:TimeInstant>
+          </caaml:validTime>
+          <caaml:mainValue>3</caaml:mainValue>
+        </caaml:DangerRating>
+        <caaml:DangerRating>
+          <caaml:validTime>
+            <caaml:TimeInstant>
+              <caaml:timePosition>2015-04-14+02:00</caaml:timePosition>
+            </caaml:TimeInstant>
+          </caaml:validTime>
+          <caaml:mainValue>3</caaml:mainValue>
+        </caaml:DangerRating>
+        <caaml:DangerRating>
+          <caaml:locRef xlink:href="AT7R1"/>
+          <caaml:validTime>
+            <caaml:TimePeriod>
+              <caaml:beginPosition>2015-04-13T00:00:00+02:00</caaml:beginPosition>
+              <caaml:endPosition>2015-04-13T11:59:59+02:00</caaml:endPosition>
+            </caaml:TimePeriod>
+          </caaml:validTime>
+          <caaml:validElevation>
+            <caaml:ElevationRange uom="m">
+              <caaml:beginPosition>2200</caaml:beginPosition>
+            </caaml:ElevationRange>
+          </caaml:validElevation>
+          <caaml:mainValue>1</caaml:mainValue>
+        </caaml:DangerRating>
+        <caaml:DangerRating>
+          <caaml:locRef xlink:href="AT7R1"/>
+          <caaml:validTime>
+            <caaml:TimePeriod>
+              <caaml:beginPosition>2015-04-13T00:00:00+02:00</caaml:beginPosition>
+              <caaml:endPosition>2015-04-13T11:59:59+02:00</caaml:endPosition>
+            </caaml:TimePeriod>
+          </caaml:validTime>
+          <caaml:validElevation>
+            <caaml:ElevationRange uom="m">
+              <caaml:endPosition>2200</caaml:endPosition>
+            </caaml:ElevationRange>
+          </caaml:validElevation>
+          <caaml:mainValue>2</caaml:mainValue>
+        </caaml:DangerRating>
+        <caaml:DangerRating>
+          <caaml:locRef xlink:href="AT7R1"/>
+          <caaml:validTime>
+            <caaml:TimePeriod>
+              <caaml:beginPosition>2015-04-13T12:00:00+02:00</caaml:beginPosition>
+              <caaml:endPosition>2015-04-13T23:59:59+02:00</caaml:endPosition>
+            </caaml:TimePeriod>
+          </caaml:validTime>
+          <caaml:validElevation>
+            <caaml:ElevationRange uom="m">
+              <caaml:beginPosition>2800</caaml:beginPosition>
+            </caaml:ElevationRange>
+          </caaml:validElevation>
+          <caaml:mainValue>2</caaml:mainValue>
+        </caaml:DangerRating>
+        <caaml:DangerRating>
+          <caaml:locRef xlink:href="AT7R1"/>
+          <caaml:validTime>
+            <caaml:TimePeriod>
+              <caaml:beginPosition>2015-04-13T12:00:00+02:00</caaml:beginPosition>
+              <caaml:endPosition>2015-04-13T23:59:59+02:00</caaml:endPosition>
+            </caaml:TimePeriod>
+          </caaml:validTime>
+          <caaml:validElevation>
+            <caaml:ElevationRange uom="m">
+              <caaml:endPosition>2800</caaml:endPosition>
+            </caaml:ElevationRange>
+          </caaml:validElevation>
+          <caaml:mainValue>3</caaml:mainValue>
+        </caaml:DangerRating>
+        <caaml:DangerRating>
+          <caaml:locRef xlink:href="AT7R2"/>
+          <caaml:validTime>
+            <caaml:TimePeriod>
+              <caaml:beginPosition>2015-04-13T00:00:00+02:00</caaml:beginPosition>
+              <caaml:endPosition>2015-04-13T11:59:59+02:00</caaml:endPosition>
+            </caaml:TimePeriod>
+          </caaml:validTime>
+          <caaml:validElevation>
+            <caaml:ElevationRange uom="m">
+              <caaml:beginPosition>2200</caaml:beginPosition>
+            </caaml:ElevationRange>
+          </caaml:validElevation>
+          <caaml:mainValue>1</caaml:mainValue>
+        </caaml:DangerRating>
+        <caaml:DangerRating>
+          <caaml:locRef xlink:href="AT7R2"/>
+          <caaml:validTime>
+            <caaml:TimePeriod>
+              <caaml:beginPosition>2015-04-13T00:00:00+02:00</caaml:beginPosition>
+              <caaml:endPosition>2015-04-13T11:59:59+02:00</caaml:endPosition>
+            </caaml:TimePeriod>
+          </caaml:validTime>
+          <caaml:validElevation>
+            <caaml:ElevationRange uom="m">
+              <caaml:endPosition>2200</caaml:endPosition>
+            </caaml:ElevationRange>
+          </caaml:validElevation>
+          <caaml:mainValue>2</caaml:mainValue>
+        </caaml:DangerRating>
+        <caaml:DangerRating>
+          <caaml:locRef xlink:href="AT7R2"/>
+          <caaml:validTime>
+            <caaml:TimePeriod>
+              <caaml:beginPosition>2015-04-13T12:00:00+02:00</caaml:beginPosition>
+              <caaml:endPosition>2015-04-13T23:59:59+02:00</caaml:endPosition>
+            </caaml:TimePeriod>
+          </caaml:validTime>
+          <caaml:validElevation>
+            <caaml:ElevationRange uom="m">
+              <caaml:beginPosition>2800</caaml:beginPosition>
+            </caaml:ElevationRange>
+          </caaml:validElevation>
+          <caaml:mainValue>2</caaml:mainValue>
+        </caaml:DangerRating>
+        <caaml:DangerRating>
+          <caaml:locRef xlink:href="AT7R2"/>
+          <caaml:validTime>
+            <caaml:TimePeriod>
+              <caaml:beginPosition>2015-04-13T12:00:00+02:00</caaml:beginPosition>
+              <caaml:endPosition>2015-04-13T23:59:59+02:00</caaml:endPosition>
+            </caaml:TimePeriod>
+          </caaml:validTime>
+          <caaml:validElevation>
+            <caaml:ElevationRange uom="m">
+              <caaml:endPosition>2800</caaml:endPosition>
+            </caaml:ElevationRange>
+          </caaml:validElevation>
+          <caaml:mainValue>3</caaml:mainValue>
+        </caaml:DangerRating>
+        <caaml:DangerRating>
+          <caaml:locRef xlink:href="AT7R3"/>
+          <caaml:validTime>
+            <caaml:TimePeriod>
+              <caaml:beginPosition>2015-04-13T00:00:00+02:00</caaml:beginPosition>
+              <caaml:endPosition>2015-04-13T11:59:59+02:00</caaml:endPosition>
+            </caaml:TimePeriod>
+          </caaml:validTime>
+          <caaml:validElevation>
+            <caaml:ElevationRange uom="m">
+              <caaml:beginPosition>1800</caaml:beginPosition>
+            </caaml:ElevationRange>
+          </caaml:validElevation>
+          <caaml:mainValue>1</caaml:mainValue>
+        </caaml:DangerRating>
+        <caaml:DangerRating>
+          <caaml:locRef xlink:href="AT7R3"/>
+          <caaml:validTime>
+            <caaml:TimePeriod>
+              <caaml:beginPosition>2015-04-13T00:00:00+02:00</caaml:beginPosition>
+              <caaml:endPosition>2015-04-13T11:59:59+02:00</caaml:endPosition>
+            </caaml:TimePeriod>
+          </caaml:validTime>
+          <caaml:validElevation>
+            <caaml:ElevationRange uom="m">
+              <caaml:endPosition>1800</caaml:endPosition>
+            </caaml:ElevationRange>
+          </caaml:validElevation>
+          <caaml:mainValue>2</caaml:mainValue>
+        </caaml:DangerRating>
+        <caaml:DangerRating>
+          <caaml:locRef xlink:href="AT7R3"/>
+          <caaml:validTime>
+            <caaml:TimePeriod>
+              <caaml:beginPosition>2015-04-13T12:00:00+02:00</caaml:beginPosition>
+              <caaml:endPosition>2015-04-13T23:59:59+02:00</caaml:endPosition>
+            </caaml:TimePeriod>
+          </caaml:validTime>
+          <caaml:validElevation>
+            <caaml:ElevationRange uom="m">
+              <caaml:beginPosition>2200</caaml:beginPosition>
+            </caaml:ElevationRange>
+          </caaml:validElevation>
+          <caaml:mainValue>2</caaml:mainValue>
+        </caaml:DangerRating>
+        <caaml:DangerRating>
+          <caaml:locRef xlink:href="AT7R3"/>
+          <caaml:validTime>
+            <caaml:TimePeriod>
+              <caaml:beginPosition>2015-04-13T12:00:00+02:00</caaml:beginPosition>
+              <caaml:endPosition>2015-04-13T23:59:59+02:00</caaml:endPosition>
+            </caaml:TimePeriod>
+          </caaml:validTime>
+          <caaml:validElevation>
+            <caaml:ElevationRange uom="m">
+              <caaml:endPosition>2200</caaml:endPosition>
+            </caaml:ElevationRange>
+          </caaml:validElevation>
+          <caaml:mainValue>3</caaml:mainValue>
+        </caaml:DangerRating>
+        <caaml:DangerRating>
+          <caaml:locRef xlink:href="AT7R4"/>
+          <caaml:validTime>
+            <caaml:TimePeriod>
+              <caaml:beginPosition>2015-04-13T00:00:00+02:00</caaml:beginPosition>
+              <caaml:endPosition>2015-04-13T11:59:59+02:00</caaml:endPosition>
+            </caaml:TimePeriod>
+          </caaml:validTime>
+          <caaml:validElevation>
+            <caaml:ElevationRange uom="m">
+              <caaml:beginPosition>2200</caaml:beginPosition>
+            </caaml:ElevationRange>
+          </caaml:validElevation>
+          <caaml:mainValue>1</caaml:mainValue>
+        </caaml:DangerRating>
+        <caaml:DangerRating>
+          <caaml:locRef xlink:href="AT7R4"/>
+          <caaml:validTime>
+            <caaml:TimePeriod>
+              <caaml:beginPosition>2015-04-13T00:00:00+02:00</caaml:beginPosition>
+              <caaml:endPosition>2015-04-13T11:59:59+02:00</caaml:endPosition>
+            </caaml:TimePeriod>
+          </caaml:validTime>
+          <caaml:validElevation>
+            <caaml:ElevationRange uom="m">
+              <caaml:endPosition>2200</caaml:endPosition>
+            </caaml:ElevationRange>
+          </caaml:validElevation>
+          <caaml:mainValue>2</caaml:mainValue>
+        </caaml:DangerRating>
+        <caaml:DangerRating>
+          <caaml:locRef xlink:href="AT7R4"/>
+          <caaml:validTime>
+            <caaml:TimePeriod>
+              <caaml:beginPosition>2015-04-13T12:00:00+02:00</caaml:beginPosition>
+              <caaml:endPosition>2015-04-13T23:59:59+02:00</caaml:endPosition>
+            </caaml:TimePeriod>
+          </caaml:validTime>
+          <caaml:validElevation>
+            <caaml:ElevationRange uom="m">
+              <caaml:beginPosition>2800</caaml:beginPosition>
+            </caaml:ElevationRange>
+          </caaml:validElevation>
+          <caaml:mainValue>2</caaml:mainValue>
+        </caaml:DangerRating>
+        <caaml:DangerRating>
+          <caaml:locRef xlink:href="AT7R4"/>
+          <caaml:validTime>
+            <caaml:TimePeriod>
+              <caaml:beginPosition>2015-04-13T12:00:00+02:00</caaml:beginPosition>
+              <caaml:endPosition>2015-04-13T23:59:59+02:00</caaml:endPosition>
+            </caaml:TimePeriod>
+          </caaml:validTime>
+          <caaml:validElevation>
+            <caaml:ElevationRange uom="m">
+              <caaml:endPosition>2800</caaml:endPosition>
+            </caaml:ElevationRange>
+          </caaml:validElevation>
+          <caaml:mainValue>3</caaml:mainValue>
+        </caaml:DangerRating>
+        <caaml:DangerRating>
+          <caaml:locRef xlink:href="AT7R5"/>
+          <caaml:validTime>
+            <caaml:TimePeriod>
+              <caaml:beginPosition>2015-04-13T00:00:00+02:00</caaml:beginPosition>
+              <caaml:endPosition>2015-04-13T11:59:59+02:00</caaml:endPosition>
+            </caaml:TimePeriod>
+          </caaml:validTime>
+          <caaml:validElevation>
+            <caaml:ElevationRange uom="m">
+              <caaml:beginPosition>2200</caaml:beginPosition>
+            </caaml:ElevationRange>
+          </caaml:validElevation>
+          <caaml:mainValue>1</caaml:mainValue>
+        </caaml:DangerRating>
+        <caaml:DangerRating>
+          <caaml:locRef xlink:href="AT7R5"/>
+          <caaml:validTime>
+            <caaml:TimePeriod>
+              <caaml:beginPosition>2015-04-13T00:00:00+02:00</caaml:beginPosition>
+              <caaml:endPosition>2015-04-13T11:59:59+02:00</caaml:endPosition>
+            </caaml:TimePeriod>
+          </caaml:validTime>
+          <caaml:validElevation>
+            <caaml:ElevationRange uom="m">
+              <caaml:endPosition>2200</caaml:endPosition>
+            </caaml:ElevationRange>
+          </caaml:validElevation>
+          <caaml:mainValue>2</caaml:mainValue>
+        </caaml:DangerRating>
+        <caaml:DangerRating>
+          <caaml:locRef xlink:href="AT7R5"/>
+          <caaml:validTime>
+            <caaml:TimePeriod>
+              <caaml:beginPosition>2015-04-13T12:00:00+02:00</caaml:beginPosition>
+              <caaml:endPosition>2015-04-13T23:59:59+02:00</caaml:endPosition>
+            </caaml:TimePeriod>
+          </caaml:validTime>
+          <caaml:validElevation>
+            <caaml:ElevationRange uom="m">
+              <caaml:beginPosition>2800</caaml:beginPosition>
+            </caaml:ElevationRange>
+          </caaml:validElevation>
+          <caaml:mainValue>2</caaml:mainValue>
+        </caaml:DangerRating>
+        <caaml:DangerRating>
+          <caaml:locRef xlink:href="AT7R5"/>
+          <caaml:validTime>
+            <caaml:TimePeriod>
+              <caaml:beginPosition>2015-04-13T12:00:00+02:00</caaml:beginPosition>
+              <caaml:endPosition>2015-04-13T23:59:59+02:00</caaml:endPosition>
+            </caaml:TimePeriod>
+          </caaml:validTime>
+          <caaml:validElevation>
+            <caaml:ElevationRange uom="m">
+              <caaml:endPosition>2800</caaml:endPosition>
+            </caaml:ElevationRange>
+          </caaml:validElevation>
+          <caaml:mainValue>3</caaml:mainValue>
+        </caaml:DangerRating>
+        <caaml:DangerRating>
+          <caaml:locRef xlink:href="AT7R6"/>
+          <caaml:validTime>
+            <caaml:TimePeriod>
+              <caaml:beginPosition>2015-04-13T00:00:00+02:00</caaml:beginPosition>
+              <caaml:endPosition>2015-04-13T11:59:59+02:00</caaml:endPosition>
+            </caaml:TimePeriod>
+          </caaml:validTime>
+          <caaml:validElevation>
+            <caaml:ElevationRange uom="m">
+              <caaml:beginPosition>2200</caaml:beginPosition>
+            </caaml:ElevationRange>
+          </caaml:validElevation>
+          <caaml:mainValue>1</caaml:mainValue>
+        </caaml:DangerRating>
+        <caaml:DangerRating>
+          <caaml:locRef xlink:href="AT7R6"/>
+          <caaml:validTime>
+            <caaml:TimePeriod>
+              <caaml:beginPosition>2015-04-13T00:00:00+02:00</caaml:beginPosition>
+              <caaml:endPosition>2015-04-13T11:59:59+02:00</caaml:endPosition>
+            </caaml:TimePeriod>
+          </caaml:validTime>
+          <caaml:validElevation>
+            <caaml:ElevationRange uom="m">
+              <caaml:endPosition>2200</caaml:endPosition>
+            </caaml:ElevationRange>
+          </caaml:validElevation>
+          <caaml:mainValue>2</caaml:mainValue>
+        </caaml:DangerRating>
+        <caaml:DangerRating>
+          <caaml:locRef xlink:href="AT7R6"/>
+          <caaml:validTime>
+            <caaml:TimePeriod>
+              <caaml:beginPosition>2015-04-13T12:00:00+02:00</caaml:beginPosition>
+              <caaml:endPosition>2015-04-13T23:59:59+02:00</caaml:endPosition>
+            </caaml:TimePeriod>
+          </caaml:validTime>
+          <caaml:validElevation>
+            <caaml:ElevationRange uom="m">
+              <caaml:beginPosition>2800</caaml:beginPosition>
+            </caaml:ElevationRange>
+          </caaml:validElevation>
+          <caaml:mainValue>2</caaml:mainValue>
+        </caaml:DangerRating>
+        <caaml:DangerRating>
+          <caaml:locRef xlink:href="AT7R6"/>
+          <caaml:validTime>
+            <caaml:TimePeriod>
+              <caaml:beginPosition>2015-04-13T12:00:00+02:00</caaml:beginPosition>
+              <caaml:endPosition>2015-04-13T23:59:59+02:00</caaml:endPosition>
+            </caaml:TimePeriod>
+          </caaml:validTime>
+          <caaml:validElevation>
+            <caaml:ElevationRange uom="m">
+              <caaml:endPosition>2800</caaml:endPosition>
+            </caaml:ElevationRange>
+          </caaml:validElevation>
+          <caaml:mainValue>3</caaml:mainValue>
+        </caaml:DangerRating>
+        <caaml:DangerRating>
+          <caaml:locRef xlink:href="AT7R7"/>
+          <caaml:validTime>
+            <caaml:TimePeriod>
+              <caaml:beginPosition>2015-04-13T00:00:00+02:00</caaml:beginPosition>
+              <caaml:endPosition>2015-04-13T11:59:59+02:00</caaml:endPosition>
+            </caaml:TimePeriod>
+          </caaml:validTime>
+          <caaml:validElevation>
+            <caaml:ElevationRange uom="m">
+              <caaml:beginPosition>1800</caaml:beginPosition>
+            </caaml:ElevationRange>
+          </caaml:validElevation>
+          <caaml:mainValue>1</caaml:mainValue>
+        </caaml:DangerRating>
+        <caaml:DangerRating>
+          <caaml:locRef xlink:href="AT7R7"/>
+          <caaml:validTime>
+            <caaml:TimePeriod>
+              <caaml:beginPosition>2015-04-13T00:00:00+02:00</caaml:beginPosition>
+              <caaml:endPosition>2015-04-13T11:59:59+02:00</caaml:endPosition>
+            </caaml:TimePeriod>
+          </caaml:validTime>
+          <caaml:validElevation>
+            <caaml:ElevationRange uom="m">
+              <caaml:endPosition>1800</caaml:endPosition>
+            </caaml:ElevationRange>
+          </caaml:validElevation>
+          <caaml:mainValue>2</caaml:mainValue>
+        </caaml:DangerRating>
+        <caaml:DangerRating>
+          <caaml:locRef xlink:href="AT7R7"/>
+          <caaml:validTime>
+            <caaml:TimePeriod>
+              <caaml:beginPosition>2015-04-13T12:00:00+02:00</caaml:beginPosition>
+              <caaml:endPosition>2015-04-13T23:59:59+02:00</caaml:endPosition>
+            </caaml:TimePeriod>
+          </caaml:validTime>
+          <caaml:validElevation>
+            <caaml:ElevationRange uom="m">
+              <caaml:beginPosition>2200</caaml:beginPosition>
+            </caaml:ElevationRange>
+          </caaml:validElevation>
+          <caaml:mainValue>2</caaml:mainValue>
+        </caaml:DangerRating>
+        <caaml:DangerRating>
+          <caaml:locRef xlink:href="AT7R7"/>
+          <caaml:validTime>
+            <caaml:TimePeriod>
+              <caaml:beginPosition>2015-04-13T12:00:00+02:00</caaml:beginPosition>
+              <caaml:endPosition>2015-04-13T23:59:59+02:00</caaml:endPosition>
+            </caaml:TimePeriod>
+          </caaml:validTime>
+          <caaml:validElevation>
+            <caaml:ElevationRange uom="m">
+              <caaml:endPosition>2200</caaml:endPosition>
+            </caaml:ElevationRange>
+          </caaml:validElevation>
+          <caaml:mainValue>3</caaml:mainValue>
+        </caaml:DangerRating>
+        <caaml:DangerRating>
+          <caaml:locRef xlink:href="AT7R8"/>
+          <caaml:validTime>
+            <caaml:TimePeriod>
+              <caaml:beginPosition>2015-04-13T00:00:00+02:00</caaml:beginPosition>
+              <caaml:endPosition>2015-04-13T11:59:59+02:00</caaml:endPosition>
+            </caaml:TimePeriod>
+          </caaml:validTime>
+          <caaml:validElevation>
+            <caaml:ElevationRange uom="m">
+              <caaml:beginPosition>2200</caaml:beginPosition>
+            </caaml:ElevationRange>
+          </caaml:validElevation>
+          <caaml:mainValue>1</caaml:mainValue>
+        </caaml:DangerRating>
+        <caaml:DangerRating>
+          <caaml:locRef xlink:href="AT7R8"/>
+          <caaml:validTime>
+            <caaml:TimePeriod>
+              <caaml:beginPosition>2015-04-13T00:00:00+02:00</caaml:beginPosition>
+              <caaml:endPosition>2015-04-13T11:59:59+02:00</caaml:endPosition>
+            </caaml:TimePeriod>
+          </caaml:validTime>
+          <caaml:validElevation>
+            <caaml:ElevationRange uom="m">
+              <caaml:endPosition>2200</caaml:endPosition>
+            </caaml:ElevationRange>
+          </caaml:validElevation>
+          <caaml:mainValue>2</caaml:mainValue>
+        </caaml:DangerRating>
+        <caaml:DangerRating>
+          <caaml:locRef xlink:href="AT7R8"/>
+          <caaml:validTime>
+            <caaml:TimePeriod>
+              <caaml:beginPosition>2015-04-13T12:00:00+02:00</caaml:beginPosition>
+              <caaml:endPosition>2015-04-13T23:59:59+02:00</caaml:endPosition>
+            </caaml:TimePeriod>
+          </caaml:validTime>
+          <caaml:validElevation>
+            <caaml:ElevationRange uom="m">
+              <caaml:beginPosition>2800</caaml:beginPosition>
+            </caaml:ElevationRange>
+          </caaml:validElevation>
+          <caaml:mainValue>2</caaml:mainValue>
+        </caaml:DangerRating>
+        <caaml:DangerRating>
+          <caaml:locRef xlink:href="AT7R8"/>
+          <caaml:validTime>
+            <caaml:TimePeriod>
+              <caaml:beginPosition>2015-04-13T12:00:00+02:00</caaml:beginPosition>
+              <caaml:endPosition>2015-04-13T23:59:59+02:00</caaml:endPosition>
+            </caaml:TimePeriod>
+          </caaml:validTime>
+          <caaml:validElevation>
+            <caaml:ElevationRange uom="m">
+              <caaml:endPosition>2800</caaml:endPosition>
+            </caaml:ElevationRange>
+          </caaml:validElevation>
+          <caaml:mainValue>3</caaml:mainValue>
+        </caaml:DangerRating>
+        <caaml:DangerRating>
+          <caaml:locRef xlink:href="AT7R9"/>
+          <caaml:validTime>
+            <caaml:TimePeriod>
+              <caaml:beginPosition>2015-04-13T00:00:00+02:00</caaml:beginPosition>
+              <caaml:endPosition>2015-04-13T11:59:59+02:00</caaml:endPosition>
+            </caaml:TimePeriod>
+          </caaml:validTime>
+          <caaml:validElevation>
+            <caaml:ElevationRange uom="m">
+              <caaml:beginPosition>2200</caaml:beginPosition>
+            </caaml:ElevationRange>
+          </caaml:validElevation>
+          <caaml:mainValue>1</caaml:mainValue>
+        </caaml:DangerRating>
+        <caaml:DangerRating>
+          <caaml:locRef xlink:href="AT7R9"/>
+          <caaml:validTime>
+            <caaml:TimePeriod>
+              <caaml:beginPosition>2015-04-13T00:00:00+02:00</caaml:beginPosition>
+              <caaml:endPosition>2015-04-13T11:59:59+02:00</caaml:endPosition>
+            </caaml:TimePeriod>
+          </caaml:validTime>
+          <caaml:validElevation>
+            <caaml:ElevationRange uom="m">
+              <caaml:endPosition>2200</caaml:endPosition>
+            </caaml:ElevationRange>
+          </caaml:validElevation>
+          <caaml:mainValue>2</caaml:mainValue>
+        </caaml:DangerRating>
+        <caaml:DangerRating>
+          <caaml:locRef xlink:href="AT7R9"/>
+          <caaml:validTime>
+            <caaml:TimePeriod>
+              <caaml:beginPosition>2015-04-13T12:00:00+02:00</caaml:beginPosition>
+              <caaml:endPosition>2015-04-13T23:59:59+02:00</caaml:endPosition>
+            </caaml:TimePeriod>
+          </caaml:validTime>
+          <caaml:validElevation>
+            <caaml:ElevationRange uom="m">
+              <caaml:beginPosition>2800</caaml:beginPosition>
+            </caaml:ElevationRange>
+          </caaml:validElevation>
+          <caaml:mainValue>2</caaml:mainValue>
+        </caaml:DangerRating>
+        <caaml:DangerRating>
+          <caaml:locRef xlink:href="AT7R9"/>
+          <caaml:validTime>
+            <caaml:TimePeriod>
+              <caaml:beginPosition>2015-04-13T12:00:00+02:00</caaml:beginPosition>
+              <caaml:endPosition>2015-04-13T23:59:59+02:00</caaml:endPosition>
+            </caaml:TimePeriod>
+          </caaml:validTime>
+          <caaml:validElevation>
+            <caaml:ElevationRange uom="m">
+              <caaml:endPosition>2800</caaml:endPosition>
+            </caaml:ElevationRange>
+          </caaml:validElevation>
+          <caaml:mainValue>3</caaml:mainValue>
+        </caaml:DangerRating>
+        <caaml:DangerRating>
+          <caaml:locRef xlink:href="AT7R10"/>
+          <caaml:validTime>
+            <caaml:TimePeriod>
+              <caaml:beginPosition>2015-04-13T00:00:00+02:00</caaml:beginPosition>
+              <caaml:endPosition>2015-04-13T11:59:59+02:00</caaml:endPosition>
+            </caaml:TimePeriod>
+          </caaml:validTime>
+          <caaml:validElevation>
+            <caaml:ElevationRange uom="m">
+              <caaml:beginPosition>2200</caaml:beginPosition>
+            </caaml:ElevationRange>
+          </caaml:validElevation>
+          <caaml:mainValue>1</caaml:mainValue>
+        </caaml:DangerRating>
+        <caaml:DangerRating>
+          <caaml:locRef xlink:href="AT7R10"/>
+          <caaml:validTime>
+            <caaml:TimePeriod>
+              <caaml:beginPosition>2015-04-13T00:00:00+02:00</caaml:beginPosition>
+              <caaml:endPosition>2015-04-13T11:59:59+02:00</caaml:endPosition>
+            </caaml:TimePeriod>
+          </caaml:validTime>
+          <caaml:validElevation>
+            <caaml:ElevationRange uom="m">
+              <caaml:endPosition>2200</caaml:endPosition>
+            </caaml:ElevationRange>
+          </caaml:validElevation>
+          <caaml:mainValue>2</caaml:mainValue>
+        </caaml:DangerRating>
+        <caaml:DangerRating>
+          <caaml:locRef xlink:href="AT7R10"/>
+          <caaml:validTime>
+            <caaml:TimePeriod>
+              <caaml:beginPosition>2015-04-13T12:00:00+02:00</caaml:beginPosition>
+              <caaml:endPosition>2015-04-13T23:59:59+02:00</caaml:endPosition>
+            </caaml:TimePeriod>
+          </caaml:validTime>
+          <caaml:validElevation>
+            <caaml:ElevationRange uom="m">
+              <caaml:beginPosition>2800</caaml:beginPosition>
+            </caaml:ElevationRange>
+          </caaml:validElevation>
+          <caaml:mainValue>2</caaml:mainValue>
+        </caaml:DangerRating>
+        <caaml:DangerRating>
+          <caaml:locRef xlink:href="AT7R10"/>
+          <caaml:validTime>
+            <caaml:TimePeriod>
+              <caaml:beginPosition>2015-04-13T12:00:00+02:00</caaml:beginPosition>
+              <caaml:endPosition>2015-04-13T23:59:59+02:00</caaml:endPosition>
+            </caaml:TimePeriod>
+          </caaml:validTime>
+          <caaml:validElevation>
+            <caaml:ElevationRange uom="m">
+              <caaml:endPosition>2800</caaml:endPosition>
+            </caaml:ElevationRange>
+          </caaml:validElevation>
+          <caaml:mainValue>3</caaml:mainValue>
+        </caaml:DangerRating>
+        <caaml:DangerRating>
+          <caaml:locRef xlink:href="AT7R11"/>
+          <caaml:validTime>
+            <caaml:TimePeriod>
+              <caaml:beginPosition>2015-04-13T00:00:00+02:00</caaml:beginPosition>
+              <caaml:endPosition>2015-04-13T11:59:59+02:00</caaml:endPosition>
+            </caaml:TimePeriod>
+          </caaml:validTime>
+          <caaml:validElevation>
+            <caaml:ElevationRange uom="m">
+              <caaml:beginPosition>2200</caaml:beginPosition>
+            </caaml:ElevationRange>
+          </caaml:validElevation>
+          <caaml:mainValue>1</caaml:mainValue>
+        </caaml:DangerRating>
+        <caaml:DangerRating>
+          <caaml:locRef xlink:href="AT7R11"/>
+          <caaml:validTime>
+            <caaml:TimePeriod>
+              <caaml:beginPosition>2015-04-13T00:00:00+02:00</caaml:beginPosition>
+              <caaml:endPosition>2015-04-13T11:59:59+02:00</caaml:endPosition>
+            </caaml:TimePeriod>
+          </caaml:validTime>
+          <caaml:validElevation>
+            <caaml:ElevationRange uom="m">
+              <caaml:endPosition>2200</caaml:endPosition>
+            </caaml:ElevationRange>
+          </caaml:validElevation>
+          <caaml:mainValue>2</caaml:mainValue>
+        </caaml:DangerRating>
+        <caaml:DangerRating>
+          <caaml:locRef xlink:href="AT7R11"/>
+          <caaml:validTime>
+            <caaml:TimePeriod>
+              <caaml:beginPosition>2015-04-13T12:00:00+02:00</caaml:beginPosition>
+              <caaml:endPosition>2015-04-13T23:59:59+02:00</caaml:endPosition>
+            </caaml:TimePeriod>
+          </caaml:validTime>
+          <caaml:validElevation>
+            <caaml:ElevationRange uom="m">
+              <caaml:beginPosition>2800</caaml:beginPosition>
+            </caaml:ElevationRange>
+          </caaml:validElevation>
+          <caaml:mainValue>2</caaml:mainValue>
+        </caaml:DangerRating>
+        <caaml:DangerRating>
+          <caaml:locRef xlink:href="AT7R11"/>
+          <caaml:validTime>
+            <caaml:TimePeriod>
+              <caaml:beginPosition>2015-04-13T12:00:00+02:00</caaml:beginPosition>
+              <caaml:endPosition>2015-04-13T23:59:59+02:00</caaml:endPosition>
+            </caaml:TimePeriod>
+          </caaml:validTime>
+          <caaml:validElevation>
+            <caaml:ElevationRange uom="m">
+              <caaml:endPosition>2800</caaml:endPosition>
+            </caaml:ElevationRange>
+          </caaml:validElevation>
+          <caaml:mainValue>3</caaml:mainValue>
+        </caaml:DangerRating>
+        <caaml:DangerRating>
+          <caaml:locRef xlink:href="AT7R12"/>
+          <caaml:validTime>
+            <caaml:TimePeriod>
+              <caaml:beginPosition>2015-04-13T00:00:00+02:00</caaml:beginPosition>
+              <caaml:endPosition>2015-04-13T11:59:59+02:00</caaml:endPosition>
+            </caaml:TimePeriod>
+          </caaml:validTime>
+          <caaml:validElevation>
+            <caaml:ElevationRange uom="m">
+              <caaml:beginPosition>1800</caaml:beginPosition>
+            </caaml:ElevationRange>
+          </caaml:validElevation>
+          <caaml:mainValue>1</caaml:mainValue>
+        </caaml:DangerRating>
+        <caaml:DangerRating>
+          <caaml:locRef xlink:href="AT7R12"/>
+          <caaml:validTime>
+            <caaml:TimePeriod>
+              <caaml:beginPosition>2015-04-13T00:00:00+02:00</caaml:beginPosition>
+              <caaml:endPosition>2015-04-13T11:59:59+02:00</caaml:endPosition>
+            </caaml:TimePeriod>
+          </caaml:validTime>
+          <caaml:validElevation>
+            <caaml:ElevationRange uom="m">
+              <caaml:endPosition>1800</caaml:endPosition>
+            </caaml:ElevationRange>
+          </caaml:validElevation>
+          <caaml:mainValue>2</caaml:mainValue>
+        </caaml:DangerRating>
+        <caaml:DangerRating>
+          <caaml:locRef xlink:href="AT7R12"/>
+          <caaml:validTime>
+            <caaml:TimePeriod>
+              <caaml:beginPosition>2015-04-13T12:00:00+02:00</caaml:beginPosition>
+              <caaml:endPosition>2015-04-13T23:59:59+02:00</caaml:endPosition>
+            </caaml:TimePeriod>
+          </caaml:validTime>
+          <caaml:validElevation>
+            <caaml:ElevationRange uom="m">
+              <caaml:beginPosition>2200</caaml:beginPosition>
+            </caaml:ElevationRange>
+          </caaml:validElevation>
+          <caaml:mainValue>2</caaml:mainValue>
+        </caaml:DangerRating>
+        <caaml:DangerRating>
+          <caaml:locRef xlink:href="AT7R12"/>
+          <caaml:validTime>
+            <caaml:TimePeriod>
+              <caaml:beginPosition>2015-04-13T12:00:00+02:00</caaml:beginPosition>
+              <caaml:endPosition>2015-04-13T23:59:59+02:00</caaml:endPosition>
+            </caaml:TimePeriod>
+          </caaml:validTime>
+          <caaml:validElevation>
+            <caaml:ElevationRange uom="m">
+              <caaml:endPosition>2200</caaml:endPosition>
+            </caaml:ElevationRange>
+          </caaml:validElevation>
+          <caaml:mainValue>3</caaml:mainValue>
+        </caaml:DangerRating>
+      </caaml:dangerRatings>
+      <caaml:dangerPatterns>
+        <caaml:DangerPattern>
+          <caaml:type>DP10</caaml:type>
+        </caaml:DangerPattern>
+        <caaml:DangerPattern>
+          <caaml:type>DP2</caaml:type>
+        </caaml:DangerPattern>
+        <caaml:DangerPattern>
+          <caaml:type>DP1</caaml:type>
+        </caaml:DangerPattern>
+      </caaml:dangerPatterns>
+      <caaml:avProblems>
+        <caaml:AvProblem>
+          <caaml:type>gliding snow</caaml:type>
+          <caaml:validTime>
+            <caaml:TimePeriod>
+              <caaml:beginPosition>2015-04-13T00:00:00+02:00</caaml:beginPosition>
+              <caaml:endPosition>2015-04-13T11:59:59+02:00</caaml:endPosition>
+            </caaml:TimePeriod>
+          </caaml:validTime>
+          <caaml:validAspect xlink:href="AspectRange_E"/>
+          <caaml:validAspect xlink:href="AspectRange_SE"/>
+          <caaml:validAspect xlink:href="AspectRange_S"/>
+          <caaml:validAspect xlink:href="AspectRange_SW"/>
+          <caaml:validAspect xlink:href="AspectRange_W"/>
+          <caaml:validElevation>
+            <caaml:ElevationRange uom="m">
+              <caaml:endPosition>2600</caaml:endPosition>
+            </caaml:ElevationRange>
+          </caaml:validElevation>
+          <caaml:comment>grassy slopes</caaml:comment>
+        </caaml:AvProblem>
+        <caaml:AvProblem>
+          <caaml:type>wet snow</caaml:type>
+          <caaml:validTime>
+            <caaml:TimePeriod>
+              <caaml:beginPosition>2015-04-13T12:00:00+02:00</caaml:beginPosition>
+              <caaml:endPosition>2015-04-13T23:59:59+02:00</caaml:endPosition>
+            </caaml:TimePeriod>
+          </caaml:validTime>
+          <caaml:validAspect xlink:href="AspectRange_N"/>
+          <caaml:validAspect xlink:href="AspectRange_NE"/>
+          <caaml:validAspect xlink:href="AspectRange_E"/>
+          <caaml:validAspect xlink:href="AspectRange_SE"/>
+          <caaml:validAspect xlink:href="AspectRange_S"/>
+          <caaml:validAspect xlink:href="AspectRange_SW"/>
+          <caaml:validAspect xlink:href="AspectRange_W"/>
+          <caaml:validAspect xlink:href="AspectRange_NW"/>
+          <caaml:validElevation>
+            <caaml:ElevationRange uom="m">
+              <caaml:endPosition>2800</caaml:endPosition>
+            </caaml:ElevationRange>
+          </caaml:validElevation>
+          <caaml:comment>from late morning</caaml:comment>
+        </caaml:AvProblem>
+      </caaml:avProblems>
+      <caaml:wxSynopsisHighlights>Alpine Weather Forecast (ZAMG-Weather Service Innsbruck)</caaml:wxSynopsisHighlights>
+      <caaml:wxSynopsisComment>Weather: Tirol lies at the edge of a high pressure zone whose is over France. The NW air current contains clouds with some potential of showers. Towards mid-week the high will be directly over the Alps, subsequently will be pushed away by a cold front. Mountain weather today: high altitude cirrus cloud and sunshine. Towards midday in northern regions between Karwendel and Kaiser, cloud could move in, convective cloud build-up expected this afternoon. Possible local showers in Tirol’s eastern Lowlands. Tonight on the northern flank of the Alps and in the Tauern, rising tendency towards showers, the snowfall level dropping from 2200 down to 1500 m. Temperature at 2000m, +3 to +7 degrees; at 3000m, -3 degrees. Light to moderate NW winds.</caaml:wxSynopsisComment>
+      <caaml:avActivityHighlights></caaml:avActivityHighlights>
+      <caaml:avActivityComment></caaml:avActivityComment>
+      <caaml:snowpackStructureHighlights>Snow Layering</caaml:snowpackStructureHighlights>
+      <caaml:snowpackStructureComment>The snowpack on sunny slopes below approximately 2800m, on shady slopes below approximately 2200m, is already thoroughly wet. Following a night of mostly clear skies with adequate outgoing radiation, the snowpack surface often formed a crust capable of bearing loads. Solar radiation and daytime warming will soften, weaken and deteriorate this crust rapidly, causing the snowpack to forfeit its hard-won firmness.</caaml:snowpackStructureComment>
+      <caaml:travelAdvisoryHighlights>Avalanche Danger</caaml:travelAdvisoryHighlights>
+      <caaml:travelAdvisoryComment>In Tirol’s backcountry touring regions favourable conditions reign during the early morning hours. A short time later, avalanche danger increases swiftly, noticeably and reaches danger level 3 (considerable) over widespread areas. The cause: loss of snowpack firmness due to intense solar radiation and daytime warming. To an increasing degree, naturally triggered moist loose-snow avalanches and wet avalanches can be expected on sunny slopes especially below approximately 2800m; on shady slopes below approximately 2200. On steep, grass-covered slopes gliding avalanches are also possible. Since avalanches which trigger frequently fracture all the way down to the ground, the entire snowmass can be swept away, thereby causing large-sized releases. Under all circumstances, skiing and freeriding tours in outlying terrain should be terminated early in the day.</caaml:travelAdvisoryComment>
+    </caaml:BulletinMeasurements>
+  </caaml:bulletinResultsOf>
+  <caaml:locRef xlink:href="AT7"/>
+</caaml:Bulletin>
