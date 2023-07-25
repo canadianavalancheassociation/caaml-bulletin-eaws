@@ -19,4 +19,4 @@ http://caaml.org/Schemas/V5.0/Profiles/BulletinEAWS/Doc/
 
 # CAAML V6.0 (draft)
 
-![CAAML V6 graphical representation](6.0/examples/tree_view.png)
+![CAAML V6 graphical representation](v6/tree_view.png)
