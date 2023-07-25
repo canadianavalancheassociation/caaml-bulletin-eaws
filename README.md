@@ -6,6 +6,8 @@ The CAAML Profile 'EAWS Bulletin' aims to facilitate the exchange of avalanche b
 
 ![CAAML V6 graphical representation](v6/tree_view.png)
 
+Treeview made with https://navneethg.github.io/jsonschemaviewer/ .
+
 ## Authors
 
 This CAAML standard was developed by:
