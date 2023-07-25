@@ -19,35 +19,35 @@
             },
             "regions": [
                 {
-                    "regionId" : "IT-32-TN-13",
+                    "regionID" : "IT-32-TN-13",
                     "name" : "Primiero - Pale di S. Martino"
                 },
                 {
-                    "regionId" : "IT-32-TN-01",
+                    "regionID" : "IT-32-TN-01",
                     "name" : "Adamello - Presanella"
                 },
                 {
-                    "regionId" : "IT-32-TN-04",
+                    "regionID" : "IT-32-TN-04",
                     "name" : "Northern Brenta - Peller"
                 },
                 {
-                    "regionId" : "IT-32-TN-16",
+                    "regionID" : "IT-32-TN-16",
                     "name" : "Fassa Valley"
                 },
                 {
-                    "regionId" : "IT-32-TN-19",
+                    "regionID" : "IT-32-TN-19",
                     "name" : "Sole, Pejo and Rabbi"
                 },
                 {
-                    "regionId" : "IT-32-TN-07",
+                    "regionID" : "IT-32-TN-07",
                     "name" : "Northern Lagorai"
                 },
                 {
-                    "regionId" : "IT-32-TN-09",
+                    "regionID" : "IT-32-TN-09",
                     "name" : "Latemar"
                 },
                 {
-                    "regionId" : "IT-32-TN-20",
+                    "regionID" : "IT-32-TN-20",
                     "name" : "Maddalene"
                 }
             ],
@@ -69,13 +69,13 @@
             ],
             "avalancheProblems": [
                 {
-                    "problemType": "wind_drifted_snow",
+                    "problemType": "wind_slab",
                     "elevation": {
                         "lowerBound": "2400"
                     },
                     "aspects": ["NE", "NW", "N"],
                     "validTimePeriod": "all_day",
-                    "terrainFeature": "In particular adjacent to ridgelines and in gullies and bowls in all aspects.",
+                    "comment": "In particular adjacent to ridgelines and in gullies and bowls in all aspects.",
                     "avalancheSize": 2,
                     "snowpackStability": "poor",
                     "frequency": "some"
@@ -101,14 +101,14 @@
             "snowpackStructure": {
                 "comment": "At high altitudes and in high Alpine regions less snow than usual is lying. As a consequence of solar radiation the snow drift accumulations stabilised during the last few days, in particular on sunny slopes. Here the snowpack is better bonded. The old snowpack will be prone to triggering in some places, especially on shady slopes above approximately 2400 m."
             },
-            "tendency": {
+            "tendency": [{
                 "comment": "The avalanche danger will persist.",
                 "tendencyType": "steady",
                 "validTime": {
                     "startTime": "2022-03-03T23:00:00Z",
                     "endTime": "2022-03-04T23:00:00Z"
                 }
-            },
+            }],
             "metaData": {
                 "extFiles" : [
                     {
