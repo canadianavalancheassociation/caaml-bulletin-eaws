@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2005 rel. 3 U (http://www.altova.com) by Pascal Haegeli (Avisualanche Consulting) -->
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.w3.org/XML/1998/namespace">
+	<!-- locator attribute -->
+	<attribute name="lang" type="language"/>
+</schema>
