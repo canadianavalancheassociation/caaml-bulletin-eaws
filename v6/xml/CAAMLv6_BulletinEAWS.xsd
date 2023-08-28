@@ -2,8 +2,10 @@
 <schema xmlns="http://www.w3.org/2001/XMLSchema"
 		targetNamespace="http://caaml.org/Schemas/V6.0/Profiles/BulletinEAWS"
 		xmlns:caaml="http://caaml.org/Schemas/V6.0/Profiles/BulletinEAWS"
+		xmlns:gml="http://www.opengis.net/gml/3.2"
 		version="6.0.0"
 		elementFormDefault="qualified">
+	<import namespace="http://www.opengis.net/gml/3.2" schemaLocation="gml/3.2.2/gml.xsd"/>
 
 	<!--**********************************************************-->
 	<!--***         OBSERVATION COLLECTION ELEMENTS            ***-->
@@ -23,21 +25,18 @@
 	<element name="bulletin" type="caaml:BulletinType"/>
 	<complexType name="BulletinType" final="#all">
 		<sequence>
-			<element name="publicationTime" type="dateTime" minOccurs="0"/>
-			<element name="validTime" type="caaml:ValidTimeType" minOccurs="0"/>
-			<element name="nextUpdate" type="caaml:ValidTimeType" minOccurs="0"/>
-			<element name="unscheduled" type="boolean" minOccurs="0"/>
-			<element name="source" type="caaml:SourceType" minOccurs="0"/>
+			<element name="publicationTime" type="dateTime"/>
+			<element name="validTime" type="caaml:ValidTimeType"/>
+			<element name="source" type="caaml:SourceType"/>
 			<element name="region" type="caaml:RegionType" maxOccurs="unbounded"/>
 			<element name="dangerRating" type="caaml:DangerRatingType" maxOccurs="unbounded"/>
 			<element name="avalancheProblem" type="caaml:AvalancheProblemType" minOccurs="0" maxOccurs="unbounded"/>
 			<element name="highlights" type="string" minOccurs="0"/>
-			<element name="weatherForecast" type="caaml:TextsBaseType" minOccurs="0"/>
-			<element name="weatherReview" type="caaml:TextsBaseType" minOccurs="0"/>
+			<element name="wxSynopsis" type="caaml:TextsBaseType" minOccurs="0"/>
 			<element name="avalancheActivity" type="caaml:TextsBaseType" minOccurs="0"/>
 			<element name="snowpackStructure" type="caaml:TextsBaseType" minOccurs="0"/>
 			<element name="travelAdvisory" type="caaml:TextsBaseType" minOccurs="0"/>
-			<element name="tendency" type="caaml:TendencyType" minOccurs="0" maxOccurs="unbounded"/>
+			<element name="tendency" type="caaml:TendencyType" minOccurs="0"/>
 			<element name="metaData" type="caaml:MetaDataType" minOccurs="0"/>
 			<element name="customData" type="caaml:CustomDataType" minOccurs="0"/>
 		</sequence>
@@ -52,7 +51,6 @@
 		<sequence>
 			<element name="mainValue" type="caaml:DangerRatingValueType"/>
 			<element name="elevation" type="caaml:ElevationType" minOccurs="0"/>
-			<element name="aspect" type="caaml:AspectType" minOccurs="0" maxOccurs="unbounded"/>
 			<element name="validTimePeriod" type="caaml:ValidTimePeriodType" minOccurs="0"/>
 			<element name="metaData" type="caaml:MetaDataType" minOccurs="0"/>
 			<element name="customData" type="caaml:CustomDataType" minOccurs="0"/>
@@ -79,11 +77,10 @@
 			<element name="elevation" type="caaml:ElevationType" minOccurs="0"/>
 			<element name="aspect" type="caaml:AspectType" minOccurs="0" maxOccurs="unbounded"/>
 			<element name="validTimePeriod" type="caaml:ValidTimePeriodType" minOccurs="0"/>
+			<element name="terrainFeature" type="string" minOccurs="0"/>
+			<element name="avalancheSize" type="caaml:AvalancheSizeType" minOccurs="0"/>
 			<element name="snowpackStability" type="caaml:SnowpackStabilityType" minOccurs="0"/>
 			<element name="frequency" type="caaml:FrequencyType" minOccurs="0"/>
-			<element name="avalancheSize" type="caaml:AvalancheSizeType" minOccurs="0"/>
-			<element name="dangerRatingValue" type="caaml:DangerRatingValueType" minOccurs="0"/>
-			<element name="comment" type="string" minOccurs="0"/>
 			<element name="metaData" type="caaml:MetaDataType" minOccurs="0"/>
 			<element name="customData" type="caaml:CustomDataType" minOccurs="0"/>
 		</sequence>
@@ -211,10 +208,12 @@
 	<complexType name="RegionType" final="#all">
 		<sequence>
 			<element name="name" type="string"/>
+			<element name="centerPoint" type="gml:PointType" minOccurs="0"/>
+			<element name="outline" type="gml:PolygonType" minOccurs="0"/>
 			<element name="metaData" type="caaml:MetaDataType" minOccurs="0"/>
 			<element name="customData" type="caaml:CustomDataType" minOccurs="0"/>
 		</sequence>
-		<attribute name="regionID" type="string" use="required"/>
+		<attribute name="regionId" type="string" use="required"/>
 	</complexType>
 	<!-- ASPECT -->
 	<simpleType name="AspectType">

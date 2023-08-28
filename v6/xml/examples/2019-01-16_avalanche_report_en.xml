@@ -15,28 +15,28 @@
         </contactPerson>
       </provider>
     </source>
-    <region regionID="IT-32-TN-13">
+    <region regionId="IT-32-TN-13">
       <name>Primiero - Pale di S. Martino</name>
     </region>
-    <region regionID="IT-32-TN-01">
+    <region regionId="IT-32-TN-01">
       <name>Adamello - Presanella</name>
     </region>
-    <region regionID="IT-32-TN-04">
+    <region regionId="IT-32-TN-04">
       <name>Northern Brenta - Peller</name>
     </region>
-    <region regionID="IT-32-TN-16">
+    <region regionId="IT-32-TN-16">
       <name>Fassa Valley</name>
     </region>
-    <region regionID="IT-32-TN-19">
+    <region regionId="IT-32-TN-19">
       <name>Sole, Pejo and Rabbi</name>
     </region>
-    <region regionID="IT-32-TN-07">
+    <region regionId="IT-32-TN-07">
       <name>Northern Lagorai</name>
     </region>
-    <region regionID="IT-32-TN-09">
+    <region regionId="IT-32-TN-09">
       <name>Latemar</name>
     </region>
-    <region regionID="IT-32-TN-20">
+    <region regionId="IT-32-TN-20">
       <name>Maddalene</name>
     </region>
     <dangerRating>
@@ -54,7 +54,7 @@
       <validTimePeriod>all_day</validTimePeriod>
     </dangerRating>
     <avalancheProblem>
-      <problemType>wind_slab</problemType>
+      <problemType>wind_drifted_snow</problemType>
       <elevation uom="m">
         <lowerBound>2400</lowerBound>
       </elevation>
@@ -62,10 +62,10 @@
       <aspect>NE</aspect>
       <aspect>N</aspect>
       <validTimePeriod>all_day</validTimePeriod>
+      <terrainFeature>In particular adjacent to ridgelines and in gullies and bowls in all aspects.</terrainFeature>
+      <avalancheSize>2</avalancheSize>
       <snowpackStability>poor</snowpackStability>
       <frequency>some</frequency>
-      <avalancheSize>2</avalancheSize>
-      <comment>In particular adjacent to ridgelines and in gullies and bowls in all aspects.</comment>
     </avalancheProblem>
     <avalancheProblem>
       <problemType>persistent_weak_layers</problemType>
@@ -79,9 +79,9 @@
       <aspect>NE</aspect>
       <aspect>N</aspect>
       <validTimePeriod>all_day</validTimePeriod>
+      <avalancheSize>3</avalancheSize>
       <snowpackStability>poor</snowpackStability>
       <frequency>few</frequency>
-      <avalancheSize>3</avalancheSize>
     </avalancheProblem>
     <highlights>Many starting zones have released the snow but not entirely.</highlights>
     <avalancheActivity>
