@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<caaml:AspectCollection xmlns:caaml="http://caaml.org/Schemas/V5.0/Profiles/BulletinEAWS" xmlns:gml="http://www.opengis.net/gml" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://caaml.org/Schemas/V5.0/Profiles/BulletinEAWS
+http://caaml.org/Schemas/V5.0/Profiles/BulletinEAWS/CAAMLv5_BulletinEAWS.xsd">
+	<caaml:metaDataProperty>
+		<caaml:MetaData>
+			<caaml:dateTimeReport>2010-10-29T19:23:00+8:00</caaml:dateTimeReport>
+			<caaml:srcRef>
+				<caaml:Operation gml:id="Avisualanche">
+					<caaml:name>Avisualanche Consulting</caaml:name>
+				</caaml:Operation>
+			</caaml:srcRef>
+			<caaml:comment>This file contains the aspect definitions for the public avalanche bulletin exchange of the EAWS.</caaml:comment>
+		</caaml:MetaData>
+	</caaml:metaDataProperty>
+	<caaml:aspects>
+		<caaml:AspectRange gml:id="AspectRange_N">
+			<caaml:beginPosition>337.5</caaml:beginPosition>
+			<caaml:endPosition>22.5</caaml:endPosition>
+		</caaml:AspectRange>
+		<caaml:AspectRange gml:id="AspectRange_NE">
+			<caaml:beginPosition>22.5</caaml:beginPosition>
+			<caaml:endPosition>67.5</caaml:endPosition>
+		</caaml:AspectRange>
+		<caaml:AspectRange gml:id="AspectRange_E">
+			<caaml:beginPosition>67.5</caaml:beginPosition>
+			<caaml:endPosition>112.5</caaml:endPosition>
+		</caaml:AspectRange>
+		<caaml:AspectRange gml:id="AspectRange_SE">
+			<caaml:beginPosition>112.5</caaml:beginPosition>
+			<caaml:endPosition>157.5</caaml:endPosition>
+		</caaml:AspectRange>
+		<caaml:AspectRange gml:id="AspectRange_S">
+			<caaml:beginPosition>157.5</caaml:beginPosition>
+			<caaml:endPosition>202.5</caaml:endPosition>
+		</caaml:AspectRange>
+		<caaml:AspectRange gml:id="AspectRange_SW">
+			<caaml:beginPosition>202.5</caaml:beginPosition>
+			<caaml:endPosition>247.5</caaml:endPosition>
+		</caaml:AspectRange>
+		<caaml:AspectRange gml:id="AspectRange_W">
+			<caaml:beginPosition>247.5</caaml:beginPosition>
+			<caaml:endPosition>292.5</caaml:endPosition>
+		</caaml:AspectRange>
+		<caaml:AspectRange gml:id="AspectRange_NW">
+			<caaml:beginPosition>292.5</caaml:beginPosition>
+			<caaml:endPosition>337.5</caaml:endPosition>
+		</caaml:AspectRange>
+	</caaml:aspects>
+</caaml:AspectCollection>
