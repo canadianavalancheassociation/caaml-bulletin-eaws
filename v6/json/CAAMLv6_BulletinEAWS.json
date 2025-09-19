@@ -1,380 +1,392 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "title": "Avalanche Bulletin CAAMLv6 Collection",
-    "description": "JSON schema for EAWS avalanche bulletin collection following the CAAMLv6 schema",
-    "type": "object",
-    "required": ["bulletins"],
-    "properties" : {
-        "bulletins" : {
-            "type" : "array",
-            "items" : {
-                "$ref" : "#/definitions/bulletin"
-            }
-        },
-        "metaData" : { "$ref" : "#/definitions/metaData" },
-        "customData" : { "$ref" : "#/definitions/customData" }
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Avalanche Bulletin CAAMLv6 Collection",
+  "description": "Comprehensive JSON schema for the European Avalanche Warning Services (EAWS) avalanche bulletin collection, following the CAAMLv6 standard. This schema defines the structure, required fields, and data types for encoding avalanche bulletins, supporting multilingual content, region-specific data, and detailed avalanche problem reporting.",
+  "type": "object",
+  "required": ["bulletins"],
+  "properties": {
+    "bulletins": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/bulletin"
+      }
     },
-    
-    "definitions" : {
-        "bulletin" : {
-            "title": "Avalanche Bulletin",
-            "description": "Avalanche Bulletin valid for a given set of regions.",
-            "type" : "object",
-            "properties": {
-                "bulletinID" : {
-                    "title": "Bulletin ID",
-                    "description": "Unique ID for the bulletin.",
-                    "type" : "string"
-                },
-                "lang" : {
-                    "title": "Language Code",
-                    "description": "Two-letter language code (ISO 639-1).",
-                    "$ref" : "#/definitions/languageCode"
-                },
-                "publicationTime" : {
-                    "title": "Publication Time",
-                    "description": "Time and date when the bulletin was issued by the AWS to the Public. ISO 8601 timestamp in UTC or with time zone information.",
-                    "type" : "string",
-                    "format" : "date-time"
-                },
-                "validTime" : {
-                    "title": "Valid Time",
-                    "description": "Date and Time from and until this bulletin is valid. ISO 8601 Timestamp in UTC or with time zone information.",
-                    "$ref" : "#/definitions/validTime"
-                },              
-                "nextUpdate" : {
-                    "title": "Next Update",
-                    "description": "Time and date when the next bulletin will be published by the AWS to the Public. ISO 8601 timestamp in UTC or with time zone information.",
-                    "type" : "string",
-                    "format" : "date-time"
-                },
-                "unscheduled" : {
-                    "title": "Unscheduled",
-                    "description": "Flag if bulletin is unscheduled or not.",
-                    "type" : "boolean"
-                },
-                "source" : {
-                    "title": "Source",
-                    "description": "Details about the issuer/AWS of the bulletin.",
-                    "$ref" : "#/definitions/source"
-                },
-                "regions" : {
-                    "title": "Regions",
-                    "description": "Collection of region elements for which this bulletin is valid.",
-                    "type" : "array",
-                    "items" : {
-                        "$ref" : "#/definitions/region"
-                    }
-                },
-                "dangerRatings" : { 
-                    "title": "Danger Ratings",
-                    "description": "Collection of Danger Rating elements for this bulletin.",
-                    "type" : "array",
-                    "items" : {
-                        "$ref" : "#/definitions/dangerRating"
-                    }
-                },
-                "avalancheProblems" : {
-                    "title": "Avalanche Problems",
-                    "description": "Collection of Avalanche Problem elements for this bulletin.",
-                    "type" : "array",
-                    "items" : {
-                        "$ref" : "#/definitions/avalancheProblem"
-                    }
-                },
-                "highlights" : {
-                    "title": "Highlights",
-                    "description": "Contains an optional short text to highlight an exceptionally dangerous situation.",
-                    "type" : "string"
-                },
-                "weatherForecast" : {
-                    "title": "Weather Forecast Synopsis",
-                    "description": "Texts element with highlight and comment for weather forecast information.",
-                    "$ref" : "#/definitions/texts"
-                },
-                "weatherReview" : {
-                    "title": "Weather Review Synopsis",
-                    "description": "Texts element with highlight and comment for weather review information.",
-                    "$ref" : "#/definitions/texts"
-                },
-                "avalancheActivity" : {
-                    "title": "Avalanche Activity",
-                    "description": "Texts element with highlight and comment for the avalanche activity.",
-                    "$ref" : "#/definitions/texts"
-                },
-                "snowpackStructure" : {
-                    "title": "Snowpack Structure",
-                    "description": "Texts element with highlight and comment for details on the snowpack structure.",
-                    "$ref" : "#/definitions/texts"
-                },
-                "travelAdvisory" : {
-                    "title": "Travel Advisory",
-                    "description": "Texts element with highlight and comment for travel advisory.",
-                    "$ref" : "#/definitions/texts"
-                },
-                "tendency" : {
-                    "title": "Tendency",
-                    "description": "Tendency element for a detailed description of the expected avalanche situation tendency after the bulletin's period of validity.",
-                    "type" : "array",
-                    "items" : {
-                        "anyOf": [
-                            { "$ref": "#/definitions/texts" },
-                            { "$ref": "#/definitions/tendency" }
-                        ]
-                    }
+    "metaData": { "$ref": "#/definitions/metaData" },
+    "customData": { "$ref": "#/definitions/customData" }
+  },
 
-
-                },
-                "metaData" : { "$ref" : "#/definitions/metaData" },
-                "customData" : { "$ref" : "#/definitions/customData" }
-            },
-            "additionalProperties" : false
+  "definitions": {
+    "bulletin": {
+      "title": "Avalanche Bulletin",
+      "description": "An avalanche bulletin containing all relevant information for a specific set of regions and a defined time period. Includes metadata, danger ratings, avalanche problems, weather information, and travel advisories. Each bulletin is uniquely identified and may be issued in multiple languages.",
+      "type": "object",
+      "properties": {
+        "bulletinID": {
+          "title": "Bulletin ID",
+          "description": "A globally unique identifier for the bulletin. Typically a string or UUID generated by the issuing authority.",
+          "type": "string"
         },
-        "dangerRating" : {
-            "title": "Danger Rating",
-            "description": "Defines a danger rating, its elevation constraints and the valid time period. If validTimePeriod or elevation are constrained for a rating, it is expected to define a dangerRating for all the other cases.",
-            "type" : "object",
-            "properties" : {
-                "mainValue": { "$ref" : "#/definitions/dangerRatingValue" },
-                "elevation" : { "$ref" : "#/definitions/elevation" },
-                "aspects" : { "$ref" : "#/definitions/aspects" },
-                "validTimePeriod" : { "$ref" : "#/definitions/validTimePeriod" },
-                "metaData" : { "$ref" : "#/definitions/metaData" },
-                "customData" : { "$ref" : "#/definitions/customData" }
-            },
-            "required": ["mainValue"],
-            "additionalProperties": false
-        },     
-        "dangerRatingValue" : {
-            "title": "Danger Rating Value",
-            "description": "Danger rating value, according to EAWS danger scale definition.",
-            "type" : "string",
-            "enum" : [ "low", "moderate", "considerable", "high", "very_high", "no_snow", "no_rating" ]
+        "lang": {
+          "title": "Language Code",
+          "description": "Language in which the bulletin is published, represented as a two-letter ISO 639-1 code (e.g., 'en' for English, 'de' for German).",
+          "$ref": "#/definitions/languageCode"
         },
-        "avalancheProblem" : {
-            "title": "Avalanche Problem",
-            "description": "Defines an avalanche problem, its time, aspect, and elevation constraints. A textual detail about the affected terrain can be given in the comment field. Also, details about the expected avalanche size, snowpack stability and its frequency can be defined. The implied danger rating value is optional.",
-            "type" : "object",
-            "properties" : {
-                "problemType" : { "$ref" : "#/definitions/avalancheProblemType" },
-                "comment" : { "type" : "string" },
-                "avalancheSize" : { "$ref" : "#/definitions/avalancheSize" },
-                "snowpackStability" : { "$ref" : "#/definitions/snowpackStability" },
-                "frequency" : { "$ref" : "#/definitions/frequency" },
-                "dangerRatingValue": { "$ref" : "#/definitions/dangerRatingValue" },
-                "elevation" : { "$ref" : "#/definitions/elevation" },
-                "aspects" : { "$ref" : "#/definitions/aspects" },
-                "validTimePeriod" : { "$ref" : "#/definitions/validTimePeriod" },
-                "metaData" : { "$ref" : "#/definitions/metaData" },
-                "customData" : { "$ref" : "#/definitions/customData" }
-            },
-            "required": ["problemType"],
-            "additionalProperties": false
+        "publicationTime": {
+          "title": "Publication Time",
+          "description": "The exact date and time when the bulletin was officially published by the Avalanche Warning Service (AWS). Format: ISO 8601 timestamp (e.g., '2025-01-15T07:30:00Z').",
+          "type": "string",
+          "format": "date-time"
         },
-        "avalancheProblemType" : {
-            "title": "Avalanche Problem Type",
-            "description": "Expected avalanche problem, according to the EAWS avalanche problem definition.",
-            "type" : "string",
-            "enum" : [ "new_snow", "wind_slab", "persistent_weak_layers", "wet_snow", "gliding_snow", "cornices", "no_distinct_avalanche_problem", "favourable_situation" ]
+        "validTime": {
+          "title": "Valid Time",
+          "description": "The time period during which the bulletin is valid. Includes both start and end times in ISO 8601 format, allowing users to determine the relevance of the information.",
+          "$ref": "#/definitions/validTime"
         },
-        "avalancheSize" : {
-            "title": "Expected Avalanche Size",
-            "description": "Expected avalanche size, according to the EAWS definition. Integer Value from 1 (small) to 5 (extremely large).",
-            "type" : "number",
-            "minimum" : 1,
-            "maximum" : 5
+        "nextUpdate": {
+          "title": "Next Update",
+          "description": "Scheduled date and time for the next bulletin release, as planned by the AWS. Format: ISO 8601 timestamp.",
+          "type": "string",
+          "format": "date-time"
         },
-        "snowpackStability" : {
-            "title": "Expected Snowpack Stability",
-            "description": "Snowpack stability, according to the EAWS definition. Four stage scale (very poor, poor, fair, good).",
-            "type" : "string",
-            "enum" : [ "good", "fair", "poor", "very_poor"]
+        "unscheduled": {
+          "title": "Unscheduled",
+          "description": "Boolean flag indicating whether this bulletin was issued outside the regular schedule (true = unscheduled, false = scheduled).",
+          "type": "boolean"
         },
-        "frequency" : {
-            "title": "Expected Avalanche Frequency",
-            "description": "Expected frequency of lowest snowpack stability, according to the EAWS definition. Three stage scale (few, some, many).",
-            "type" : "string",
-            "enum" : [ "none", "few", "some", "many"]
+        "source": {
+          "title": "Source",
+          "description": "Information about the organization or person responsible for issuing the bulletin, including provider details and contact information.",
+          "$ref": "#/definitions/source"
         },
-        "tendency" : {
-            "title": "Avalanche Situation Tendency",
-            "description": "Describes the expected tendency of the development of the avalanche situation for a defined time period.",
-            "type" : "object",
-            "properties" : {
-                "tendencyType" : {
-                    "type" : "string",
-                    "enum" : [ "decreasing", "steady", "increasing"]
-                },
-                "validTime" : {
-                    "$ref" : "#/definitions/validTime"
-                },
-                "metaData" : { "$ref" : "#/definitions/metaData" },
-                "customData" : { "$ref" : "#/definitions/customData" }
-            }
+        "regions": {
+          "title": "Regions",
+          "description": "List of regions (geographical areas) covered by this bulletin. Each region is identified by a unique regionID and may include a name and metadata.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/region"
+          }
         },
-        "metaData" : {
-            "title": "Meta Data",
-            "description": "Meta data for various uses. Can be used to link to external files like maps, thumbnails etc.",
-            "type" : "object",
-            "properties": {
-                "extFiles" : { 
-                    "type" : "array",
-                    "items" : {
-                        "$ref" : "#/definitions/extFile"
-                    }
-                },
-                "comment" : { "type" : "string" }
-            },
-            "additionalProperties": false
+        "dangerRatings": {
+          "title": "Danger Ratings",
+          "description": "Array of danger rating objects, each describing the avalanche danger level for a specific elevation band, aspect, or time period within the bulletin's validity.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/dangerRating"
+          }
         },
-        "extFile" : {
-            "title": "External File",
-            "description": "External file is used to link to external files like maps, thumbnails etc.",
-            "type" : "object",
-            "properties" : {
-                "fileType" : { "type" : "string" },
-                "description" : { "type" : "string" },
-                "fileReferenceURI" : {
-                    "type" : "string",
-                    "format" : "uri"
-                }
-            },
-            "additionalProperties": false
+        "avalancheProblems": {
+          "title": "Avalanche Problems",
+          "description": "Array of avalanche problem objects, each detailing a specific avalanche problem type, affected terrain, expected size, stability, and frequency for the bulletin period.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/avalancheProblem"
+          }
         },
-        "customData" : {
-            "title": "Custom Data",
-            "description": "Custom data can be used to add arbitrary additional information. There can be AWS specific custom data types defined."
+        "highlights": {
+          "title": "Highlights",
+          "description": "Optional short text used to emphasize particularly dangerous situations or key messages for the public. Should be concise and attention-grabbing.",
+          "type": "string"
         },
-        "source" : {
-            "title": "Avalanche Bulletin Source",
-            "description": "Information about the bulletin source. Either as in a person or with a provider element to specify details about the AWS.",
-            "type" : "object",
-            "properties": {
-                "provider" : { "$ref" : "#/definitions/provider" },
-                "person" : { "$ref" : "#/definitions/person" }
-            },
-            "oneOf" : [
-                { "required" : [ "provider" ] },
-                { "required" : [ "person" ] }
-            ],
-            "additionalProperties": false
+        "weatherForecast": {
+          "title": "Weather Forecast Synopsis",
+          "description": "Weather forecast summary, including a headline (highlight) and detailed comment. May use HTML tags for formatting (e.g., <br/>, <ul>, <li>).",
+          "$ref": "#/definitions/texts"
         },
-        "provider" : {
-            "title": "Avalanche Bulletin Provider",
-            "description": "Information about the bulletin provider. Defines the name, website and/or contactPerson (which could be the author) of the issuing AWS.",
-            "type" : "object",
-            "properties" : {
-                "name" : {
-                    "type" : "string"
-                },
-                "website" : {
-                    "type" : "string",
-                    "format" : "uri"
-                },
-                "contactPerson" : { "$ref" : "#/definitions/person" },
-                "metaData" : { "$ref" : "#/definitions/metaData" },
-                "customData" : { "$ref" : "#/definitions/customData" }
-            },
-            "additionalProperties": false
+        "weatherReview": {
+          "title": "Weather Review Synopsis",
+          "description": "Review of recent weather conditions relevant to avalanche risk, with a highlight and detailed comment. Supports HTML formatting.",
+          "$ref": "#/definitions/texts"
         },
-        "person" : {
-            "title": "Person",
-            "description": "Details on a person.",
-            "type" : "object",
-            "properties" : {
-                "name" : {
-                    "type" : "string"
-                },
-                "website" : {
-                    "type" : "string",
-                    "format" : "uri"
-                },
-                "metaData" : { "$ref" : "#/definitions/metaData" },
-                "customData" : { "$ref" : "#/definitions/customData" }
-            },
-            "additionalProperties": false
+        "avalancheActivity": {
+          "title": "Avalanche Activity",
+          "description": "Summary of observed avalanche activity, including a highlight and detailed comment. Useful for situational awareness and trend analysis.",
+          "$ref": "#/definitions/texts"
         },
-        "region" : {
-            "title": "Region",
-            "description": "Region element describes a (micro) region. The regionID follows the EAWS schema. It is recommended to have the region shape's files with the same IDs in gitlab.com/eaws/eaws-regions. Additionally, the region name can be added.",
-            "type" : "object",
-            "properties": {
-                "regionID" : { "type" : "string" },
-                "name" : { "type" : "string" },
-                "metaData" : { "$ref" : "#/definitions/metaData" },
-                "customData" : { "$ref" : "#/definitions/customData" }
-            },
-            "required": ["regionID"],
-            "additionalProperties": false
+        "snowpackStructure": {
+          "title": "Snowpack Structure",
+          "description": "Detailed description of the current snowpack structure, including weak layers, crusts, and other relevant features. Includes a highlight and comment.",
+          "$ref": "#/definitions/texts"
         },
-        "aspects" : {
-            "title": "Aspects",
-            "description": "An aspect can be defined as a set of aspects. The aspects are the expositions as in a eight part (45°) segments. The allowed aspects are the four main cardinal directions and the four intercardinal directions.",
-            "type" : "array",
-            "items" : {
-              "type" : "string",
-              "enum" : [ "N", "NE", "E", "SE", "S", "SW", "W", "NW", "n/a" ]
-            }
+        "travelAdvisory": {
+          "title": "Travel Advisory",
+          "description": "Travel advisory section providing guidance and recommendations for safe travel in avalanche terrain. Includes a highlight and comment.",
+          "$ref": "#/definitions/texts"
         },
-        "elevation" : {
-            "title": "Elevation Boundary or Band",
-            "description": "Elevation describes either an elevation range below a certain bound (only upperBound is set to a value) or above a certain bound (only lowerBound is set to a value). If both values are set to a value, an elevation band is defined by this property. The value uses a numeric value, not more detailed than 100m resolution. Additionally to the numeric values also 'treeline' is allowed.",
-            "type" : "object",
-            "properties" : {
-                "lowerBound" : {
-                    "type" : "string",
-                    "pattern" : "treeline|0|[1-9][0-9]*[0][0]+"
-                },
-                "upperBound" : {
-                    "type" : "string",
-                    "pattern" : "treeline|0|[1-9][0-9]*[0][0]+"
-                }
-            },
-            "additionalProperties": false
+        "tendency": {
+          "title": "Tendency",
+          "description": "Detailed description of the expected trend or tendency in avalanche danger after the current bulletin's validity period. May include both structured and free-text elements.",
+          "type": "array",
+          "items": {
+            "anyOf": [
+              { "$ref": "#/definitions/texts" },
+              { "$ref": "#/definitions/tendency" }
+            ]
+          }
         },
-        "validTime" : {
-            "title": "Valid Time",
-            "description": "Valid time defines two ISO 8601 timestamps in UTC or with time zone information.",
-            "type" : "object",
-            "properties" : {
-                "startTime" : {
-                    "type" : "string",
-                    "format" : "date-time"
-                },
-                "endTime" : {
-                    "type" : "string",
-                    "format" : "date-time"
-                }
-            },
-            "additionalProperties": false
+        "metaData": { "$ref": "#/definitions/metaData" },
+        "customData": { "$ref": "#/definitions/customData" }
+      },
+      "additionalProperties": false
+    },
+    "dangerRating": {
+      "title": "Danger Rating",
+      "description": "Defines an avalanche danger rating for a specific elevation band, aspect, or time period. If a danger rating is constrained by elevation or validTimePeriod, additional ratings should be provided for other cases to ensure full coverage.",
+      "type": "object",
+      "properties": {
+        "mainValue": { "$ref": "#/definitions/dangerRatingValue" },
+        "elevation": { "$ref": "#/definitions/elevation" },
+        "aspects": { "$ref": "#/definitions/aspects" },
+        "validTimePeriod": { "$ref": "#/definitions/validTimePeriod" },
+        "metaData": { "$ref": "#/definitions/metaData" },
+        "customData": { "$ref": "#/definitions/customData" }
+      },
+      "required": ["mainValue"],
+      "additionalProperties": false
+    },
+    "dangerRatingValue": {
+      "title": "Danger Rating Value",
+      "description": "Avalanche danger level as defined by the EAWS danger scale. Allowed values: low, moderate, considerable, high, very_high, no_snow, no_rating.",
+      "type": "string",
+      "enum": [
+        "low",
+        "moderate",
+        "considerable",
+        "high",
+        "very_high",
+        "no_snow",
+        "no_rating"
+      ]
+    },
+    "avalancheProblem": {
+      "title": "Avalanche Problem",
+      "description": "Describes a specific avalanche problem expected during the bulletin period, including type, affected terrain, expected avalanche size, snowpack stability, and frequency. May also include an implied danger rating value. Provides context for risk assessment and mitigation.",
+      "type": "object",
+      "properties": {
+        "problemType": { "$ref": "#/definitions/avalancheProblemType" },
+        "comment": { "type": "string" },
+        "avalancheSize": { "$ref": "#/definitions/avalancheSize" },
+        "snowpackStability": { "$ref": "#/definitions/snowpackStability" },
+        "frequency": { "$ref": "#/definitions/frequency" },
+        "dangerRatingValue": { "$ref": "#/definitions/dangerRatingValue" },
+        "elevation": { "$ref": "#/definitions/elevation" },
+        "aspects": { "$ref": "#/definitions/aspects" },
+        "validTimePeriod": { "$ref": "#/definitions/validTimePeriod" },
+        "metaData": { "$ref": "#/definitions/metaData" },
+        "customData": { "$ref": "#/definitions/customData" }
+      },
+      "required": ["problemType"],
+      "additionalProperties": false
+    },
+    "avalancheProblemType": {
+      "title": "Avalanche Problem Type",
+      "description": "Type of avalanche problem expected, as defined by the EAWS. Examples: new_snow, wind_slab, persistent_weak_layers, wet_snow, gliding_snow, cornices, no_distinct_avalanche_problem, favourable_situation.",
+      "type": "string",
+      "enum": [
+        "new_snow",
+        "wind_slab",
+        "persistent_weak_layers",
+        "wet_snow",
+        "gliding_snow",
+        "cornices",
+        "no_distinct_avalanche_problem",
+        "favourable_situation"
+      ]
+    },
+    "avalancheSize": {
+      "title": "Expected Avalanche Size",
+      "description": "Expected size of potential avalanches, following the EAWS scale. Integer value from 1 (small) to 5 (extremely large).",
+      "type": "number",
+      "minimum": 1,
+      "maximum": 5
+    },
+    "snowpackStability": {
+      "title": "Expected Snowpack Stability",
+      "description": "Expected snowpack stability, using the EAWS four-stage scale: very_poor, poor, fair, good.",
+      "type": "string",
+      "enum": ["good", "fair", "poor", "very_poor"]
+    },
+    "frequency": {
+      "title": "Expected Avalanche Frequency",
+      "description": "Expected frequency of spots with the lowest snowpack stability, using the EAWS four-stage scale: none, few, some, many.",
+      "type": "string",
+      "enum": ["none", "few", "some", "many"]
+    },
+    "tendency": {
+      "title": "Avalanche Situation Tendency",
+      "description": "Describes the expected trend in avalanche danger (increasing, steady, or decreasing) for a defined time period, supporting risk planning beyond the current bulletin.",
+      "type": "object",
+      "properties": {
+        "tendencyType": {
+          "type": "string",
+          "enum": ["decreasing", "steady", "increasing"]
         },
-        "validTimePeriod" : {
-            "title": "Valid Time Period",
-            "description": "Valid time period can be used to limit the validity of an element to an earlier or later period. It can be used to distinguish danger ratings or avalanche problems.",
-            "type" : "string",
-            "enum" : [ "all_day", "earlier", "later" ]
+        "validTime": {
+          "$ref": "#/definitions/validTime"
         },
-        "texts" : {
-            "title": "Texts",
-            "description": "Texts contains a highlight and a comment string, where highlights could also be described as a kind of headline for the longer comment. For text-formatting the HTML-Tags <br/> for a new line, (<ul>,<ul/>) and (<li>,<li/>) for lists, (<h1>,<h1/>) to (<h6>,<h6/>) for headings and (<b>,</b>) for a bold text are allowed.",
-            "type" : "object",
-            "properties" : {
-                "highlights" : {
-                    "type" : "string"
-                },
-                "comment" : {
-                    "type" : "string"
-                }
-            },
-            "additionalProperties": false
+        "metaData": { "$ref": "#/definitions/metaData" },
+        "customData": { "$ref": "#/definitions/customData" }
+      }
+    },
+    "metaData": {
+      "title": "Meta Data",
+      "description": "Metadata for various uses, such as linking to external files (maps, images, thumbnails), providing additional context, or referencing related resources.",
+      "type": "object",
+      "properties": {
+        "extFiles": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/extFile"
+          }
         },
-        "languageCode" : {
-            "title": "Language Code",
-            "description": "Two-letter language code (ISO 639-1).",
-            "type" : "string",
-            "minLength" : 2,
-            "maxLength" : 2
+        "comment": { "type": "string" }
+      },
+      "additionalProperties": false
+    },
+    "extFile": {
+      "title": "External File",
+      "description": "Describes an external file resource, such as a map, image, or document, that is linked to the bulletin or its components. Includes file type, description, and URI.",
+      "type": "object",
+      "properties": {
+        "fileType": { "type": "string" },
+        "description": { "type": "string" },
+        "fileReferenceURI": {
+          "type": "string",
+          "format": "uri"
         }
+      },
+      "additionalProperties": false
     },
-    "additionalProperties": false
+    "customData": {
+      "title": "Custom Data",
+      "description": "Flexible field for adding arbitrary additional information, including AWS-specific custom data types. Allows for extensibility beyond the standard schema."
+    },
+    "source": {
+      "title": "Avalanche Bulletin Source",
+      "description": "Information about the source of the bulletin, either as a person (author) or as a provider (organization/AWS). Includes contact and metadata fields.",
+      "type": "object",
+      "properties": {
+        "provider": { "$ref": "#/definitions/provider" },
+        "person": { "$ref": "#/definitions/person" }
+      },
+      "oneOf": [{ "required": ["provider"] }, { "required": ["person"] }],
+      "additionalProperties": false
+    },
+    "provider": {
+      "title": "Avalanche Bulletin Provider",
+      "description": "Details about the organization or provider responsible for issuing the bulletin. Includes name, website, and optional contact person.",
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "website": {
+          "type": "string",
+          "format": "uri"
+        },
+        "contactPerson": { "$ref": "#/definitions/person" },
+        "metaData": { "$ref": "#/definitions/metaData" },
+        "customData": { "$ref": "#/definitions/customData" }
+      },
+      "additionalProperties": false
+    },
+    "person": {
+      "title": "Person",
+      "description": "Information about a person, such as an author or contact, including name, website, and optional metadata.",
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "website": {
+          "type": "string",
+          "format": "uri"
+        },
+        "metaData": { "$ref": "#/definitions/metaData" },
+        "customData": { "$ref": "#/definitions/customData" }
+      },
+      "additionalProperties": false
+    },
+    "region": {
+      "title": "Region",
+      "description": "Describes a region (or micro-region) for which the bulletin is valid. The regionID should follow the EAWS schema. It is recommended to maintain region shape files with matching IDs in the EAWS regions repository. Optionally includes a human-readable name and metadata.",
+      "type": "object",
+      "properties": {
+        "regionID": { "type": "string" },
+        "name": { "type": "string" },
+        "metaData": { "$ref": "#/definitions/metaData" },
+        "customData": { "$ref": "#/definitions/customData" }
+      },
+      "required": ["regionID"],
+      "additionalProperties": false
+    },
+    "aspects": {
+      "title": "Aspects",
+      "description": "Defines one or more slope aspects (expositions) relevant to avalanche danger. Aspects are represented as eight 45° segments: N, NE, E, SE, S, SW, W, NW. Use 'n/a' if not applicable.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": ["N", "NE", "E", "SE", "S", "SW", "W", "NW", "n/a"]
+      }
+    },
+    "elevation": {
+      "title": "Elevation Boundary or Band",
+      "description": "Describes an elevation boundary or band relevant to avalanche danger. If only upperBound is set, it refers to elevations below that value; if only lowerBound is set, it refers to elevations above that value. If both are set, it defines an elevation band. Values should be numeric (minimum 100m resolution) or 'treeline'.",
+      "type": "object",
+      "properties": {
+        "lowerBound": {
+          "type": "string",
+          "pattern": "treeline|0|[1-9][0-9]*[0][0]+"
+        },
+        "upperBound": {
+          "type": "string",
+          "pattern": "treeline|0|[1-9][0-9]*[0][0]+"
+        }
+      },
+      "additionalProperties": false
+    },
+    "validTime": {
+      "title": "Valid Time",
+      "description": "Defines a time period with a start and end, both as ISO 8601 timestamps (UTC or with time zone). Used to specify the validity of bulletin elements.",
+      "type": "object",
+      "properties": {
+        "startTime": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "endTime": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "additionalProperties": false
+    },
+    "validTimePeriod": {
+      "title": "Valid Time Period",
+      "description": "Specifies a named time period within the bulletin's validity, such as 'all_day', 'earlier', or 'later'. Useful for distinguishing danger ratings or avalanche problems by time of day.",
+      "type": "string",
+      "enum": ["all_day", "earlier", "later"]
+    },
+    "texts": {
+      "title": "Texts",
+      "description": "Object containing a highlight (headline) and a comment (detailed text). Supports HTML tags for formatting: <br/> (new line), <ul>/<li> (lists), <h1>-<h6> (headings), <b> (bold).",
+      "type": "object",
+      "properties": {
+        "highlights": {
+          "type": "string"
+        },
+        "comment": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "languageCode": {
+      "title": "Language Code",
+      "description": "Language code for the bulletin, using the two-letter ISO 639-1 standard (e.g., 'en', 'de').",
+      "type": "string",
+      "minLength": 2,
+      "maxLength": 2
+    }
+  },
+  "additionalProperties": false
 }
